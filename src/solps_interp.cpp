@@ -2,6 +2,7 @@
 #include <netcdf>
 #include <vector>
 #include <cmath>
+#include <chrono>
 #include <omp.h>
 #include <thrust/host_vector.h>
 #include <thrust/device_vector.h>
@@ -190,6 +191,9 @@ struct saxpy_functor
 
 int main()
 {
+    typedef std::chrono::high_resolution_clock app_time;
+    auto app_start_time = app_time::now();
+    
     std::cout << "Hello World!\n";
     
     try {
@@ -270,8 +274,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 4400;
-    int nz = 9300;
+    int nr = 440;
+    int nz = 930;
     thrust::counting_iterator<std::size_t> point_first(0);
     thrust::counting_iterator<std::size_t> point_last(nr*nz);
     double r_start = 4.0;
@@ -312,6 +316,11 @@ int main()
                       r1_pointer,z1_pointer,v1_pointer,
                       r2_pointer,z2_pointer,v2_pointer,
                       r3_pointer,z3_pointer,v3_pointer,radius_pointer,val_pointer);
+    
+    auto setup_time_clock = app_time::now();
+    typedef std::chrono::duration<float> fsec;
+    fsec setup_time = setup_time_clock - app_start_time;
+    printf("Time taken for setup is %6.3f (secs) \n", setup_time.count());
 //#pragma omp parallel for collapse(3)
   for(int i=0; i< n_total; i++)
   {
@@ -339,6 +348,10 @@ int main()
     //    }
       
     }
+    auto run_time_clock = app_time::now();
+    //typedef std::chrono::duration<float> fsec;
+    fsec run_time = run_time_clock - setup_time_clock;
+    printf("Time taken for main loop is %6.3f (secs) \n", run_time.count());
 
     val_h = val;
 
@@ -358,5 +371,9 @@ int main()
       _gridz.putVar(&z_h[0]);
       _vals.putVar(&val_h[0]);
       ncFile_out.close();
+    
+    auto end_time_clock = app_time::now();
+    fsec out_time = end_time_clock - run_time_clock;
+    printf("Time taken for output is %6.3f (secs) \n", out_time.count());
     return 0;
 }
