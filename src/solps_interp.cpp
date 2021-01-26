@@ -14,6 +14,8 @@ void vectorPrint(std::string a, double D[])
     D[1] << " " << 
     D[2] << std::endl;
 }
+
+__host__ __device__
 void vectorAssign(double a, double b,double c, double D[])
 {
     D[0] = a;
@@ -21,6 +23,7 @@ void vectorAssign(double a, double b,double c, double D[])
     D[2] = c;
 }
 
+__host__ __device__
 void vectorSubtract(double A[], double B[],double C[])
 {
     C[0] = A[0] - B[0];
@@ -28,6 +31,7 @@ void vectorSubtract(double A[], double B[],double C[])
     C[2] = A[2] - B[2];
 }
 
+__host__ __device__
 void vectorCrossProduct(double A[], double B[], double C[])
 {
     double tmp[3] = {0.0f,0.0f,0.0f};
@@ -40,12 +44,14 @@ void vectorCrossProduct(double A[], double B[], double C[])
     C[2] = tmp[2];
 }
 
+__host__ __device__
 double vectorDotProduct(double A[], double B[])
 {
     double c = A[0]*B[0] +  A[1]*B[1] + A[2]*B[2];
     return c;
 }
 
+__host__ __device__
 double vectorNorm(double A[])
 {
     double norm = 0.0f;
@@ -53,6 +59,8 @@ double vectorNorm(double A[])
 
         return norm;
 }
+
+__host__ __device__
 double interpolate_value(double r1, double z1, double a1, double r2, double z2, double a2, double r3, double z3, double a3, double r_point, double z_point)
 {
                     double denom = (z2 - z3)*(r1 - r3) + (r3 - r2)*(z1 - z3);
@@ -63,6 +71,8 @@ double interpolate_value(double r1, double z1, double a1, double r2, double z2, 
 
                     return a_point;
 }
+
+__host__ __device__
 bool in_triangle(double r1, double z1, double r2, double z2, double r3, double z3, double r_point, double z_point)
 {
       bool in_triangle = false;
@@ -260,8 +270,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 440;
-    int nz = 930;
+    int nr = 4400;
+    int nz = 9300;
     thrust::counting_iterator<std::size_t> point_first(0);
     thrust::counting_iterator<std::size_t> point_last(nr*nz);
     double r_start = 4.0;
@@ -296,10 +306,6 @@ int main()
     //std::vector<double> r(1,6.0);
     //std::vector<double> z(1,0.0);
     //std::vector<double> val(1,0.0);
-    double hollow_r0 = 4.65;
-    double hollow_r1 = 7.3;
-    double hollow_z0 = -0.7;
-    double hollow_z1 = 2.35;
     thrust::device_vector<int> index_triangle(1,0);
     int* triangle_pointer = thrust::raw_pointer_cast(&index_triangle[0]);
     saxpy_functor spf(triangle_pointer,nr,nz,r_pointer,z_pointer,
