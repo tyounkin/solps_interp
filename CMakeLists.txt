@@ -37,7 +37,11 @@ find_package(OpenMP REQUIRED)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -std=c++1z -O3")
 
+find_package(Thrust REQUIRED)
+include_directories(${THRUST_INCLUDE_DIRS})
+
 add_executable(app src/solps_interp.cpp)
+add_definitions("-x c++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_OMP")
 
 target_link_libraries(app ${NETCDF_CXX_LIBRARIES})
 target_link_libraries(app ${NETCDF_C_LIBRARIES})
