@@ -274,8 +274,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 440;
-    int nz = 930;
+    int nr = 4400;
+    int nz = 9300;
     thrust::counting_iterator<std::size_t> point_first(0);
     thrust::counting_iterator<std::size_t> point_last(nr*nz);
     double r_start = 4.0;
