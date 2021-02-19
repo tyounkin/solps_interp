@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.1)
 project(solps_interp)
 
-set(CUDA 1)
-set(APPLE 0)
+set(OPENMP 1)
+set(APPLE 1)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/CMake/)
 set(CMAKE_CXX_STANDARD 17) # Doesn't set NVCC C++ standard
