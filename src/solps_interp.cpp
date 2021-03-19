@@ -330,7 +330,22 @@ struct Fields : public Managed
 	sim::Vector<double> vz2t;
 	sim::Vector<double> vz3t;
 	sim::Vector<double> vz;
+	
+	sim::Vector<double> Er1t;
+	sim::Vector<double> Er2t;
+	sim::Vector<double> Er3t;
+	sim::Vector<double> Er;
+	
+	sim::Vector<double> Ez1t;
+	sim::Vector<double> Ez2t;
+	sim::Vector<double> Ez3t;
+	sim::Vector<double> Ez;
 
+	sim::Vector<double> gradTe1t;
+	sim::Vector<double> gradTe2t;
+	sim::Vector<double> gradTe3t;
+	sim::Vector<double> gradTe;
+	
 	sim::Vector<double> gradTer1t;
 	sim::Vector<double> gradTer2t;
 	sim::Vector<double> gradTer3t;
@@ -345,6 +360,11 @@ struct Fields : public Managed
 	sim::Vector<double> gradTez2t;
 	sim::Vector<double> gradTez3t;
 	sim::Vector<double> gradTez;
+	
+	sim::Vector<double> gradTi1t;
+	sim::Vector<double> gradTi2t;
+	sim::Vector<double> gradTi3t;
+	sim::Vector<double> gradTi;
 	
 	sim::Vector<double> gradTir1t;
 	sim::Vector<double> gradTir2t;
@@ -627,6 +647,24 @@ struct saxpy_functor
                                              r[ii],z[jj]);
 		 solps_fields->vz[index] = a_point;
 		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Er1t[i],
+                                             r2[i],z2[i],solps_fields->Er2t[i],
+                                             r3[i],z3[i],solps_fields->Er3t[i],
+                                             r[ii],z[jj]);
+		 solps_fields->Er[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Ez1t[i],
+                                             r2[i],z2[i],solps_fields->Ez2t[i],
+                                             r3[i],z3[i],solps_fields->Ez3t[i],
+                                             r[ii],z[jj]);
+		 solps_fields->Ez[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTe1t[i],
+                                             r2[i],z2[i],solps_fields->gradTe2t[i],
+                                             r3[i],z3[i],solps_fields->gradTe3t[i],
+                                             r[ii],z[jj]);
+		 solps_fields->gradTe[index] = a_point;
+		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTer1t[i],
                                              r2[i],z2[i],solps_fields->gradTer2t[i],
                                              r3[i],z3[i],solps_fields->gradTer3t[i],
@@ -644,6 +682,12 @@ struct saxpy_functor
                                              r3[i],z3[i],solps_fields->gradTez3t[i],
                                              r[ii],z[jj]);
 		 solps_fields->gradTez[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTi1t[i],
+                                             r2[i],z2[i],solps_fields->gradTi2t[i],
+                                             r3[i],z3[i],solps_fields->gradTi3t[i],
+                                             r[ii],z[jj]);
+		 solps_fields->gradTi[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTir1t[i],
                                              r2[i],z2[i],solps_fields->gradTir2t[i],
@@ -1525,6 +1569,11 @@ std::tuple<std::vector<double>,std::vector<double>>
   std::vector<double> te = read_dfield("b2fstate", "te");
   std::vector<double> ti = read_dfield("b2fstate", "ti");
   std::vector<double> bb = read_dfield("b2fgmtry", "bb");
+    for(int i=0; i<ti.size();i++)
+    {
+      ti[i] = ti[i]/1.602176565e-19;
+      te[i] = te[i]/1.602176565e-19;
+    }
 
   for (int i=1; i < nx+1; i++)
   {
@@ -1548,12 +1597,13 @@ std::tuple<std::vector<double>,std::vector<double>>
 
       double left_hx = hx[left_2d_index];
       double left_te = te[left_2d_index];
-      double left_ti = te[left_2d_index];
+      double left_ti = ti[left_2d_index];
       
       double d_left_right = 0.5*left_hx + cell_hx + 0.5*right_hx;
       double theta = std::atan(bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,2)]);
       double d_grad = d_left_right/std::sin(theta);
-
+      //std::cout << " dlr dgrag " << d_left_right << " " << d_grad << std::endl;
+      //std::cout << " rte lte " << right_te-left_te <<  std::endl;
       gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
       gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;
     }
@@ -1617,10 +1667,11 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
     {
       int cell_2d_index = solps_2d_index(i,j);
 	
-      for(int m=0; m<4;m++)    
-      {
-        bfield[m][cell_2d_index] = bb[solps_3d_index(i,j,m)];	
-      }
+        bfield[0][cell_2d_index] = bb[solps_3d_index(i,j,0)];	
+        bfield[1][cell_2d_index] = bb[solps_3d_index(i,j,1)];	
+        bfield[2][cell_2d_index] = -bb[solps_3d_index(i,j,2)];	// Solps toroidal field is out of page
+	//this is opposite to the GITR right handed coordinate system
+        bfield[3][cell_2d_index] = bb[solps_3d_index(i,j,3)];
 
       //double cell_hx = hx[cell_2d_index];
       //double cell_hy = hy[cell_2d_index];
@@ -1685,6 +1736,8 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
       Bt[cell_2d_index] = bfield[2][cell_2d_index];	
       Bz[cell_2d_index] = bfield[0][cell_2d_index]*z_hatx;	
       Bmag[cell_2d_index] = bfield[3][cell_2d_index];	
+      //std::cout << " Bmag " << std::sqrt(bfield[0][cell_2d_index]*bfield[0][cell_2d_index] 
+      //	      + bfield[2][cell_2d_index]*bfield[2][cell_2d_index]) << " " << Bmag[cell_2d_index] << std::endl;
       //double dxr = dx*r_hatx;
       //double dxz = dx*z_hatx;
 
@@ -3215,6 +3268,12 @@ int main()
     std::vector<double> ti = read_dfield("b2fstate", "ti");
     std::vector<double> ua = read_dfield("b2fstate", "ua");
     std::vector<double> bb = read_dfield("b2fgmtry", "bb");
+    std::vector<double> gs = read_dfield("b2fgmtry", "gs");
+    for(int i=0; i<ti.size();i++)
+    {
+      ti[i] = ti[i]/1.602176565e-19;
+      te[i] = te[i]/1.602176565e-19;
+    }
     
     // SOLPS grid variables pulled out of the above variables
     std::vector<double> ion_density((nx+2)*(ny+2),0.0);
@@ -3253,49 +3312,6 @@ int main()
     std::vector<double> gradTe, gradTi;
     std::tie(gradTe, gradTi) = get_gradT(gradTe,gradTi);
 
-    // Target variables
-    std::vector<double> r_inner_target(nx+1,0.0);
-    std::vector<double> z_inner_target(nx+1,0.0);
-    std::vector<double> r_inner_target_midpoints(nx,0.0);
-    std::vector<double> z_inner_target_midpoints(nx,0.0);
-    std::vector<double> rmrs_inner_target(nx+1,0.0);
-    std::vector<double> rmrs_inner_target_midpoints(nx,0.0);
-    std::vector<double> Bmag_inner_target(nx,0.0);
-    std::vector<double> Bangle_inner_target(nx,0.0);
-    
-    std::vector<double> r_outer_target(nx+1,0.0);
-    std::vector<double> z_outer_target(nx+1,0.0);
-    std::vector<double> r_outer_target_midpoints(nx,0.0);
-    std::vector<double> z_outer_target_midpoints(nx,0.0);
-    std::vector<double> rmrs_outer_target(nx+1,0.0);
-    std::vector<double> rmrs_outer_target_midpoints(nx,0.0);
-    std::vector<double> Bmag_outer_target(nx,0.0);
-    std::vector<double> Bangle_outer_target(nx,0.0);
-    
-    std::vector<std::vector<double>> flux_inner_target(ns);
-    std::vector<std::vector<double>> te_inner_target(ns);
-    std::vector<std::vector<double>> ti_inner_target(ns);
-    std::vector<std::vector<double>> ne_inner_target(ns);
-    std::vector<std::vector<double>> ni_inner_target(ns);
-    std::vector<std::vector<double>> flux_outer_target(ns);
-    std::vector<std::vector<double>> te_outer_target(ns);
-    std::vector<std::vector<double>> ti_outer_target(ns);
-    std::vector<std::vector<double>> ne_outer_target(ns);
-    std::vector<std::vector<double>> ni_outer_target(ns);
-   
-    for ( int i = 0 ; i < ns ; i++ )
-    {
-      flux_inner_target[i].resize(nx);
-      te_inner_target[i].resize(nx);
-      ti_inner_target[i].resize(nx);
-      ne_inner_target[i].resize(nx);
-      ni_inner_target[i].resize(nx);
-      flux_outer_target[i].resize(nx);
-      te_outer_target[i].resize(nx);
-      ti_outer_target[i].resize(nx);
-      ne_outer_target[i].resize(nx);
-      ni_outer_target[i].resize(nx);
-    }
 
     for (int i=0;i<nx+2; i++)
     {
@@ -3315,10 +3331,15 @@ int main()
             ion_flow[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)] + na[solps_3d_index(i,j,k)]*flowv[k][solps_2d_index(i,j)];
           }
         }
+	if(ion_density[solps_2d_index(i,j)]>0.0)
+	{
             ion_charge[solps_2d_index(i,j)] = ion_charge[solps_2d_index(i,j)]/ion_density[solps_2d_index(i,j)];
             ion_mass[solps_2d_index(i,j)] = ion_mass[solps_2d_index(i,j)]/ion_density[solps_2d_index(i,j)];
             
             ion_flow[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]/ion_density[solps_2d_index(i,j)];
+	}
+	if(Bmag[solps_2d_index(i,j)] > 0.0)
+	{
             ion_vr[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Br[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             ion_vt[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             ion_vz[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
@@ -3328,13 +3349,165 @@ int main()
             gradTir[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Br[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTit[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTiz[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
-	//for(int m=0; m<4;m++)    
-	//{
-	//  bfield[m][solps_2d_index(i,j)] = bb[solps_3d_index(i,j,m)];	
-	//}
+	}
       }	     
     } 
     
+    // Target variables
+    std::vector<double> r_inner_target(ny+1,0.0);
+    std::vector<double> z_inner_target(ny+1,0.0);
+    std::vector<double> area_inner_target(ny,0.0);
+    std::vector<double> r_inner_target_midpoints(ny,0.0);
+    std::vector<double> z_inner_target_midpoints(ny,0.0);
+    std::vector<double> rmrs_inner_target(ny+1,0.0);
+    std::vector<double> rmrs_inner_target_midpoints(ny,0.0);
+    std::vector<double> Bmag_inner_target(ny,0.0);
+    std::vector<double> Bangle_inner_target(ny,0.0);
+    std::vector<double> te_inner_target(ny,0.0);
+    std::vector<double> ti_inner_target(ny,0.0);
+    std::vector<double> ne_inner_target(ny,0.0);
+    std::vector<double> length_inner_target_segment(ny,0.0);
+    
+    std::vector<double> r_outer_target(ny+1,0.0);
+    std::vector<double> z_outer_target(ny+1,0.0);
+    std::vector<double> area_outer_target(ny,0.0);
+    std::vector<double> r_outer_target_midpoints(ny,0.0);
+    std::vector<double> z_outer_target_midpoints(ny,0.0);
+    std::vector<double> rmrs_outer_target(ny+1,0.0);
+    std::vector<double> rmrs_outer_target_midpoints(ny,0.0);
+    std::vector<double> Bmag_outer_target(ny,0.0);
+    std::vector<double> Bangle_outer_target(ny,0.0);
+    std::vector<double> te_outer_target(ny,0.0);
+    std::vector<double> ti_outer_target(ny,0.0);
+    std::vector<double> ne_outer_target(ny,0.0);
+    std::vector<double> length_outer_target_segment(ny,0.0);
+    
+    std::vector<double> flux_inner_target(ns*ny,0.0);
+    std::vector<double> ni_inner_target(ns*ny,0.0);
+    std::vector<double> flux_outer_target(ns*ny,0.0);
+    std::vector<double> ni_outer_target(ns*ny,0.0);
+    
+    std::vector<double> crx = read_dfield("b2fgmtry", "crx");
+    std::vector<double> cry = read_dfield("b2fgmtry", "cry");
+    
+    for (int j=0;j<ny+1; j++)
+    {
+      // Inner target	    
+      int i = 0;	    
+      double r_top_right = crx[solps_3d_index(i,j,3)];
+      double z_top_right = cry[solps_3d_index(i,j,3)];
+      
+      r_inner_target[j] = r_top_right; 	    
+      z_inner_target[j] = z_top_right; 	    
+      
+      if(j > 0)
+      {
+        double r_bottom_right = crx[solps_3d_index(i,j,1)];
+        double z_bottom_right = cry[solps_3d_index(i,j,1)];
+        r_inner_target_midpoints[j-1] = mean(r_top_right,r_bottom_right); 	    
+        z_inner_target_midpoints[j-1] = mean(z_top_right,z_bottom_right); 	    
+	length_inner_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
+//	std::cout << " lits " << length_inner_target_segment[j-1] << std::endl;
+
+        Bmag_inner_target[j-1] = Bmag[solps_2d_index(i+1,j)];
+
+        // Bangle calculation
+        double slope_dzdx = (z_top_right - z_bottom_right)/(r_top_right - r_bottom_right);
+        double perpSlope = -std::copysign(1.0, slope_dzdx) / std::abs(slope_dzdx);
+        double surface_normal[3] = {0.0,0.0,0.0};
+        surface_normal[0] = 1.0 / std::sqrt(perpSlope * perpSlope + 1.0);
+        surface_normal[2] = std::copysign(1.0,perpSlope) * std::sqrt(1.0 - surface_normal[0]*surface_normal[0]);
+    
+        double dot_product = surface_normal[0]*Br[solps_2d_index(i+1,j)] + surface_normal[2]*Bz[solps_2d_index(i+1,j)];
+        double b_norm = Bmag_inner_target[j-1];
+        Bangle_inner_target[j-1] = std::acos(dot_product/b_norm)*180.0/3.1415926535;
+     
+       	te_inner_target[j-1] = te[solps_2d_index(i+1,j)];
+       	ti_inner_target[j-1] = ti[solps_2d_index(i+1,j)];
+       	ne_inner_target[j-1] = ne[solps_2d_index(i+1,j)];
+
+        area_inner_target[j-1] = gs[solps_3d_index(i+1,j,0)]; 	    
+        for(int k=0; k<ns; k++)
+        {
+       	  flux_inner_target[k*ny + j-1] = flux[k][solps_2d_index(i+1,j)]/area_inner_target[j-1];
+       	  ni_inner_target[k*ny + j-1] = na[solps_3d_index(i+1,j,k)];
+	}
+      }
+      
+      // Outer target
+      i = nx;
+      r_top_right = crx[solps_3d_index(i,j,3)];
+      z_top_right = cry[solps_3d_index(i,j,3)];
+      
+      r_outer_target[j] = r_top_right; 	    
+      z_outer_target[j] = z_top_right; 	    
+      
+      if(j > 0)
+      {
+        double r_bottom_right = crx[solps_3d_index(i,j,1)];
+        double z_bottom_right = cry[solps_3d_index(i,j,1)];
+        r_outer_target_midpoints[j-1] = mean(r_top_right,r_bottom_right); 	    
+        z_outer_target_midpoints[j-1] = mean(z_top_right,z_bottom_right); 	    
+	length_outer_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
+        
+	Bmag_outer_target[j-1] = Bmag[solps_2d_index(i,j)];
+
+        // Bangle calculation
+        double slope_dzdx = (z_top_right - z_bottom_right)/(r_top_right - r_bottom_right);
+        double perpSlope = -std::copysign(1.0, slope_dzdx) / std::abs(slope_dzdx);
+        double surface_normal[3] = {0.0,0.0,0.0};
+        surface_normal[0] = 1.0 / std::sqrt(perpSlope * perpSlope + 1.0);
+        surface_normal[2] = std::copysign(1.0,perpSlope) * std::sqrt(1.0 - surface_normal[0]*surface_normal[0]);
+    
+        double dot_product = surface_normal[0]*Br[solps_2d_index(i,j)] + surface_normal[2]*Bz[solps_2d_index(i,j)];
+        double b_norm = Bmag_outer_target[j-1];
+        Bangle_outer_target[j-1] = std::acos(dot_product/b_norm)*180.0/3.1415926535;
+     
+       	te_outer_target[j-1] = te[solps_2d_index(i,j)];
+       	ti_outer_target[j-1] = ti[solps_2d_index(i,j)];
+       	ne_outer_target[j-1] = ne[solps_2d_index(i,j)];
+
+        area_outer_target[j-1] = gs[solps_3d_index(i+1,j,0)]; 	    
+        for(int k=0; k<ns; k++)
+        {
+       	  flux_outer_target[k*ny + j-1] = flux[k][solps_2d_index(i+1,j)]/area_outer_target[j-1];
+       	  ni_outer_target[k*ny + j-1] = na[solps_3d_index(i,j,k)];
+	}
+      }
+    }
+
+    std::vector<int> topcut_vec = read_ifield("b2fgmtry","topcut");
+    int topcut = topcut_vec[0];//Doesn't change from SOLPS index value because of removal of guard cell
+
+    for(int i=topcut; i<ny+1; i++)
+    {
+      if(i==topcut)
+      {
+        rmrs_inner_target[i] = 0.0;
+        rmrs_outer_target[i] = 0.0;
+        rmrs_inner_target_midpoints[i] = 0.5*rmrs_inner_target[i];
+        rmrs_outer_target_midpoints[i] = 0.5*rmrs_outer_target[i];
+      }
+      else
+      {
+        rmrs_inner_target[i] = rmrs_inner_target[i-1] + length_inner_target_segment[i-1];
+        rmrs_outer_target[i] = rmrs_outer_target[i-1] + length_outer_target_segment[i-1];
+	if(i<ny)
+	{
+          rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] + 0.5*length_inner_target_segment[i];
+          rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] + 0.5*length_outer_target_segment[i];
+	}
+      }
+    }
+    
+    for(int i=topcut-1; i>-1; i--)
+    {
+        rmrs_inner_target[i] = rmrs_inner_target[i+1] - length_inner_target_segment[i];
+        rmrs_outer_target[i] = rmrs_outer_target[i+1] - length_outer_target_segment[i];
+        rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] - 0.5*length_inner_target_segment[i];
+        rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] - 0.5*length_outer_target_segment[i];
+    }
+
     auto solps_fields = new Fields();
 
     thrust::host_vector<double> r1_h(n_total), r2_h(n_total), r3_h(n_total),
@@ -3478,6 +3651,33 @@ int main()
     solps_fields->vz3t.resize(vz3t.size());
     solps_fields->vz3t = vz3t;
     
+    std::vector<double> Er1t, Er2t, Er3t;
+    std::tie(Er1t, Er2t, Er3t) = get_scalar_field_tris(Er,Er1t, Er2t, Er3t);
+    solps_fields->Er1t.resize(Er1t.size());
+    solps_fields->Er1t = Er1t;
+    solps_fields->Er2t.resize(Er2t.size());
+    solps_fields->Er2t = Er2t;
+    solps_fields->Er3t.resize(Er3t.size());
+    solps_fields->Er3t = Er3t;
+
+    std::vector<double> Ez1t, Ez2t, Ez3t;
+    std::tie(Ez1t, Ez2t, Ez3t) = get_scalar_field_tris(Ez,Ez1t, Ez2t, Ez3t);
+    solps_fields->Ez1t.resize(Ez1t.size());
+    solps_fields->Ez1t = Ez1t;
+    solps_fields->Ez2t.resize(Ez2t.size());
+    solps_fields->Ez2t = Ez2t;
+    solps_fields->Ez3t.resize(Ez3t.size());
+    solps_fields->Ez3t = Ez3t;
+    
+    std::vector<double> gradTe1t, gradTe2t, gradTe3t;
+    std::tie(gradTe1t, gradTe2t, gradTe3t) = get_scalar_field_tris(gradTe,gradTe1t, gradTe2t, gradTe3t);
+    solps_fields->gradTe1t.resize(gradTe1t.size());
+    solps_fields->gradTe1t = gradTe1t;
+    solps_fields->gradTe2t.resize(gradTe2t.size());
+    solps_fields->gradTe2t = gradTe2t;
+    solps_fields->gradTe3t.resize(gradTe3t.size());
+    solps_fields->gradTe3t = gradTe3t;
+    
     std::vector<double> gradTer1t, gradTer2t, gradTer3t;
     std::tie(gradTer1t, gradTer2t, gradTer3t) = get_scalar_field_tris(gradTer,gradTer1t, gradTer2t, gradTer3t);
     solps_fields->gradTer1t.resize(gradTer1t.size());
@@ -3504,6 +3704,15 @@ int main()
     solps_fields->gradTez2t = gradTez2t;
     solps_fields->gradTez3t.resize(gradTez3t.size());
     solps_fields->gradTez3t = gradTez3t;
+    
+    std::vector<double> gradTi1t, gradTi2t, gradTi3t;
+    std::tie(gradTi1t, gradTi2t, gradTi3t) = get_scalar_field_tris(gradTi,gradTi1t, gradTi2t, gradTi3t);
+    solps_fields->gradTi1t.resize(gradTi1t.size());
+    solps_fields->gradTi1t = gradTi1t;
+    solps_fields->gradTi2t.resize(gradTi2t.size());
+    solps_fields->gradTi2t = gradTi2t;
+    solps_fields->gradTi3t.resize(gradTi3t.size());
+    solps_fields->gradTi3t = gradTi3t;
     
     std::vector<double> gradTir1t, gradTir2t, gradTir3t;
     std::tie(gradTir1t, gradTir2t, gradTir3t) = get_scalar_field_tris(gradTir,gradTir1t, gradTir2t, gradTir3t);
@@ -3593,8 +3802,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 440;
-    int nz = 930;
+    int nr = 4400;
+    int nz = 9300;
 
     solps_fields->te.resize(nr*nz);
     solps_fields->te = 0.0;
@@ -3624,18 +3833,26 @@ int main()
     solps_fields->vt = 0.0;
     solps_fields->vz.resize(nr*nz);
     solps_fields->vz = 0.0;
+    solps_fields->Er.resize(nr*nz);
+    solps_fields->Er = 0.0;
+    solps_fields->Ez.resize(nr*nz);
+    solps_fields->Ez = 0.0;
+    solps_fields->gradTe.resize(nr*nz);
+    solps_fields->gradTe = 0.0;
     solps_fields->gradTer.resize(nr*nz);
     solps_fields->gradTer = 0.0;
     solps_fields->gradTet.resize(nr*nz);
     solps_fields->gradTet = 0.0;
     solps_fields->gradTez.resize(nr*nz);
     solps_fields->gradTez = 0.0;
-    solps_fields->gradTer.resize(nr*nz);
-    solps_fields->gradTer = 0.0;
-    solps_fields->gradTet.resize(nr*nz);
-    solps_fields->gradTet = 0.0;
-    solps_fields->gradTez.resize(nr*nz);
-    solps_fields->gradTez = 0.0;
+    solps_fields->gradTi.resize(nr*nz);
+    solps_fields->gradTi = 0.0;
+    solps_fields->gradTir.resize(nr*nz);
+    solps_fields->gradTir = 0.0;
+    solps_fields->gradTit.resize(nr*nz);
+    solps_fields->gradTit = 0.0;
+    solps_fields->gradTiz.resize(nr*nz);
+    solps_fields->gradTiz = 0.0;
 
     thrust::counting_iterator<std::size_t> point_first(0);
     thrust::counting_iterator<std::size_t> point_last(nr*nz);
@@ -3731,21 +3948,50 @@ int main()
                          netCDF::NcFile::replace);
       netCDF::NcDim _nr = ncFile_out.addDim("nr", nr);
       netCDF::NcDim _nz = ncFile_out.addDim("nz", nz);
-      netCDF::NcDim _nx = ncFile_out.addDim("nx", nx);
+      netCDF::NcDim _ny = ncFile_out.addDim("ny", ny);
       netCDF::NcDim _ns = ncFile_out.addDim("ns", ns);
-      netCDF::NcDim _nx1 = ncFile_out.addDim("nx+1", nx+1);
+      netCDF::NcDim _ny1 = ncFile_out.addDim("ny+1", ny+1);
       std::vector<netCDF::NcDim> outdim;
       outdim.push_back(_nz);
       outdim.push_back(_nr);
       
       std::vector<netCDF::NcDim> surfdim;
       surfdim.push_back(_ns);
-      surfdim.push_back(_nx);
+      surfdim.push_back(_ny);
 
 
       netCDF::NcVar _z_spec = ncFile_out.addVar("atomic_number", netCDF::ncDouble, _ns);
       netCDF::NcVar _q_spec = ncFile_out.addVar("charge_number", netCDF::ncDouble, _ns);
       netCDF::NcVar _a_spec = ncFile_out.addVar("mass_number", netCDF::ncDouble, _ns);
+      
+      netCDF::NcVar _r_inner_target = ncFile_out.addVar("r_inner_target", netCDF::ncDouble, _ny1);
+      netCDF::NcVar _z_inner_target = ncFile_out.addVar("z_inner_target", netCDF::ncDouble, _ny1);
+      netCDF::NcVar _r_inner_target_midpoints = ncFile_out.addVar("r_inner_target_midpoints", netCDF::ncDouble, _ny);
+      netCDF::NcVar _z_inner_target_midpoints = ncFile_out.addVar("z_inner_target_midpoints", netCDF::ncDouble, _ny);
+      netCDF::NcVar _rmrs_inner_target = ncFile_out.addVar("rmrs_inner_target", netCDF::ncDouble, _ny1);
+      netCDF::NcVar _rmrs_inner_target_midpoints = ncFile_out.addVar("rmrs_inner_target_midpoints", netCDF::ncDouble, _ny);
+      netCDF::NcVar _Bmag_inner_target = ncFile_out.addVar("Bmag_inner_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _Bangle_inner_target = ncFile_out.addVar("Bangle_inner_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _te_inner_target = ncFile_out.addVar("te_inner_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _ti_inner_target = ncFile_out.addVar("ti_inner_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _ne_inner_target = ncFile_out.addVar("ne_inner_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _flux_inner_target = ncFile_out.addVar("flux_inner_target", netCDF::ncDouble, surfdim);
+      netCDF::NcVar _ni_inner_target = ncFile_out.addVar("ni_inner_target", netCDF::ncDouble, surfdim);
+
+      netCDF::NcVar _r_outer_target = ncFile_out.addVar("r_outer_target", netCDF::ncDouble, _ny1);
+      netCDF::NcVar _z_outer_target = ncFile_out.addVar("z_outer_target", netCDF::ncDouble, _ny1);
+      netCDF::NcVar _r_outer_target_midpoints = ncFile_out.addVar("r_outer_target_midpoints", netCDF::ncDouble, _ny);
+      netCDF::NcVar _z_outer_target_midpoints = ncFile_out.addVar("z_outer_target_midpoints", netCDF::ncDouble, _ny);
+      netCDF::NcVar _rmrs_outer_target = ncFile_out.addVar("rmrs_outer_target", netCDF::ncDouble, _ny1);
+      netCDF::NcVar _rmrs_outer_target_midpoints = ncFile_out.addVar("rmrs_outer_target_midpoints", netCDF::ncDouble, _ny);
+      netCDF::NcVar _Bmag_outer_target = ncFile_out.addVar("Bmag_outer_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _Bangle_outer_target = ncFile_out.addVar("Bangle_outer_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _te_outer_target = ncFile_out.addVar("te_outer_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _ti_outer_target = ncFile_out.addVar("ti_outer_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _ne_outer_target = ncFile_out.addVar("ne_outer_target", netCDF::ncDouble, _ny);
+      netCDF::NcVar _flux_outer_target = ncFile_out.addVar("flux_outer_target", netCDF::ncDouble, surfdim);
+      netCDF::NcVar _ni_outer_target = ncFile_out.addVar("ni_outer_target", netCDF::ncDouble, surfdim);
+
       netCDF::NcVar _gridr = ncFile_out.addVar("gridr", netCDF::ncDouble, _nr);
       netCDF::NcVar _gridz = ncFile_out.addVar("gridz", netCDF::ncDouble, _nz);
       netCDF::NcVar _vals = ncFile_out.addVar("values", netCDF::ncDouble, outdim);
@@ -3763,16 +4009,49 @@ int main()
       netCDF::NcVar _vr = ncFile_out.addVar("vr", netCDF::ncDouble, outdim);
       netCDF::NcVar _vt = ncFile_out.addVar("vt", netCDF::ncDouble, outdim);
       netCDF::NcVar _vz = ncFile_out.addVar("vz", netCDF::ncDouble, outdim);
+      netCDF::NcVar _Er = ncFile_out.addVar("Er", netCDF::ncDouble, outdim);
+      netCDF::NcVar _Ez = ncFile_out.addVar("Ez", netCDF::ncDouble, outdim);
+      netCDF::NcVar _gradTe = ncFile_out.addVar("gradTe", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTer = ncFile_out.addVar("gradTer", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTet = ncFile_out.addVar("gradTet", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTez = ncFile_out.addVar("gradTez", netCDF::ncDouble, outdim);
+      netCDF::NcVar _gradTi = ncFile_out.addVar("gradTi", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTir = ncFile_out.addVar("gradTir", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTit = ncFile_out.addVar("gradTit", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTiz = ncFile_out.addVar("gradTiz", netCDF::ncDouble, outdim);
 
-      _z_spec.putVar(&zamin[0]);
-      _q_spec.putVar(&zn[0]);
-      _z_spec.putVar(&am[0]);
+      _z_spec.putVar(&zn[0]);
+      _q_spec.putVar(&zamin[0]);
+      _a_spec.putVar(&am[0]);
+
+      _r_inner_target.putVar(&r_inner_target[0]);
+      _z_inner_target.putVar(&z_inner_target[0]);
+      _r_inner_target_midpoints.putVar(&r_inner_target_midpoints[0]);
+      _z_inner_target_midpoints.putVar(&z_inner_target_midpoints[0]);
+      _rmrs_inner_target.putVar(&rmrs_inner_target[0]);
+      _rmrs_inner_target_midpoints.putVar(&rmrs_inner_target_midpoints[0]);
+      _Bmag_inner_target.putVar(&Bmag_inner_target[0]);
+      _Bangle_inner_target.putVar(&Bangle_inner_target[0]);
+      _te_inner_target.putVar(&te_inner_target[0]);
+      _ti_inner_target.putVar(&ti_inner_target[0]);
+      _ne_inner_target.putVar(&ne_inner_target[0]);
+      _flux_inner_target.putVar(&flux_inner_target[0]);
+      _ni_inner_target.putVar(&ni_inner_target[0]);
+
+      _r_outer_target.putVar(&r_outer_target[0]);
+      _z_outer_target.putVar(&z_outer_target[0]);
+      _r_outer_target_midpoints.putVar(&r_outer_target_midpoints[0]);
+      _z_outer_target_midpoints.putVar(&z_outer_target_midpoints[0]);
+      _rmrs_outer_target.putVar(&rmrs_outer_target[0]);
+      _rmrs_outer_target_midpoints.putVar(&rmrs_outer_target_midpoints[0]);
+      _Bmag_outer_target.putVar(&Bmag_outer_target[0]);
+      _Bangle_outer_target.putVar(&Bangle_outer_target[0]);
+      _te_outer_target.putVar(&te_outer_target[0]);
+      _ti_outer_target.putVar(&ti_outer_target[0]);
+      _ne_outer_target.putVar(&ne_outer_target[0]);
+      _flux_outer_target.putVar(&flux_outer_target[0]);
+      _ni_outer_target.putVar(&ni_outer_target[0]);
+
       _gridr.putVar(&r_h[0]);
       _gridz.putVar(&z_h[0]);
       _vals.putVar(&val_h[0]);
@@ -3790,9 +4069,13 @@ int main()
       _vr.putVar(solps_fields->vr.data());
       _vt.putVar(solps_fields->vt.data());
       _vz.putVar(solps_fields->vz.data());
+      _Er.putVar(solps_fields->Er.data());
+      _Ez.putVar(solps_fields->Ez.data());
+      _gradTe.putVar(solps_fields->gradTe.data());
       _gradTer.putVar(solps_fields->gradTer.data());
       _gradTet.putVar(solps_fields->gradTet.data());
       _gradTez.putVar(solps_fields->gradTez.data());
+      _gradTi.putVar(solps_fields->gradTi.data());
       _gradTir.putVar(solps_fields->gradTir.data());
       _gradTit.putVar(solps_fields->gradTit.data());
       _gradTiz.putVar(solps_fields->gradTiz.data());
