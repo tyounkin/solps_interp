@@ -1285,26 +1285,23 @@ std::tuple<std::vector<double>,std::vector<double>,
 		v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
 
 
-                double topvecr = r_top_left - r_top_right;
-		double topvecz = z_top_left - z_top_right;
-                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-		topvecr = topvecr/topvecnorm;
-		topvecz = topvecz/topvecnorm;
+                double parvecr = r_bottom_left - r_top_left;
+		double parvecz = r_bottom_left - z_top_left;
+                double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
+		parvecr = parvecr/parvecnorm;
+		parvecz = parvecz/parvecnorm;
 
-                double bottomvecr = r_bottom_left - r_bottom_right;
-		double bottomvecz = z_bottom_left - z_bottom_right;
-                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-		bottomvecr = bottomvecr/bottomvecnorm;
-		bottomvecz = bottomvecz/bottomvecnorm;
+                double perpvecr = -parvecz;
+		double perpvecz = parvecr;
                 
-		r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*topvecr;
-		z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*topvecz;
+		r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*perpvecr;
+		z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*perpvecz;
 		v2_edge[(j-1)*4 + 1] = a_topleft_corner;
 		
-		r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*topvecr;
-		r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*bottomvecr;
-		z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*topvecz;
-		z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*bottomvecz;
+		r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*perpvecr;
+		r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*perpvecr;
+		z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*perpvecz;
+		z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*perpvecz;
 		v3_edge[(j-1)*4 + 0] = a_topleft_corner;
 		v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
       
@@ -1341,27 +1338,23 @@ std::tuple<std::vector<double>,std::vector<double>,
 		z1_edge[(j-1)*4 + 3] = z_bottom_right;
 		v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
 
+                double parvecr = r_bottom_right - r_top_right;
+		double parvecz = r_bottom_right - z_top_right;
+                double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
+		parvecr = parvecr/parvecnorm;
+		parvecz = parvecz/parvecnorm;
 
-                double topvecr = -(r_top_left - r_top_right);
-		double topvecz = -(z_top_left - z_top_right);
-                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-		topvecr = topvecr/topvecnorm;
-		topvecz = topvecz/topvecnorm;
+                double perpvecr = -(-parvecz);
+		double perpvecz = -parvecr;
 
-                double bottomvecr = -(r_bottom_left - r_bottom_right);
-		double bottomvecz = -(z_bottom_left - z_bottom_right);
-                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-		bottomvecr = bottomvecr/bottomvecnorm;
-		bottomvecz = bottomvecz/bottomvecnorm;
-                
-		r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*topvecr;
-		z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*topvecz;
+		r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*perpvecr;
+		z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*perpvecz;
 		v2_edge[(j-1)*4 + 3] = a_topright_corner;
 		
-		r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*topvecr;
-		r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*bottomvecr;
-		z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*topvecz;
-		z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*bottomvecz;
+		r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*perpvecr;
+		r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*perpvecr;
+		z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*perpvecz;
+		z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*perpvecz;
 		v3_edge[(j-1)*4 + 2] = a_topright_corner;
 		v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
       
@@ -1410,6 +1403,15 @@ std::tuple<std::vector<double>,std::vector<double>>
   // Calculate Efield on SOLPS grid
   Er.resize((nx+2)*(ny+2),0.0);
   Ez.resize((nx+2)*(ny+2),0.0);
+  
+  int n_edge_total = 4*ny;
+  std::vector<double> Er1_edge(n_edge_total,0.0);
+  std::vector<double> Er2_edge(n_edge_total,0.0);
+  std::vector<double> Er3_edge(n_edge_total,0.0);
+  std::vector<double> Ez1_edge(n_edge_total,0.0);
+  std::vector<double> Ez2_edge(n_edge_total,0.0);
+  std::vector<double> Ez3_edge(n_edge_total,0.0);
+  std::vector<double> radius_edge(n_edge_total,0.0);
   
   std::vector<double> crx = read_dfield("b2fgmtry", "crx");
   std::vector<double> cry = read_dfield("b2fgmtry", "cry");
@@ -1522,6 +1524,19 @@ std::tuple<std::vector<double>,std::vector<double>>
       Er[cell_2d_index] = -der;
       Ez[cell_2d_index] = -dez;
 
+      if( i == 1)
+      {
+        cell_2d_index = solps_2d_index(i-1,j);
+	Er[cell_2d_index] = -der;
+	Ez[cell_2d_index] = -dez;
+      }
+
+      if( i == nx)
+      {
+        cell_2d_index = solps_2d_index(i+1,j);
+	Er[cell_2d_index] = -der;
+	Ez[cell_2d_index] = -dez;
+      }
     }
   }
 
@@ -1606,6 +1621,20 @@ std::tuple<std::vector<double>,std::vector<double>>
       //std::cout << " rte lte " << right_te-left_te <<  std::endl;
       gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
       gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;
+      
+      if( i == 1)
+      {
+        cell_2d_index = solps_2d_index(i-1,j);
+	gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
+	gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
+      }
+
+      if( i == nx)
+      {
+        cell_2d_index = solps_2d_index(i+1,j);
+	gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
+	gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
+      }
     }
   }
 
@@ -1661,9 +1690,9 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
     bfield[i].resize((nx+2)*(ny+2));
   }
 
-  for (int i=1; i < nx+1; i++)
+  for (int i=0; i < nx+2; i++)
   {
-    for( int j=1; j < ny+1; j++)
+    for( int j=0; j < ny+2; j++)
     {
       int cell_2d_index = solps_2d_index(i,j);
 	
@@ -3241,6 +3270,7 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
 
 int main()
 {
+    //cudaSetDevice(1);
     typedef std::chrono::high_resolution_clock app_time;
     auto app_start_time = app_time::now();
     
@@ -3669,6 +3699,7 @@ int main()
     solps_fields->Ez3t.resize(Ez3t.size());
     solps_fields->Ez3t = Ez3t;
     
+    
     std::vector<double> gradTe1t, gradTe2t, gradTe3t;
     std::tie(gradTe1t, gradTe2t, gradTe3t) = get_scalar_field_tris(gradTe,gradTe1t, gradTe2t, gradTe3t);
     solps_fields->gradTe1t.resize(gradTe1t.size());
@@ -3740,45 +3771,51 @@ int main()
     solps_fields->gradTiz2t = gradTiz2t;
     solps_fields->gradTiz3t.resize(gradTiz3t.size());
     solps_fields->gradTiz3t = gradTiz3t;
-    //netCDF::NcFile ncFile_tri("solps_triangles2.nc",
-    //                     netCDF::NcFile::replace);
-    //  netCDF::NcDim _nx = ncFile_tri.addDim("nx", nx);
-    //  netCDF::NcDim _ny = ncFile_tri.addDim("ny", ny);
-    //  netCDF::NcDim _n8 = ncFile_tri.addDim("n8", n8);
-    //  netCDF::NcDim _ntot = ncFile_tri.addDim("ntot", n_total);
-    //  std::vector<netCDF::NcDim> outdimt;
-    //  outdimt.push_back(_n8);
-    //  outdimt.push_back(_ny);
-    //  outdimt.push_back(_nx);
+    netCDF::NcFile ncFile_tri("solps_triangles2.nc",
+                         netCDF::NcFile::replace);
+      netCDF::NcDim _ntri = ncFile_tri.addDim("ntri", nx*ny*8 + ny*4);
+      //netCDF::NcDim _nyy = ncFile_tri.addDim("ny", ny);
+      //netCDF::NcDim _n8 = ncFile_tri.addDim("n8", n8);
+      //netCDF::NcDim _ntot = ncFile_tri.addDim("ntot", n_total);
+      //std::vector<netCDF::NcDim> outdimt;
+      //outdimt.push_back(_n8);
+      //outdimt.push_back(_nyy);
+      //outdimt.push_back(_nxx);
 
-    //  netCDF::NcVar _r1 = ncFile_tri.addVar("r1", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _r2 = ncFile_tri.addVar("r2", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _r3 = ncFile_tri.addVar("r3", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _z1 = ncFile_tri.addVar("z1", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _z2 = ncFile_tri.addVar("z2", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _z3 = ncFile_tri.addVar("z3", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _v1 = ncFile_tri.addVar("v1", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _v2 = ncFile_tri.addVar("v2", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _v3 = ncFile_tri.addVar("v3", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _ni1 = ncFile_tri.addVar("ni1", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _ni2 = ncFile_tri.addVar("ni2", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _ni3 = ncFile_tri.addVar("ni3", netCDF::ncDouble, _ntot);
-    //  netCDF::NcVar _radius = ncFile_tri.addVar("radius", netCDF::ncDouble, _ntot);
-    //  _r1.putVar(&r1t[0]);
-    //  _r2.putVar(&r2t[0]);
-    //  _r3.putVar(&r3t[0]);
+      netCDF::NcVar _r1 = ncFile_tri.addVar("r1", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _r2 = ncFile_tri.addVar("r2", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _r3 = ncFile_tri.addVar("r3", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _z1 = ncFile_tri.addVar("z1", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _z2 = ncFile_tri.addVar("z2", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _z3 = ncFile_tri.addVar("z3", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _v1 = ncFile_tri.addVar("v1", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _v2 = ncFile_tri.addVar("v2", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _v3 = ncFile_tri.addVar("v3", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _ni1 = ncFile_tri.addVar("ni1", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _ni2 = ncFile_tri.addVar("ni2", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _ni3 = ncFile_tri.addVar("ni3", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _bt1 = ncFile_tri.addVar("bt1", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _bt2 = ncFile_tri.addVar("bt2", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _bt3 = ncFile_tri.addVar("bt3", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _radius = ncFile_tri.addVar("radius", netCDF::ncDouble, _ntri);
+      _r1.putVar(&r1t[0]);
+      _r2.putVar(&r2t[0]);
+      _r3.putVar(&r3t[0]);
 
-    //  _z1.putVar(&z1t[0]);
-    //  _z2.putVar(&z2t[0]);
-    //  _z3.putVar(&z3t[0]);
-    //  _v1.putVar(&po1t[0]);
-    //  _v2.putVar(&po2t[0]);
-    //  _v3.putVar(&po3t[0]);
-    //  _ni1.putVar(solps_fields->ni1t.data());
-    //  _ni2.putVar(solps_fields->ni2t.data());
-    //  _ni3.putVar(solps_fields->ni3t.data());
-    //  _radius.putVar(&radiust[0]);
-    //  ncFile_tri.close();
+      _z1.putVar(&z1t[0]);
+      _z2.putVar(&z2t[0]);
+      _z3.putVar(&z3t[0]);
+      _v1.putVar(&po1t[0]);
+      _v2.putVar(&po2t[0]);
+      _v3.putVar(&po3t[0]);
+      _ni1.putVar(solps_fields->ni1t.data());
+      _ni2.putVar(solps_fields->ni2t.data());
+      _ni3.putVar(solps_fields->ni3t.data());
+      _bt1.putVar(solps_fields->Bt1t.data());
+      _bt2.putVar(solps_fields->Bt2t.data());
+      _bt3.putVar(solps_fields->Bt3t.data());
+      _radius.putVar(&radiust[0]);
+      ncFile_tri.close();
     
     thrust::device_vector<double> r1(r1t);
     thrust::device_vector<double> r2(r2t);
@@ -3837,6 +3874,7 @@ int main()
     solps_fields->Er = 0.0;
     solps_fields->Ez.resize(nr*nz);
     solps_fields->Ez = 0.0;
+    std::vector<double> Et(nr*nz,0.0);
     solps_fields->gradTe.resize(nr*nz);
     solps_fields->gradTe = 0.0;
     solps_fields->gradTer.resize(nr*nz);
@@ -4011,6 +4049,7 @@ int main()
       netCDF::NcVar _vz = ncFile_out.addVar("vz", netCDF::ncDouble, outdim);
       netCDF::NcVar _Er = ncFile_out.addVar("Er", netCDF::ncDouble, outdim);
       netCDF::NcVar _Ez = ncFile_out.addVar("Ez", netCDF::ncDouble, outdim);
+      netCDF::NcVar _Et = ncFile_out.addVar("Et", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTe = ncFile_out.addVar("gradTe", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTer = ncFile_out.addVar("gradTer", netCDF::ncDouble, outdim);
       netCDF::NcVar _gradTet = ncFile_out.addVar("gradTet", netCDF::ncDouble, outdim);
@@ -4071,6 +4110,7 @@ int main()
       _vz.putVar(solps_fields->vz.data());
       _Er.putVar(solps_fields->Er.data());
       _Ez.putVar(solps_fields->Ez.data());
+      _Et.putVar(&Et[0]);
       _gradTe.putVar(solps_fields->gradTe.data());
       _gradTer.putVar(solps_fields->gradTer.data());
       _gradTet.putVar(solps_fields->gradTet.data());
