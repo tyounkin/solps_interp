@@ -1404,15 +1404,6 @@ std::tuple<std::vector<double>,std::vector<double>>
   Er.resize((nx+2)*(ny+2),0.0);
   Ez.resize((nx+2)*(ny+2),0.0);
   
-  int n_edge_total = 4*ny;
-  std::vector<double> Er1_edge(n_edge_total,0.0);
-  std::vector<double> Er2_edge(n_edge_total,0.0);
-  std::vector<double> Er3_edge(n_edge_total,0.0);
-  std::vector<double> Ez1_edge(n_edge_total,0.0);
-  std::vector<double> Ez2_edge(n_edge_total,0.0);
-  std::vector<double> Ez3_edge(n_edge_total,0.0);
-  std::vector<double> radius_edge(n_edge_total,0.0);
-  
   std::vector<double> crx = read_dfield("b2fgmtry", "crx");
   std::vector<double> cry = read_dfield("b2fgmtry", "cry");
   std::vector<double> hx = read_dfield("b2fgmtry", "hx");
@@ -1529,6 +1520,7 @@ std::tuple<std::vector<double>,std::vector<double>>
         cell_2d_index = solps_2d_index(i-1,j);
 	Er[cell_2d_index] = -der;
 	Ez[cell_2d_index] = -dez;
+	std::cout << "left edge i " << i << " " << j << " Er " << -der << " Ez " << -dez << std::endl;
       }
 
       if( i == nx)
@@ -1536,6 +1528,7 @@ std::tuple<std::vector<double>,std::vector<double>>
         cell_2d_index = solps_2d_index(i+1,j);
 	Er[cell_2d_index] = -der;
 	Ez[cell_2d_index] = -dez;
+	std::cout << "right edge i " << i << " " << j << " Er " << -der << " Ez " << -dez << std::endl;
       }
     }
   }
@@ -3632,6 +3625,7 @@ int main()
     //solps_fields->flux_last2t = flux_last2t;
     //solps_fields->flux_last3t.resize(flux_last3t.size());
     //solps_fields->flux_last3t = flux_last3t;
+    std::cout << " size of Er " << po1t.size() << std::endl;
     std::cout << " size of po1t " << po1t.size() << std::endl;
     std::cout << " size of r1t " << r1t.size() << std::endl;
     std::cout << " size of te1t " << te1t.size() << std::endl;
