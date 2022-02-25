@@ -262,59 +262,64 @@ template<typename T>
 
 struct Fields : public Managed
 {
-	//sim::Vector<double> te1t;
-	//sim::Vector<double> te2t;
-	//sim::Vector<double> te3t;
-	//sim::Vector<double> te;
-	//
-	//sim::Vector<double> ti1t;
-	//sim::Vector<double> ti2t;
-	//sim::Vector<double> ti3t;
-	//sim::Vector<double> ti;
-	//
-	//sim::Vector<double> ni1t;
-	//sim::Vector<double> ni2t;
-	//sim::Vector<double> ni3t;
-	//sim::Vector<double> ni;
-	//
-	//sim::Vector<double> ne1t;
-	//sim::Vector<double> ne2t;
-	//sim::Vector<double> ne3t;
-	//sim::Vector<double> ne;
-	////sim::Vector<double> flux_last1t;
-	////sim::Vector<double> flux_last2t;
-	////sim::Vector<double> flux_last3t;
-	////sim::Vector<double> flux_last;
-	//
-	//sim::Vector<double> mass1t;
-	//sim::Vector<double> mass2t;
-	//sim::Vector<double> mass3t;
-	//sim::Vector<double> mass;
-	//
-	//sim::Vector<double> charge1t;
-	//sim::Vector<double> charge2t;
-	//sim::Vector<double> charge3t;
-	//sim::Vector<double> charge;
-	//
-	//sim::Vector<double> Br1t;
-	//sim::Vector<double> Br2t;
-	//sim::Vector<double> Br3t;
-	//sim::Vector<double> Br;
-	//
-	//sim::Vector<double> Bt1t;
-	//sim::Vector<double> Bt2t;
-	//sim::Vector<double> Bt3t;
-	//sim::Vector<double> Bt;
-	//
-	//sim::Vector<double> Bz1t;
-	//sim::Vector<double> Bz2t;
-	//sim::Vector<double> Bz3t;
-	//sim::Vector<double> Bz;
-	//
-	//sim::Vector<double> Bmag1t;
-	//sim::Vector<double> Bmag2t;
-	//sim::Vector<double> Bmag3t;
-	//sim::Vector<double> Bmag;
+	sim::Vector<double> te1t;
+	sim::Vector<double> te2t;
+	sim::Vector<double> te3t;
+	sim::Vector<double> te;
+	
+	sim::Vector<double> ti1t;
+	sim::Vector<double> ti2t;
+	sim::Vector<double> ti3t;
+	sim::Vector<double> ti;
+	
+	sim::Vector<double> ni1t;
+	sim::Vector<double> ni2t;
+	sim::Vector<double> ni3t;
+	sim::Vector<double> ni;
+	
+	sim::Vector<double> ne1t;
+	sim::Vector<double> ne2t;
+	sim::Vector<double> ne3t;
+	sim::Vector<double> ne;
+	//sim::Vector<double> flux_last1t;
+	//sim::Vector<double> flux_last2t;
+	//sim::Vector<double> flux_last3t;
+	//sim::Vector<double> flux_last;
+	
+	sim::Vector<double> mass1t;
+	sim::Vector<double> mass2t;
+	sim::Vector<double> mass3t;
+	sim::Vector<double> mass;
+	
+	sim::Vector<double> charge1t;
+	sim::Vector<double> charge2t;
+	sim::Vector<double> charge3t;
+	sim::Vector<double> charge;
+	
+	sim::Vector<double> Br1t;
+	sim::Vector<double> Br2t;
+	sim::Vector<double> Br3t;
+	sim::Vector<double> Br;
+	
+	sim::Vector<double> Bt1t;
+	sim::Vector<double> Bt2t;
+	sim::Vector<double> Bt3t;
+	sim::Vector<double> Bt;
+	
+	sim::Vector<double> Bz1t;
+	sim::Vector<double> Bz2t;
+	sim::Vector<double> Bz3t;
+	sim::Vector<double> Bz;
+	
+	sim::Vector<double> Bmag1t;
+	sim::Vector<double> Bmag2t;
+	sim::Vector<double> Bmag3t;
+	sim::Vector<double> Bmag;
+	
+	sim::Vector<double> v1t;
+	sim::Vector<double> v2t;
+	sim::Vector<double> v3t;
+	sim::Vector<double> v;
 	
 	sim::Vector<double> vr1t;
 	sim::Vector<double> vr2t;
@@ -563,148 +568,154 @@ struct saxpy_functor
                                                     r[ii],z[jj]);
                  val[index] = a_point;
                  found[index] = false;
-                 //a_point = interpolate_value(r1[i],z1[i],solps_fields->te1t[i],
-                 //                            r2[i],z2[i],solps_fields->te2t[i],
-                 //                            r3[i],z3[i],solps_fields->te3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->te[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->ti1t[i],
-                 //                            r2[i],z2[i],solps_fields->ti2t[i],
-                 //                            r3[i],z3[i],solps_fields->ti3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->ti[index] = a_point;
-                 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->ni1t[i],
-                 //                            r2[i],z2[i],solps_fields->ni2t[i],
-                 //                            r3[i],z3[i],solps_fields->ni3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->ni[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->ne1t[i],
-                 //                            r2[i],z2[i],solps_fields->ne2t[i],
-                 //                            r3[i],z3[i],solps_fields->ne3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->ne[index] = a_point;
-		 //
-		 ////a_point = interpolate_value(r1[i],z1[i],solps_fields->flux_last1t[i],
-                 ////                            r2[i],z2[i],solps_fields->flux_last2t[i],
-                 ////                            r3[i],z3[i],solps_fields->flux_last3t[i],
-                 ////                            r[ii],z[jj]);
-		 ////solps_fields->flux_last[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->mass1t[i],
-                 //                            r2[i],z2[i],solps_fields->mass2t[i],
-                 //                            r3[i],z3[i],solps_fields->mass3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->mass[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->charge1t[i],
-                 //                            r2[i],z2[i],solps_fields->charge2t[i],
-                 //                            r3[i],z3[i],solps_fields->charge3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->charge[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->Br1t[i],
-                 //                            r2[i],z2[i],solps_fields->Br2t[i],
-                 //                            r3[i],z3[i],solps_fields->Br3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->Br[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->Bt1t[i],
-                 //                            r2[i],z2[i],solps_fields->Bt2t[i],
-                 //                            r3[i],z3[i],solps_fields->Bt3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->Bt[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->Bz1t[i],
-                 //                            r2[i],z2[i],solps_fields->Bz2t[i],
-                 //                            r3[i],z3[i],solps_fields->Bz3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->Bz[index] = a_point;
-		 //
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->Bmag1t[i],
-                 //                            r2[i],z2[i],solps_fields->Bmag2t[i],
-                 //                            r3[i],z3[i],solps_fields->Bmag3t[i],
-                 //                            r[ii],z[jj]);
-		 //solps_fields->Bmag[index] = a_point;
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->te1t[i],
+                                             r2[i],z2[i],solps_fields->te2t[i],
+                                             r3[i],z3[i],solps_fields->te3t[i],
+                                             r[ii],z[jj]);
+		             solps_fields->te[index] = a_point;
+		             
+		             a_point = interpolate_value(r1[i],z1[i],solps_fields->ti1t[i],
+                                           r2[i],z2[i],solps_fields->ti2t[i],
+                                           r3[i],z3[i],solps_fields->ti3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->ti[index] = a_point;
+               //
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->ni1t[i],
+                                           r2[i],z2[i],solps_fields->ni2t[i],
+                                           r3[i],z3[i],solps_fields->ni3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->ni[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->ne1t[i],
+                                           r2[i],z2[i],solps_fields->ne2t[i],
+                                           r3[i],z3[i],solps_fields->ne3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->ne[index] = a_point;
+		 
+		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->flux_last1t[i],
+               ////                            r2[i],z2[i],solps_fields->flux_last2t[i],
+               ////                            r3[i],z3[i],solps_fields->flux_last3t[i],
+               ////                            r[ii],z[jj]);
+		 //solps_fields->flux_last[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->mass1t[i],
+                                           r2[i],z2[i],solps_fields->mass2t[i],
+                                           r3[i],z3[i],solps_fields->mass3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->mass[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->charge1t[i],
+                                           r2[i],z2[i],solps_fields->charge2t[i],
+                                           r3[i],z3[i],solps_fields->charge3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->charge[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Br1t[i],
+                                           r2[i],z2[i],solps_fields->Br2t[i],
+                                           r3[i],z3[i],solps_fields->Br3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->Br[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bt1t[i],
+                                           r2[i],z2[i],solps_fields->Bt2t[i],
+                                           r3[i],z3[i],solps_fields->Bt3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->Bt[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bz1t[i],
+                                           r2[i],z2[i],solps_fields->Bz2t[i],
+                                           r3[i],z3[i],solps_fields->Bz3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->Bz[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bmag1t[i],
+                                           r2[i],z2[i],solps_fields->Bmag2t[i],
+                                           r3[i],z3[i],solps_fields->Bmag3t[i],
+                                           r[ii],z[jj]);
+		 solps_fields->Bmag[index] = a_point;
+		 
+		 a_point = interpolate_value(r1[i],z1[i],solps_fields->v1t[i],
+                                             r2[i],z2[i],solps_fields->v2t[i],
+                                             r3[i],z3[i],solps_fields->v3t[i],
+                                             r[ii],z[jj]);
+		 solps_fields->v[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->vr1t[i],
-                                             r2[i],z2[i],solps_fields->vr2t[i],
-                                             r3[i],z3[i],solps_fields->vr3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->vr2t[i],
+                                           r3[i],z3[i],solps_fields->vr3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->vr[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->vt1t[i],
-                                             r2[i],z2[i],solps_fields->vt2t[i],
-                                             r3[i],z3[i],solps_fields->vt3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->vt2t[i],
+                                           r3[i],z3[i],solps_fields->vt3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->vt[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->vz1t[i],
-                                             r2[i],z2[i],solps_fields->vz2t[i],
-                                             r3[i],z3[i],solps_fields->vz3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->vz2t[i],
+                                           r3[i],z3[i],solps_fields->vz3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->vz[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Er1t[i],
-                                             r2[i],z2[i],solps_fields->Er2t[i],
-                                             r3[i],z3[i],solps_fields->Er3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->Er2t[i],
+                                           r3[i],z3[i],solps_fields->Er3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->Er[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Ez1t[i],
-                                             r2[i],z2[i],solps_fields->Ez2t[i],
-                                             r3[i],z3[i],solps_fields->Ez3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->Ez2t[i],
+                                           r3[i],z3[i],solps_fields->Ez3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->Ez[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTe1t[i],
-                                             r2[i],z2[i],solps_fields->gradTe2t[i],
-                                             r3[i],z3[i],solps_fields->gradTe3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTe2t[i],
+                                           r3[i],z3[i],solps_fields->gradTe3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTe[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTer1t[i],
-                                             r2[i],z2[i],solps_fields->gradTer2t[i],
-                                             r3[i],z3[i],solps_fields->gradTer3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTer2t[i],
+                                           r3[i],z3[i],solps_fields->gradTer3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTer[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTet1t[i],
-                                             r2[i],z2[i],solps_fields->gradTet2t[i],
-                                             r3[i],z3[i],solps_fields->gradTet3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTet2t[i],
+                                           r3[i],z3[i],solps_fields->gradTet3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTet[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTez1t[i],
-                                             r2[i],z2[i],solps_fields->gradTez2t[i],
-                                             r3[i],z3[i],solps_fields->gradTez3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTez2t[i],
+                                           r3[i],z3[i],solps_fields->gradTez3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTez[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTi1t[i],
-                                             r2[i],z2[i],solps_fields->gradTi2t[i],
-                                             r3[i],z3[i],solps_fields->gradTi3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTi2t[i],
+                                           r3[i],z3[i],solps_fields->gradTi3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTi[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTir1t[i],
-                                             r2[i],z2[i],solps_fields->gradTir2t[i],
-                                             r3[i],z3[i],solps_fields->gradTir3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTir2t[i],
+                                           r3[i],z3[i],solps_fields->gradTir3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTir[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTit1t[i],
-                                             r2[i],z2[i],solps_fields->gradTit2t[i],
-                                             r3[i],z3[i],solps_fields->gradTit3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTit2t[i],
+                                           r3[i],z3[i],solps_fields->gradTit3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTit[index] = a_point;
 		 
 		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTiz1t[i],
-                                             r2[i],z2[i],solps_fields->gradTiz2t[i],
-                                             r3[i],z3[i],solps_fields->gradTiz3t[i],
-                                             r[ii],z[jj]);
+                                           r2[i],z2[i],solps_fields->gradTiz2t[i],
+                                           r3[i],z3[i],solps_fields->gradTiz3t[i],
+                                           r[ii],z[jj]);
 		 solps_fields->gradTiz[index] = a_point;
                }
             }
@@ -1497,8 +1508,6 @@ std::tuple<std::vector<double>,std::vector<double>>
       double z_hatx = (z_right_mid - z_left_mid)/norm_left_right;
 
       double dx = (right_po - left_po)/d_left_right;
-      double dxr = dx*r_hatx;
-      double dxz = dx*z_hatx;
 
       double norm_bottom_top = std::sqrt((r_top_mid - r_bottom_mid)*(r_top_mid - r_bottom_mid) +
             (z_top_mid - z_bottom_mid)*(z_top_mid - z_bottom_mid));
@@ -1507,29 +1516,88 @@ std::tuple<std::vector<double>,std::vector<double>>
 
 
       double dy = (top_po - bottom_po)/d_bottom_top;
+
+      if( i == 1)
+      {
+        //cell_2d_index = solps_2d_index(i-1,j);
+        int rightright_2d_index = solps_2d_index(rightix[right_2d_index],
+                                        rightiy[right_2d_index]);
+        double rightright_po = po[rightright_2d_index];
+        double rightright_hx = hx[rightright_2d_index];
+        double dx_i = 0.5*cell_hx + 0.5*right_hx;
+        double dx_ip1 = 0.5*right_hx + 0.5*rightright_hx;
+        double r = dx_ip1/dx_i;
+        dx = ((1.0+r)*(1.0+r)*right_po - rightright_po - r*(r+2.0)*cell_po)/
+             (r*(r+1.0)*dx_i);
+      }
+
+      if( i == nx)
+      {
+        //cell_2d_index = solps_2d_index(i+1,j);
+        int leftleft_2d_index = solps_2d_index(leftix[left_2d_index],
+                                        leftiy[left_2d_index]);
+        double leftleft_po = po[leftleft_2d_index];
+        double leftleft_hx = hx[leftleft_2d_index];
+        double dx_im1 = 0.5*cell_hx + 0.5*left_hx;
+        double dx_im2 = 0.5*left_hx + 0.5*leftleft_hx;
+        double r = dx_im2/dx_im1;
+        dx = (-(1.0+r)*(1.0+r)*left_po + leftleft_po + r*(r+2.0)*cell_po)/
+             (r*(r+1.0)*dx_im1);
+      }
+      
+      if( j == 1)
+      {
+        int toptop_2d_index = solps_2d_index(topix[top_2d_index],
+                                        topiy[top_2d_index]);
+        double toptop_po = po[toptop_2d_index];
+        double toptop_hy = hy[toptop_2d_index];
+        double dx_i = 0.5*cell_hy + 0.5*top_hy;
+        double dx_ip1 = 0.5*top_hy + 0.5*toptop_hy;
+        double r = dx_ip1/dx_i;
+        dy = ((1.0+r)*(1.0+r)*top_po - toptop_po - r*(r+2.0)*cell_po)/
+             (r*(r+1.0)*dx_i);
+      }
+      
+      if( j == ny)
+      {
+        //cell_2d_index = solps_2d_index(i+1,j);
+        int bottombottom_2d_index = solps_2d_index(bottomix[bottom_2d_index],
+                                        bottomiy[bottom_2d_index]);
+        double bottombottom_po = po[bottombottom_2d_index];
+        double bottombottom_hy = hy[bottombottom_2d_index];
+        double dx_im1 = 0.5*cell_hy + 0.5*bottom_hy;
+        double dx_im2 = 0.5*bottom_hy + 0.5*bottombottom_hy;
+        double r = dx_im2/dx_im1;
+        dy = (-(1.0+r)*(1.0+r)*bottom_po + bottombottom_po + r*(r+2.0)*cell_po)/
+             (r*(r+1.0)*dx_im1);
+        if( i == 30)
+        {
+          std::cout << "Cell 2d index " << cell_2d_index << std::endl;
+          std::cout << "Cell 1d index " << i << " , " << j << std::endl;
+          std::cout << "bottom 2d index " << bottom_2d_index << std::endl;
+          std::cout << "bottombottom 2d index " << bottombottom_2d_index << std::endl;
+          std::cout << "Cell po " << cell_po << std::endl;
+          std::cout << "Bottom po " << bottom_po << std::endl;
+          std::cout << "Bottom bottom po " << bottombottom_po << std::endl;
+          std::cout << "Cell  hy" << cell_hy << std::endl;
+          std::cout << "Bottom hy " << bottom_hy << std::endl;
+          std::cout << "Bottom bottom hy " << bottombottom_hy << std::endl;
+          std::cout << "r " << r << std::endl;
+          std::cout << "dy " << dy << std::endl;
+        }
+      }
+      
+      double dxr = dx*r_hatx;
+      double dxz = dx*z_hatx;
+      
       double dyr = dy*r_haty;
       double dyz = dy*z_haty;
+      
       double der = dxr+dyr;
       double dez = dxz+dyz;
 
       Er[cell_2d_index] = -der;
       Ez[cell_2d_index] = -dez;
-
-      if( i == 1)
-      {
-        cell_2d_index = solps_2d_index(i-1,j);
-	Er[cell_2d_index] = -der;
-	Ez[cell_2d_index] = -dez;
-	std::cout << "left edge i " << i << " " << j << " Er " << -der << " Ez " << -dez << std::endl;
-      }
-
-      if( i == nx)
-      {
-        cell_2d_index = solps_2d_index(i+1,j);
-	Er[cell_2d_index] = -der;
-	Ez[cell_2d_index] = -dez;
-	std::cout << "right edge i " << i << " " << j << " Er " << -der << " Ez " << -dez << std::endl;
-      }
     }
   }
 
@@ -3263,6 +3331,7 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
 
 int main()
 {
+	netCDF::NcType netcdf_precision = netCDF::ncFloat;
     //cudaSetDevice(1);
     typedef std::chrono::high_resolution_clock app_time;
     auto app_start_time = app_time::now();
@@ -3546,107 +3615,116 @@ int main()
 
     std::tie(Er, Ez) = get_Efield(Er, Ez);
     
-    //std::vector<double> mass1t, mass2t, mass3t;
-    //std::tie(mass1t, mass2t, mass3t) = get_scalar_field_tris(ion_mass,mass1t, mass2t, mass3t);
-    //solps_fields->mass1t.resize(mass1t.size());
-    //solps_fields->mass1t = mass1t;
-    //solps_fields->mass2t.resize(mass2t.size());
-    //solps_fields->mass2t = mass2t;
-    //solps_fields->mass3t.resize(mass3t.size());
-    //solps_fields->mass3t = mass3t;
-    //
-    //std::vector<double> charge1t, charge2t, charge3t;
-    //std::tie(charge1t, charge2t, charge3t) = get_scalar_field_tris(ion_charge,charge1t, charge2t, charge3t);
-    //solps_fields->charge1t.resize(charge1t.size());
-    //solps_fields->charge1t = charge1t;
-    //solps_fields->charge2t.resize(charge2t.size());
-    //solps_fields->charge2t = charge2t;
-    //solps_fields->charge3t.resize(charge3t.size());
-    //solps_fields->charge3t = charge3t;
-    //
-    //std::vector<double> Br1t, Br2t, Br3t;
-    //std::tie(Br1t, Br2t, Br3t) = get_scalar_field_tris(Br,Br1t, Br2t, Br3t);
-    //solps_fields->Br1t.resize(Br1t.size());
-    //solps_fields->Br1t = Br1t;
-    //solps_fields->Br2t.resize(Br2t.size());
-    //solps_fields->Br2t = Br2t;
-    //solps_fields->Br3t.resize(Br3t.size());
-    //solps_fields->Br3t = Br3t;
-    //
-    //std::vector<double> Bt1t, Bt2t, Bt3t;
-    //std::tie(Bt1t, Bt2t, Bt3t) = get_scalar_field_tris(Bt,Bt1t, Bt2t, Bt3t);
-    //solps_fields->Bt1t.resize(Bt1t.size());
-    //solps_fields->Bt1t = Bt1t;
-    //solps_fields->Bt2t.resize(Bt2t.size());
-    //solps_fields->Bt2t = Bt2t;
-    //solps_fields->Bt3t.resize(Bt3t.size());
-    //solps_fields->Bt3t = Bt3t;
-    //
-    //std::vector<double> Bz1t, Bz2t, Bz3t;
-    //std::tie(Bz1t, Bz2t, Bz3t) = get_scalar_field_tris(Bz,Bz1t, Bz2t, Bz3t);
-    //solps_fields->Bz1t.resize(Bz1t.size());
-    //solps_fields->Bz1t = Bz1t;
-    //solps_fields->Bz2t.resize(Bz2t.size());
-    //solps_fields->Bz2t = Bz2t;
-    //solps_fields->Bz3t.resize(Bz3t.size());
-    //solps_fields->Bz3t = Bz3t;
-    //
-    //std::vector<double> Bmag1t, Bmag2t, Bmag3t;
-    //std::tie(Bmag1t, Bmag2t, Bmag3t) = get_scalar_field_tris(Bmag,Bmag1t, Bmag2t, Bmag3t);
-    //solps_fields->Bmag1t.resize(Bmag1t.size());
-    //solps_fields->Bmag1t = Bmag1t;
-    //solps_fields->Bmag2t.resize(Bmag2t.size());
-    //solps_fields->Bmag2t = Bmag2t;
-    //solps_fields->Bmag3t.resize(Bmag3t.size());
-    //solps_fields->Bmag3t = Bmag3t;
-    //
-    //std::vector<double> te1t, te2t, te3t;
-    //std::tie(te1t, te2t, te3t) = get_scalar_field_tris(te,te1t, te2t, te3t);
-    //solps_fields->te1t.resize(te1t.size());
-    //solps_fields->te1t = te1t;
-    //solps_fields->te2t.resize(te2t.size());
-    //solps_fields->te2t = te2t;
-    //solps_fields->te3t.resize(te3t.size());
-    //solps_fields->te3t = te3t;
-    //
-    //std::vector<double> ti1t, ti2t, ti3t;
-    //std::tie(ti1t, ti2t, ti3t) = get_scalar_field_tris(ti,ti1t, ti2t, ti3t);
-    //solps_fields->ti1t.resize(ti1t.size());
-    //solps_fields->ti1t = ti1t;
-    //solps_fields->ti2t.resize(ti2t.size());
-    //solps_fields->ti2t = ti2t;
-    //solps_fields->ti3t.resize(ti3t.size());
-    //solps_fields->ti3t = ti3t;
-    ////std::vector<double> flux_last1t, flux_last2t, flux_last3t;
-    ////std::tie(flux_last1t, flux_last2t, flux_last3t) = get_scalar_field_tris_left(flux_last,flux_last1t, flux_last2t, flux_last3t);
-    ////solps_fields->flux_last1t.resize(flux_last1t.size());
-    ////solps_fields->flux_last1t = flux_last1t;
-    ////solps_fields->flux_last2t.resize(flux_last2t.size());
-    ////solps_fields->flux_last2t = flux_last2t;
-    ////solps_fields->flux_last3t.resize(flux_last3t.size());
-    ////solps_fields->flux_last3t = flux_last3t;
-    //std::cout << " size of Er " << po1t.size() << std::endl;
-    //std::cout << " size of po1t " << po1t.size() << std::endl;
-    //std::cout << " size of r1t " << r1t.size() << std::endl;
-    //std::cout << " size of te1t " << te1t.size() << std::endl;
-    //
-    //std::vector<double> ni1t, ni2t, ni3t;
-    //std::tie(ni1t, ni2t, ni3t) = get_scalar_field_tris(ion_density, ni1t, ni2t, ni3t);
-    //solps_fields->ni1t.resize(ni1t.size());
-    //solps_fields->ni1t = ni1t;
-    //solps_fields->ni2t.resize(ni2t.size());
-    //solps_fields->ni2t = ni2t;
-    //solps_fields->ni3t.resize(ni3t.size());
-    //solps_fields->ni3t = ni3t;
-    //
-    //std::vector<double> ne1t, ne2t, ne3t;
-    //std::tie(ne1t, ne2t, ne3t) = get_scalar_field_tris(ne, ne1t, ne2t, ne3t);
-    //solps_fields->ne1t.resize(ne1t.size());
-    //solps_fields->ne1t = ne1t;
-    //solps_fields->ne2t.resize(ne2t.size());
-    //solps_fields->ne2t = ne2t;
-    //solps_fields->ne3t.resize(ne3t.size());
-    //solps_fields->ne3t = ne3t;
+    std::vector<double> mass1t, mass2t, mass3t;
+    std::tie(mass1t, mass2t, mass3t) = get_scalar_field_tris(ion_mass,mass1t, mass2t, mass3t);
+    solps_fields->mass1t.resize(mass1t.size());
+    solps_fields->mass1t = mass1t;
+    solps_fields->mass2t.resize(mass2t.size());
+    solps_fields->mass2t = mass2t;
+    solps_fields->mass3t.resize(mass3t.size());
+    solps_fields->mass3t = mass3t;
+    
+    std::vector<double> charge1t, charge2t, charge3t;
+    std::tie(charge1t, charge2t, charge3t) = get_scalar_field_tris(ion_charge,charge1t, charge2t, charge3t);
+    solps_fields->charge1t.resize(charge1t.size());
+    solps_fields->charge1t = charge1t;
+    solps_fields->charge2t.resize(charge2t.size());
+    solps_fields->charge2t = charge2t;
+    solps_fields->charge3t.resize(charge3t.size());
+    solps_fields->charge3t = charge3t;
+    
+    std::vector<double> Br1t, Br2t, Br3t;
+    std::tie(Br1t, Br2t, Br3t) = get_scalar_field_tris(Br,Br1t, Br2t, Br3t);
+    solps_fields->Br1t.resize(Br1t.size());
+    solps_fields->Br1t = Br1t;
+    solps_fields->Br2t.resize(Br2t.size());
+    solps_fields->Br2t = Br2t;
+    solps_fields->Br3t.resize(Br3t.size());
+    solps_fields->Br3t = Br3t;
+    
+    std::vector<double> Bt1t, Bt2t, Bt3t;
+    std::tie(Bt1t, Bt2t, Bt3t) = get_scalar_field_tris(Bt,Bt1t, Bt2t, Bt3t);
+    solps_fields->Bt1t.resize(Bt1t.size());
+    solps_fields->Bt1t = Bt1t;
+    solps_fields->Bt2t.resize(Bt2t.size());
+    solps_fields->Bt2t = Bt2t;
+    solps_fields->Bt3t.resize(Bt3t.size());
+    solps_fields->Bt3t = Bt3t;
+    
+    std::vector<double> Bz1t, Bz2t, Bz3t;
+    std::tie(Bz1t, Bz2t, Bz3t) = get_scalar_field_tris(Bz,Bz1t, Bz2t, Bz3t);
+    solps_fields->Bz1t.resize(Bz1t.size());
+    solps_fields->Bz1t = Bz1t;
+    solps_fields->Bz2t.resize(Bz2t.size());
+    solps_fields->Bz2t = Bz2t;
+    solps_fields->Bz3t.resize(Bz3t.size());
+    solps_fields->Bz3t = Bz3t;
+    
+    std::vector<double> Bmag1t, Bmag2t, Bmag3t;
+    std::tie(Bmag1t, Bmag2t, Bmag3t) = get_scalar_field_tris(Bmag,Bmag1t, Bmag2t, Bmag3t);
+    solps_fields->Bmag1t.resize(Bmag1t.size());
+    solps_fields->Bmag1t = Bmag1t;
+    solps_fields->Bmag2t.resize(Bmag2t.size());
+    solps_fields->Bmag2t = Bmag2t;
+    solps_fields->Bmag3t.resize(Bmag3t.size());
+    solps_fields->Bmag3t = Bmag3t;
+    
+    std::vector<double> te1t, te2t, te3t;
+    std::tie(te1t, te2t, te3t) = get_scalar_field_tris(te,te1t, te2t, te3t);
+    solps_fields->te1t.resize(te1t.size());
+    solps_fields->te1t = te1t;
+    solps_fields->te2t.resize(te2t.size());
+    solps_fields->te2t = te2t;
+    solps_fields->te3t.resize(te3t.size());
+    solps_fields->te3t = te3t;
+    
+    std::vector<double> ti1t, ti2t, ti3t;
+    std::tie(ti1t, ti2t, ti3t) = get_scalar_field_tris(ti,ti1t, ti2t, ti3t);
+    solps_fields->ti1t.resize(ti1t.size());
+    solps_fields->ti1t = ti1t;
+    solps_fields->ti2t.resize(ti2t.size());
+    solps_fields->ti2t = ti2t;
+    solps_fields->ti3t.resize(ti3t.size());
+    solps_fields->ti3t = ti3t;
+    //std::vector<double> flux_last1t, flux_last2t, flux_last3t;
+    //std::tie(flux_last1t, flux_last2t, flux_last3t) = get_scalar_field_tris_left(flux_last,flux_last1t, flux_last2t, flux_last3t);
+    //solps_fields->flux_last1t.resize(flux_last1t.size());
+    //solps_fields->flux_last1t = flux_last1t;
+    //solps_fields->flux_last2t.resize(flux_last2t.size());
+    //solps_fields->flux_last2t = flux_last2t;
+    //solps_fields->flux_last3t.resize(flux_last3t.size());
+    //solps_fields->flux_last3t = flux_last3t;
+    std::cout << " size of Er " << po1t.size() << std::endl;
+    std::cout << " size of po1t " << po1t.size() << std::endl;
+    std::cout << " size of r1t " << r1t.size() << std::endl;
+    std::cout << " size of te1t " << te1t.size() << std::endl;
+    
+    std::vector<double> ni1t, ni2t, ni3t;
+    std::tie(ni1t, ni2t, ni3t) = get_scalar_field_tris(ion_density, ni1t, ni2t, ni3t);
+    solps_fields->ni1t.resize(ni1t.size());
+    solps_fields->ni1t = ni1t;
+    solps_fields->ni2t.resize(ni2t.size());
+    solps_fields->ni2t = ni2t;
+    solps_fields->ni3t.resize(ni3t.size());
+    solps_fields->ni3t = ni3t;
+    
+    std::vector<double> ne1t, ne2t, ne3t;
+    std::tie(ne1t, ne2t, ne3t) = get_scalar_field_tris(ne, ne1t, ne2t, ne3t);
+    solps_fields->ne1t.resize(ne1t.size());
+    solps_fields->ne1t = ne1t;
+    solps_fields->ne2t.resize(ne2t.size());
+    solps_fields->ne2t = ne2t;
+    solps_fields->ne3t.resize(ne3t.size());
+    solps_fields->ne3t = ne3t;
+    
+    std::vector<double> v1t, v2t, v3t;
+    std::tie(v1t, v2t, v3t) = get_scalar_field_tris(ion_flow,v1t, v2t, v3t);
+    solps_fields->v1t.resize(v1t.size());
+    solps_fields->v1t = v1t;
+    solps_fields->v2t.resize(v2t.size());
+    solps_fields->v2t = v2t;
+    solps_fields->v3t.resize(v3t.size());
+    solps_fields->v3t = v3t;
     
     std::vector<double> vr1t, vr2t, vr3t;
     std::tie(vr1t, vr2t, vr3t) = get_scalar_field_tris(ion_vr,vr1t, vr2t, vr3t);
@@ -3776,22 +3854,22 @@ int main()
       //outdimt.push_back(_nyy);
       //outdimt.push_back(_nxx);
 
-      netCDF::NcVar _r1 = ncFile_tri.addVar("r1", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _r2 = ncFile_tri.addVar("r2", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _r3 = ncFile_tri.addVar("r3", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _z1 = ncFile_tri.addVar("z1", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _z2 = ncFile_tri.addVar("z2", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _z3 = ncFile_tri.addVar("z3", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _v1 = ncFile_tri.addVar("v1", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _v2 = ncFile_tri.addVar("v2", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _v3 = ncFile_tri.addVar("v3", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _ni1 = ncFile_tri.addVar("ni1", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _ni2 = ncFile_tri.addVar("ni2", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _ni3 = ncFile_tri.addVar("ni3", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _bt1 = ncFile_tri.addVar("bt1", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _bt2 = ncFile_tri.addVar("bt2", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _bt3 = ncFile_tri.addVar("bt3", netCDF::ncDouble, _ntri);
-      netCDF::NcVar _radius = ncFile_tri.addVar("radius", netCDF::ncDouble, _ntri);
+      netCDF::NcVar _r1 = ncFile_tri.addVar("r1", netcdf_precision, _ntri);
+      netCDF::NcVar _r2 = ncFile_tri.addVar("r2", netcdf_precision, _ntri);
+      netCDF::NcVar _r3 = ncFile_tri.addVar("r3", netcdf_precision, _ntri);
+      netCDF::NcVar _z1 = ncFile_tri.addVar("z1", netcdf_precision, _ntri);
+      netCDF::NcVar _z2 = ncFile_tri.addVar("z2", netcdf_precision, _ntri);
+      netCDF::NcVar _z3 = ncFile_tri.addVar("z3", netcdf_precision, _ntri);
+      netCDF::NcVar _v1 = ncFile_tri.addVar("v1", netcdf_precision, _ntri);
+      netCDF::NcVar _v2 = ncFile_tri.addVar("v2", netcdf_precision, _ntri);
+      netCDF::NcVar _v3 = ncFile_tri.addVar("v3", netcdf_precision, _ntri);
+      netCDF::NcVar _ni1 = ncFile_tri.addVar("ni1", netcdf_precision, _ntri);
+      netCDF::NcVar _ni2 = ncFile_tri.addVar("ni2", netcdf_precision, _ntri);
+      netCDF::NcVar _ni3 = ncFile_tri.addVar("ni3", netcdf_precision, _ntri);
+      netCDF::NcVar _bt1 = ncFile_tri.addVar("bt1", netcdf_precision, _ntri);
+      netCDF::NcVar _bt2 = ncFile_tri.addVar("bt2", netcdf_precision, _ntri);
+      netCDF::NcVar _bt3 = ncFile_tri.addVar("bt3", netcdf_precision, _ntri);
+      netCDF::NcVar _radius = ncFile_tri.addVar("radius", netcdf_precision, _ntri);
       _r1.putVar(&r1t[0]);
       _r2.putVar(&r2t[0]);
       _r3.putVar(&r3t[0]);
@@ -3833,31 +3911,33 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 3600; //4400;
-    int nz = 7200; //9300;
+    int nr = 4400;
+    int nz = 9300;
 
-    //solps_fields->te.resize(nr*nz);
-    //solps_fields->te = 0.0;
-    //solps_fields->ti.resize(nr*nz);
-    //solps_fields->ti = 0.0;
-    //solps_fields->ni.resize(nr*nz);
-    //solps_fields->ni = 0.0;
-    //solps_fields->ne.resize(nr*nz);
-    //solps_fields->ne = 0.0;
-    ////solps_fields->flux_last.resize(nr*nz);
-    ////solps_fields->flux_last = 0.0;
-    //solps_fields->mass.resize(nr*nz);
-    //solps_fields->mass = 0.0;
-    //solps_fields->charge.resize(nr*nz);
-    //solps_fields->charge = 0.0;
-    //solps_fields->Br.resize(nr*nz);
-    //solps_fields->Br = 0.0;
-    //solps_fields->Bt.resize(nr*nz);
-    //solps_fields->Bt = 0.0;
-    //solps_fields->Bz.resize(nr*nz);
-    //solps_fields->Bz = 0.0;
-    //solps_fields->Bmag.resize(nr*nz);
-    //solps_fields->Bmag = 0.0;
+    solps_fields->te.resize(nr*nz);
+    solps_fields->te = 0.0;
+    solps_fields->ti.resize(nr*nz);
+    solps_fields->ti = 0.0;
+    solps_fields->ni.resize(nr*nz);
+    solps_fields->ni = 0.0;
+    solps_fields->ne.resize(nr*nz);
+    solps_fields->ne = 0.0;
+    //solps_fields->flux_last.resize(nr*nz);
+    //solps_fields->flux_last = 0.0;
+    solps_fields->mass.resize(nr*nz);
+    solps_fields->mass = 0.0;
+    solps_fields->charge.resize(nr*nz);
+    solps_fields->charge = 0.0;
+    solps_fields->Br.resize(nr*nz);
+    solps_fields->Br = 0.0;
+    solps_fields->Bt.resize(nr*nz);
+    solps_fields->Bt = 0.0;
+    solps_fields->Bz.resize(nr*nz);
+    solps_fields->Bz = 0.0;
+    solps_fields->Bmag.resize(nr*nz);
+    solps_fields->Bmag = 0.0;
+    solps_fields->v.resize(nr*nz);
+    solps_fields->v = 0.0;
     solps_fields->vr.resize(nr*nz);
     solps_fields->vr = 0.0;
     solps_fields->vt.resize(nr*nz);
@@ -3950,6 +4030,7 @@ int main()
     //  for(int ii=0; ii< nr; ii++)
     //  {
           index_triangle[0] = i;
+	  std::cout << "Time step # " << i << std::endl;
           thrust::for_each(thrust::device,point_first,point_last,spf);
               //double dist = (r[ii] - r1[i])*(r[ii] - r1[i]) + (z[jj] - z1[i])*(z[jj] - z1[i]);
               //if(dist < radius[i]*radius[i])
@@ -3992,66 +4073,67 @@ int main()
       surfdim.push_back(_ny);
 
 
-      netCDF::NcVar _z_spec = ncFile_out.addVar("atomic_number", netCDF::ncDouble, _ns);
-      netCDF::NcVar _q_spec = ncFile_out.addVar("charge_number", netCDF::ncDouble, _ns);
-      netCDF::NcVar _a_spec = ncFile_out.addVar("mass_number", netCDF::ncDouble, _ns);
+      netCDF::NcVar _z_spec = ncFile_out.addVar("atomic_number", netcdf_precision, _ns);
+      netCDF::NcVar _q_spec = ncFile_out.addVar("charge_number", netcdf_precision, _ns);
+      netCDF::NcVar _a_spec = ncFile_out.addVar("mass_number", netcdf_precision, _ns);
       
-      netCDF::NcVar _r_inner_target = ncFile_out.addVar("r_inner_target", netCDF::ncDouble, _ny1);
-      netCDF::NcVar _z_inner_target = ncFile_out.addVar("z_inner_target", netCDF::ncDouble, _ny1);
-      netCDF::NcVar _r_inner_target_midpoints = ncFile_out.addVar("r_inner_target_midpoints", netCDF::ncDouble, _ny);
-      netCDF::NcVar _z_inner_target_midpoints = ncFile_out.addVar("z_inner_target_midpoints", netCDF::ncDouble, _ny);
-      netCDF::NcVar _rmrs_inner_target = ncFile_out.addVar("rmrs_inner_target", netCDF::ncDouble, _ny1);
-      netCDF::NcVar _rmrs_inner_target_midpoints = ncFile_out.addVar("rmrs_inner_target_midpoints", netCDF::ncDouble, _ny);
-      netCDF::NcVar _Bmag_inner_target = ncFile_out.addVar("Bmag_inner_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _Bangle_inner_target = ncFile_out.addVar("Bangle_inner_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _te_inner_target = ncFile_out.addVar("te_inner_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _ti_inner_target = ncFile_out.addVar("ti_inner_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _ne_inner_target = ncFile_out.addVar("ne_inner_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _flux_inner_target = ncFile_out.addVar("flux_inner_target", netCDF::ncDouble, surfdim);
-      netCDF::NcVar _ni_inner_target = ncFile_out.addVar("ni_inner_target", netCDF::ncDouble, surfdim);
+      netCDF::NcVar _r_inner_target = ncFile_out.addVar("r_inner_target", netcdf_precision, _ny1);
+      netCDF::NcVar _z_inner_target = ncFile_out.addVar("z_inner_target", netcdf_precision, _ny1);
+      netCDF::NcVar _r_inner_target_midpoints = ncFile_out.addVar("r_inner_target_midpoints", netcdf_precision, _ny);
+      netCDF::NcVar _z_inner_target_midpoints = ncFile_out.addVar("z_inner_target_midpoints", netcdf_precision, _ny);
+      netCDF::NcVar _rmrs_inner_target = ncFile_out.addVar("rmrs_inner_target", netcdf_precision, _ny1);
+      netCDF::NcVar _rmrs_inner_target_midpoints = ncFile_out.addVar("rmrs_inner_target_midpoints", netcdf_precision, _ny);
+      netCDF::NcVar _Bmag_inner_target = ncFile_out.addVar("Bmag_inner_target", netcdf_precision, _ny);
+      netCDF::NcVar _Bangle_inner_target = ncFile_out.addVar("Bangle_inner_target", netcdf_precision, _ny);
+      netCDF::NcVar _te_inner_target = ncFile_out.addVar("te_inner_target", netcdf_precision, _ny);
+      netCDF::NcVar _ti_inner_target = ncFile_out.addVar("ti_inner_target", netcdf_precision, _ny);
+      netCDF::NcVar _ne_inner_target = ncFile_out.addVar("ne_inner_target", netcdf_precision, _ny);
+      netCDF::NcVar _flux_inner_target = ncFile_out.addVar("flux_inner_target", netcdf_precision, surfdim);
+      netCDF::NcVar _ni_inner_target = ncFile_out.addVar("ni_inner_target", netcdf_precision, surfdim);
 
-      netCDF::NcVar _r_outer_target = ncFile_out.addVar("r_outer_target", netCDF::ncDouble, _ny1);
-      netCDF::NcVar _z_outer_target = ncFile_out.addVar("z_outer_target", netCDF::ncDouble, _ny1);
-      netCDF::NcVar _r_outer_target_midpoints = ncFile_out.addVar("r_outer_target_midpoints", netCDF::ncDouble, _ny);
-      netCDF::NcVar _z_outer_target_midpoints = ncFile_out.addVar("z_outer_target_midpoints", netCDF::ncDouble, _ny);
-      netCDF::NcVar _rmrs_outer_target = ncFile_out.addVar("rmrs_outer_target", netCDF::ncDouble, _ny1);
-      netCDF::NcVar _rmrs_outer_target_midpoints = ncFile_out.addVar("rmrs_outer_target_midpoints", netCDF::ncDouble, _ny);
-      netCDF::NcVar _Bmag_outer_target = ncFile_out.addVar("Bmag_outer_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _Bangle_outer_target = ncFile_out.addVar("Bangle_outer_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _te_outer_target = ncFile_out.addVar("te_outer_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _ti_outer_target = ncFile_out.addVar("ti_outer_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _ne_outer_target = ncFile_out.addVar("ne_outer_target", netCDF::ncDouble, _ny);
-      netCDF::NcVar _flux_outer_target = ncFile_out.addVar("flux_outer_target", netCDF::ncDouble, surfdim);
-      netCDF::NcVar _ni_outer_target = ncFile_out.addVar("ni_outer_target", netCDF::ncDouble, surfdim);
+      netCDF::NcVar _r_outer_target = ncFile_out.addVar("r_outer_target", netcdf_precision, _ny1);
+      netCDF::NcVar _z_outer_target = ncFile_out.addVar("z_outer_target", netcdf_precision, _ny1);
+      netCDF::NcVar _r_outer_target_midpoints = ncFile_out.addVar("r_outer_target_midpoints", netcdf_precision, _ny);
+      netCDF::NcVar _z_outer_target_midpoints = ncFile_out.addVar("z_outer_target_midpoints", netcdf_precision, _ny);
+      netCDF::NcVar _rmrs_outer_target = ncFile_out.addVar("rmrs_outer_target", netcdf_precision, _ny1);
+      netCDF::NcVar _rmrs_outer_target_midpoints = ncFile_out.addVar("rmrs_outer_target_midpoints", netcdf_precision, _ny);
+      netCDF::NcVar _Bmag_outer_target = ncFile_out.addVar("Bmag_outer_target", netcdf_precision, _ny);
+      netCDF::NcVar _Bangle_outer_target = ncFile_out.addVar("Bangle_outer_target", netcdf_precision, _ny);
+      netCDF::NcVar _te_outer_target = ncFile_out.addVar("te_outer_target", netcdf_precision, _ny);
+      netCDF::NcVar _ti_outer_target = ncFile_out.addVar("ti_outer_target", netcdf_precision, _ny);
+      netCDF::NcVar _ne_outer_target = ncFile_out.addVar("ne_outer_target", netcdf_precision, _ny);
+      netCDF::NcVar _flux_outer_target = ncFile_out.addVar("flux_outer_target", netcdf_precision, surfdim);
+      netCDF::NcVar _ni_outer_target = ncFile_out.addVar("ni_outer_target", netcdf_precision, surfdim);
 
-      netCDF::NcVar _gridr = ncFile_out.addVar("gridr", netCDF::ncDouble, _nr);
-      netCDF::NcVar _gridz = ncFile_out.addVar("gridz", netCDF::ncDouble, _nz);
-      //netCDF::NcVar _vals = ncFile_out.addVar("values", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _te = ncFile_out.addVar("te", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _ti = ncFile_out.addVar("ti", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _ne = ncFile_out.addVar("ne", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _ni = ncFile_out.addVar("ni", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _flux = ncFile_out.addVar("flux", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _mass = ncFile_out.addVar("mass", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _charge = ncFile_out.addVar("charge", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _Br = ncFile_out.addVar("Br", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _Bt = ncFile_out.addVar("Bt", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _Bz = ncFile_out.addVar("Bz", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _Bmag = ncFile_out.addVar("Bmag", netCDF::ncDouble, outdim);
-      netCDF::NcVar _vr = ncFile_out.addVar("vr", netCDF::ncDouble, outdim);
-      netCDF::NcVar _vt = ncFile_out.addVar("vt", netCDF::ncDouble, outdim);
-      netCDF::NcVar _vz = ncFile_out.addVar("vz", netCDF::ncDouble, outdim);
-      netCDF::NcVar _Er = ncFile_out.addVar("Er", netCDF::ncDouble, outdim);
-      netCDF::NcVar _Ez = ncFile_out.addVar("Ez", netCDF::ncDouble, outdim);
-      netCDF::NcVar _Et = ncFile_out.addVar("Et", netCDF::ncDouble, outdim);
-      netCDF::NcVar _gradTe = ncFile_out.addVar("gradTe", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTer = ncFile_out.addVar("gradTer", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTet = ncFile_out.addVar("gradTet", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTez = ncFile_out.addVar("gradTez", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTi = ncFile_out.addVar("gradTi", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTir = ncFile_out.addVar("gradTir", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTit = ncFile_out.addVar("gradTit", netCDF::ncDouble, outdim);
-      //netCDF::NcVar _gradTiz = ncFile_out.addVar("gradTiz", netCDF::ncDouble, outdim);
+      netCDF::NcVar _gridr = ncFile_out.addVar("gridr", netcdf_precision, _nr);
+      netCDF::NcVar _gridz = ncFile_out.addVar("gridz", netcdf_precision, _nz);
+      netCDF::NcVar _vals = ncFile_out.addVar("values", netcdf_precision, outdim);
+      netCDF::NcVar _te = ncFile_out.addVar("te", netcdf_precision, outdim);
+      netCDF::NcVar _ti = ncFile_out.addVar("ti", netcdf_precision, outdim);
+      netCDF::NcVar _ne = ncFile_out.addVar("ne", netcdf_precision, outdim);
+      netCDF::NcVar _ni = ncFile_out.addVar("ni", netcdf_precision, outdim);
+      netCDF::NcVar _flux = ncFile_out.addVar("flux", netcdf_precision, outdim);
+      netCDF::NcVar _mass = ncFile_out.addVar("mass", netcdf_precision, outdim);
+      netCDF::NcVar _charge = ncFile_out.addVar("charge", netcdf_precision, outdim);
+      netCDF::NcVar _Br = ncFile_out.addVar("Br", netcdf_precision, outdim);
+      netCDF::NcVar _Bt = ncFile_out.addVar("Bt", netcdf_precision, outdim);
+      netCDF::NcVar _Bz = ncFile_out.addVar("Bz", netcdf_precision, outdim);
+      netCDF::NcVar _Bmag = ncFile_out.addVar("Bmag", netcdf_precision, outdim);
+      netCDF::NcVar _v = ncFile_out.addVar("v", netcdf_precision, outdim);
+      netCDF::NcVar _vr = ncFile_out.addVar("vr", netcdf_precision, outdim);
+      netCDF::NcVar _vt = ncFile_out.addVar("vt", netcdf_precision, outdim);
+      netCDF::NcVar _vz = ncFile_out.addVar("vz", netcdf_precision, outdim);
+      netCDF::NcVar _Er = ncFile_out.addVar("Er", netcdf_precision, outdim);
+      netCDF::NcVar _Ez = ncFile_out.addVar("Ez", netcdf_precision, outdim);
+      netCDF::NcVar _Et = ncFile_out.addVar("Et", netcdf_precision, outdim);
+      netCDF::NcVar _gradTe = ncFile_out.addVar("gradTe", netcdf_precision, outdim);
+      netCDF::NcVar _gradTer = ncFile_out.addVar("gradTer", netcdf_precision, outdim);
+      netCDF::NcVar _gradTet = ncFile_out.addVar("gradTet", netcdf_precision, outdim);
+      netCDF::NcVar _gradTez = ncFile_out.addVar("gradTez", netcdf_precision, outdim);
+      netCDF::NcVar _gradTi = ncFile_out.addVar("gradTi", netcdf_precision, outdim);
+      netCDF::NcVar _gradTir = ncFile_out.addVar("gradTir", netcdf_precision, outdim);
+      netCDF::NcVar _gradTit = ncFile_out.addVar("gradTit", netcdf_precision, outdim);
+      netCDF::NcVar _gradTiz = ncFile_out.addVar("gradTiz", netcdf_precision, outdim);
 
       _z_spec.putVar(&zn[0]);
       _q_spec.putVar(&zamin[0]);
@@ -4087,32 +4169,33 @@ int main()
 
       _gridr.putVar(&r_h[0]);
       _gridz.putVar(&z_h[0]);
-      //_vals.putVar(&val_h[0]);
-      //_te.putVar(solps_fields->te.data());
-      //_ti.putVar(solps_fields->ti.data());
-      //_ne.putVar(solps_fields->ne.data());
-      //_ni.putVar(solps_fields->ni.data());
+      _vals.putVar(&val_h[0]);
+      _te.putVar(solps_fields->te.data());
+      _ti.putVar(solps_fields->ti.data());
+      _ne.putVar(solps_fields->ne.data());
+      _ni.putVar(solps_fields->ni.data());
       //_flux.putVar(solps_fields->flux_last.data());
-      //_mass.putVar(solps_fields->mass.data());
-      //_charge.putVar(solps_fields->charge.data());
-      //_Br.putVar(solps_fields->Br.data());
-      //_Bt.putVar(solps_fields->Bt.data());
-      //_Bz.putVar(solps_fields->Bz.data());
-      //_Bmag.putVar(solps_fields->Bmag.data());
+      _mass.putVar(solps_fields->mass.data());
+      _charge.putVar(solps_fields->charge.data());
+      _Br.putVar(solps_fields->Br.data());
+      _Bt.putVar(solps_fields->Bt.data());
+      _Bz.putVar(solps_fields->Bz.data());
+      _Bmag.putVar(solps_fields->Bmag.data());
+      _v.putVar(solps_fields->v.data());
       _vr.putVar(solps_fields->vr.data());
       _vt.putVar(solps_fields->vt.data());
       _vz.putVar(solps_fields->vz.data());
       _Er.putVar(solps_fields->Er.data());
       _Ez.putVar(solps_fields->Ez.data());
       _Et.putVar(&Et[0]);
-      //_gradTe.putVar(solps_fields->gradTe.data());
-      //_gradTer.putVar(solps_fields->gradTer.data());
-      //_gradTet.putVar(solps_fields->gradTet.data());
-      //_gradTez.putVar(solps_fields->gradTez.data());
-      //_gradTi.putVar(solps_fields->gradTi.data());
-      //_gradTir.putVar(solps_fields->gradTir.data());
-      //_gradTit.putVar(solps_fields->gradTit.data());
-      //_gradTiz.putVar(solps_fields->gradTiz.data());
+      _gradTe.putVar(solps_fields->gradTe.data());
+      _gradTer.putVar(solps_fields->gradTer.data());
+      _gradTet.putVar(solps_fields->gradTet.data());
+      _gradTez.putVar(solps_fields->gradTez.data());
+      _gradTi.putVar(solps_fields->gradTi.data());
+      _gradTir.putVar(solps_fields->gradTir.data());
+      _gradTit.putVar(solps_fields->gradTit.data());
+      _gradTiz.putVar(solps_fields->gradTiz.data());
       ncFile_out.close();
     
     auto end_time_clock = app_time::now();
