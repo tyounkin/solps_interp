@@ -262,133 +262,133 @@ template<typename T>
 
 struct Fields : public Managed
 {
-	sim::Vector<double> te1t;
-	sim::Vector<double> te2t;
-	sim::Vector<double> te3t;
-	sim::Vector<double> te;
-	
-	sim::Vector<double> ti1t;
-	sim::Vector<double> ti2t;
-	sim::Vector<double> ti3t;
-	sim::Vector<double> ti;
-	
-	sim::Vector<double> ni1t;
-	sim::Vector<double> ni2t;
-	sim::Vector<double> ni3t;
-	sim::Vector<double> ni;
-	
-	sim::Vector<double> ne1t;
-	sim::Vector<double> ne2t;
-	sim::Vector<double> ne3t;
-	sim::Vector<double> ne;
-	//sim::Vector<double> flux_last1t;
-	//sim::Vector<double> flux_last2t;
-	//sim::Vector<double> flux_last3t;
-	//sim::Vector<double> flux_last;
-	
-	sim::Vector<double> mass1t;
-	sim::Vector<double> mass2t;
-	sim::Vector<double> mass3t;
-	sim::Vector<double> mass;
-	
-	sim::Vector<double> charge1t;
-	sim::Vector<double> charge2t;
-	sim::Vector<double> charge3t;
-	sim::Vector<double> charge;
-	
-	sim::Vector<double> Br1t;
-	sim::Vector<double> Br2t;
-	sim::Vector<double> Br3t;
-	sim::Vector<double> Br;
-	
-	sim::Vector<double> Bt1t;
-	sim::Vector<double> Bt2t;
-	sim::Vector<double> Bt3t;
-	sim::Vector<double> Bt;
-	
-	sim::Vector<double> Bz1t;
-	sim::Vector<double> Bz2t;
-	sim::Vector<double> Bz3t;
-	sim::Vector<double> Bz;
-	
-	sim::Vector<double> Bmag1t;
-	sim::Vector<double> Bmag2t;
-	sim::Vector<double> Bmag3t;
-	sim::Vector<double> Bmag;
-	
-	sim::Vector<double> v1t;
-	sim::Vector<double> v2t;
-	sim::Vector<double> v3t;
-	sim::Vector<double> v;
-	
-	sim::Vector<double> vr1t;
-	sim::Vector<double> vr2t;
-	sim::Vector<double> vr3t;
-	sim::Vector<double> vr;
-	
-	sim::Vector<double> vt1t;
-	sim::Vector<double> vt2t;
-	sim::Vector<double> vt3t;
-	sim::Vector<double> vt;
-	
-	sim::Vector<double> vz1t;
-	sim::Vector<double> vz2t;
-	sim::Vector<double> vz3t;
-	sim::Vector<double> vz;
-	
-	sim::Vector<double> Er1t;
-	sim::Vector<double> Er2t;
-	sim::Vector<double> Er3t;
-	sim::Vector<double> Er;
-	
-	sim::Vector<double> Ez1t;
-	sim::Vector<double> Ez2t;
-	sim::Vector<double> Ez3t;
-	sim::Vector<double> Ez;
+  sim::Vector<double> te1t;
+  sim::Vector<double> te2t;
+  sim::Vector<double> te3t;
+  sim::Vector<double> te;
+  
+  sim::Vector<double> ti1t;
+  sim::Vector<double> ti2t;
+  sim::Vector<double> ti3t;
+  sim::Vector<double> ti;
+  
+  sim::Vector<double> ni1t;
+  sim::Vector<double> ni2t;
+  sim::Vector<double> ni3t;
+  sim::Vector<double> ni;
+  
+  sim::Vector<double> ne1t;
+  sim::Vector<double> ne2t;
+  sim::Vector<double> ne3t;
+  sim::Vector<double> ne;
+  //sim::Vector<double> flux_last1t;
+  //sim::Vector<double> flux_last2t;
+  //sim::Vector<double> flux_last3t;
+  //sim::Vector<double> flux_last;
+  
+  sim::Vector<double> mass1t;
+  sim::Vector<double> mass2t;
+  sim::Vector<double> mass3t;
+  sim::Vector<double> mass;
+  
+  sim::Vector<double> charge1t;
+  sim::Vector<double> charge2t;
+  sim::Vector<double> charge3t;
+  sim::Vector<double> charge;
+  
+  sim::Vector<double> Br1t;
+  sim::Vector<double> Br2t;
+  sim::Vector<double> Br3t;
+  sim::Vector<double> Br;
+  
+  sim::Vector<double> Bt1t;
+  sim::Vector<double> Bt2t;
+  sim::Vector<double> Bt3t;
+  sim::Vector<double> Bt;
+  
+  sim::Vector<double> Bz1t;
+  sim::Vector<double> Bz2t;
+  sim::Vector<double> Bz3t;
+  sim::Vector<double> Bz;
+  
+  sim::Vector<double> Bmag1t;
+  sim::Vector<double> Bmag2t;
+  sim::Vector<double> Bmag3t;
+  sim::Vector<double> Bmag;
+  
+  sim::Vector<double> v1t;
+  sim::Vector<double> v2t;
+  sim::Vector<double> v3t;
+  sim::Vector<double> v;
+  
+  sim::Vector<double> vr1t;
+  sim::Vector<double> vr2t;
+  sim::Vector<double> vr3t;
+  sim::Vector<double> vr;
+  
+  sim::Vector<double> vt1t;
+  sim::Vector<double> vt2t;
+  sim::Vector<double> vt3t;
+  sim::Vector<double> vt;
+  
+  sim::Vector<double> vz1t;
+  sim::Vector<double> vz2t;
+  sim::Vector<double> vz3t;
+  sim::Vector<double> vz;
+  
+  sim::Vector<double> Er1t;
+  sim::Vector<double> Er2t;
+  sim::Vector<double> Er3t;
+  sim::Vector<double> Er;
+  
+  sim::Vector<double> Ez1t;
+  sim::Vector<double> Ez2t;
+  sim::Vector<double> Ez3t;
+  sim::Vector<double> Ez;
+  
+  sim::Vector<double> gradTe1t;
+  sim::Vector<double> gradTe2t;
+  sim::Vector<double> gradTe3t;
+  sim::Vector<double> gradTe;
+  
+  sim::Vector<double> gradTer1t;
+  sim::Vector<double> gradTer2t;
+  sim::Vector<double> gradTer3t;
+  sim::Vector<double> gradTer;
+  
+  sim::Vector<double> gradTet1t;
+  sim::Vector<double> gradTet2t;
+  sim::Vector<double> gradTet3t;
+  sim::Vector<double> gradTet;
+  
+  sim::Vector<double> gradTez1t;
+  sim::Vector<double> gradTez2t;
+  sim::Vector<double> gradTez3t;
+  sim::Vector<double> gradTez;
+  
+  sim::Vector<double> gradTi1t;
+  sim::Vector<double> gradTi2t;
+  sim::Vector<double> gradTi3t;
+  sim::Vector<double> gradTi;
+  
+  sim::Vector<double> gradTir1t;
+  sim::Vector<double> gradTir2t;
+  sim::Vector<double> gradTir3t;
+  sim::Vector<double> gradTir;
+  
+  sim::Vector<double> gradTit1t;
+  sim::Vector<double> gradTit2t;
+  sim::Vector<double> gradTit3t;
+  sim::Vector<double> gradTit;
+  
+  sim::Vector<double> gradTiz1t;
+  sim::Vector<double> gradTiz2t;
+  sim::Vector<double> gradTiz3t;
+  sim::Vector<double> gradTiz;
+  //CUDA_CALLABLE_MEMBER
+  //Fields() :
+  //nParticles{getVariable_cfg<unsigned int> (cfg,"impurityParticleSource.nP")},
 
-	sim::Vector<double> gradTe1t;
-	sim::Vector<double> gradTe2t;
-	sim::Vector<double> gradTe3t;
-	sim::Vector<double> gradTe;
-	
-	sim::Vector<double> gradTer1t;
-	sim::Vector<double> gradTer2t;
-	sim::Vector<double> gradTer3t;
-	sim::Vector<double> gradTer;
-	
-	sim::Vector<double> gradTet1t;
-	sim::Vector<double> gradTet2t;
-	sim::Vector<double> gradTet3t;
-	sim::Vector<double> gradTet;
-	
-	sim::Vector<double> gradTez1t;
-	sim::Vector<double> gradTez2t;
-	sim::Vector<double> gradTez3t;
-	sim::Vector<double> gradTez;
-	
-	sim::Vector<double> gradTi1t;
-	sim::Vector<double> gradTi2t;
-	sim::Vector<double> gradTi3t;
-	sim::Vector<double> gradTi;
-	
-	sim::Vector<double> gradTir1t;
-	sim::Vector<double> gradTir2t;
-	sim::Vector<double> gradTir3t;
-	sim::Vector<double> gradTir;
-	
-	sim::Vector<double> gradTit1t;
-	sim::Vector<double> gradTit2t;
-	sim::Vector<double> gradTit3t;
-	sim::Vector<double> gradTit;
-	
-	sim::Vector<double> gradTiz1t;
-	sim::Vector<double> gradTiz2t;
-	sim::Vector<double> gradTiz3t;
-	sim::Vector<double> gradTiz;
-	//CUDA_CALLABLE_MEMBER
-  	//Fields() :
-        //nParticles{getVariable_cfg<unsigned int> (cfg,"impurityParticleSource.nP")},
-	
 };
 
 void vectorPrint(std::string a, double D[])
@@ -560,7 +560,8 @@ struct saxpy_functor
             if(dist < radius[i]*radius[i])
             {
                bool in = in_triangle(r1[i],z1[i],r2[i],z2[i],r3[i],z3[i],r[ii],z[jj]);
-	       if(in)
+            
+               if(in)
                {
                  double a_point = interpolate_value(r1[i],z1[i],v1[i],
                                                     r2[i],z2[i],v2[i],
@@ -572,151 +573,151 @@ struct saxpy_functor
                                              r2[i],z2[i],solps_fields->te2t[i],
                                              r3[i],z3[i],solps_fields->te3t[i],
                                              r[ii],z[jj]);
-		             solps_fields->te[index] = a_point;
-		             
-		             a_point = interpolate_value(r1[i],z1[i],solps_fields->ti1t[i],
+                 solps_fields->te[index] = a_point;
+             
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->ti1t[i],
                                            r2[i],z2[i],solps_fields->ti2t[i],
                                            r3[i],z3[i],solps_fields->ti3t[i],
                                            r[ii],z[jj]);
-		 solps_fields->ti[index] = a_point;
-               //
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->ni1t[i],
-                                           r2[i],z2[i],solps_fields->ni2t[i],
-                                           r3[i],z3[i],solps_fields->ni3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->ni[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->ne1t[i],
-                                           r2[i],z2[i],solps_fields->ne2t[i],
-                                           r3[i],z3[i],solps_fields->ne3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->ne[index] = a_point;
-		 
-		 //a_point = interpolate_value(r1[i],z1[i],solps_fields->flux_last1t[i],
-               ////                            r2[i],z2[i],solps_fields->flux_last2t[i],
-               ////                            r3[i],z3[i],solps_fields->flux_last3t[i],
-               ////                            r[ii],z[jj]);
-		 //solps_fields->flux_last[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->mass1t[i],
-                                           r2[i],z2[i],solps_fields->mass2t[i],
-                                           r3[i],z3[i],solps_fields->mass3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->mass[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->charge1t[i],
-                                           r2[i],z2[i],solps_fields->charge2t[i],
-                                           r3[i],z3[i],solps_fields->charge3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->charge[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Br1t[i],
-                                           r2[i],z2[i],solps_fields->Br2t[i],
-                                           r3[i],z3[i],solps_fields->Br3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->Br[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bt1t[i],
-                                           r2[i],z2[i],solps_fields->Bt2t[i],
-                                           r3[i],z3[i],solps_fields->Bt3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->Bt[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bz1t[i],
-                                           r2[i],z2[i],solps_fields->Bz2t[i],
-                                           r3[i],z3[i],solps_fields->Bz3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->Bz[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bmag1t[i],
-                                           r2[i],z2[i],solps_fields->Bmag2t[i],
-                                           r3[i],z3[i],solps_fields->Bmag3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->Bmag[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->v1t[i],
-                                             r2[i],z2[i],solps_fields->v2t[i],
-                                             r3[i],z3[i],solps_fields->v3t[i],
-                                             r[ii],z[jj]);
-		 solps_fields->v[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->vr1t[i],
-                                           r2[i],z2[i],solps_fields->vr2t[i],
-                                           r3[i],z3[i],solps_fields->vr3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->vr[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->vt1t[i],
-                                           r2[i],z2[i],solps_fields->vt2t[i],
-                                           r3[i],z3[i],solps_fields->vt3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->vt[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->vz1t[i],
-                                           r2[i],z2[i],solps_fields->vz2t[i],
-                                           r3[i],z3[i],solps_fields->vz3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->vz[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Er1t[i],
-                                           r2[i],z2[i],solps_fields->Er2t[i],
-                                           r3[i],z3[i],solps_fields->Er3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->Er[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->Ez1t[i],
-                                           r2[i],z2[i],solps_fields->Ez2t[i],
-                                           r3[i],z3[i],solps_fields->Ez3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->Ez[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTe1t[i],
-                                           r2[i],z2[i],solps_fields->gradTe2t[i],
-                                           r3[i],z3[i],solps_fields->gradTe3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTe[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTer1t[i],
-                                           r2[i],z2[i],solps_fields->gradTer2t[i],
-                                           r3[i],z3[i],solps_fields->gradTer3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTer[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTet1t[i],
-                                           r2[i],z2[i],solps_fields->gradTet2t[i],
-                                           r3[i],z3[i],solps_fields->gradTet3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTet[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTez1t[i],
-                                           r2[i],z2[i],solps_fields->gradTez2t[i],
-                                           r3[i],z3[i],solps_fields->gradTez3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTez[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTi1t[i],
-                                           r2[i],z2[i],solps_fields->gradTi2t[i],
-                                           r3[i],z3[i],solps_fields->gradTi3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTi[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTir1t[i],
-                                           r2[i],z2[i],solps_fields->gradTir2t[i],
-                                           r3[i],z3[i],solps_fields->gradTir3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTir[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTit1t[i],
-                                           r2[i],z2[i],solps_fields->gradTit2t[i],
-                                           r3[i],z3[i],solps_fields->gradTit3t[i],
-                                           r[ii],z[jj]);
-		 solps_fields->gradTit[index] = a_point;
-		 
-		 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTiz1t[i],
+                 solps_fields->ti[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->ni1t[i],
+                                                       r2[i],z2[i],solps_fields->ni2t[i],
+                                                       r3[i],z3[i],solps_fields->ni3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->ni[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->ne1t[i],
+                                                       r2[i],z2[i],solps_fields->ne2t[i],
+                                                       r3[i],z3[i],solps_fields->ne3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->ne[index] = a_point;
+                 
+                 //a_point = interpolate_value(r1[i],z1[i],solps_fields->flux_last1t[i],
+                           ////                            r2[i],z2[i],solps_fields->flux_last2t[i],
+                           ////                            r3[i],z3[i],solps_fields->flux_last3t[i],
+                           ////                            r[ii],z[jj]);
+                 //solps_fields->flux_last[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->mass1t[i],
+                                                       r2[i],z2[i],solps_fields->mass2t[i],
+                                                       r3[i],z3[i],solps_fields->mass3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->mass[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->charge1t[i],
+                                                       r2[i],z2[i],solps_fields->charge2t[i],
+                                                       r3[i],z3[i],solps_fields->charge3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->charge[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->Br1t[i],
+                                                       r2[i],z2[i],solps_fields->Br2t[i],
+                                                       r3[i],z3[i],solps_fields->Br3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->Br[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bt1t[i],
+                                                       r2[i],z2[i],solps_fields->Bt2t[i],
+                                                       r3[i],z3[i],solps_fields->Bt3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->Bt[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bz1t[i],
+                                                       r2[i],z2[i],solps_fields->Bz2t[i],
+                                                       r3[i],z3[i],solps_fields->Bz3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->Bz[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->Bmag1t[i],
+                                                       r2[i],z2[i],solps_fields->Bmag2t[i],
+                                                       r3[i],z3[i],solps_fields->Bmag3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->Bmag[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->v1t[i],
+                                                         r2[i],z2[i],solps_fields->v2t[i],
+                                                         r3[i],z3[i],solps_fields->v3t[i],
+                                                         r[ii],z[jj]);
+                 solps_fields->v[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->vr1t[i],
+                                                       r2[i],z2[i],solps_fields->vr2t[i],
+                                                       r3[i],z3[i],solps_fields->vr3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->vr[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->vt1t[i],
+                                                       r2[i],z2[i],solps_fields->vt2t[i],
+                                                       r3[i],z3[i],solps_fields->vt3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->vt[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->vz1t[i],
+                                                       r2[i],z2[i],solps_fields->vz2t[i],
+                                                       r3[i],z3[i],solps_fields->vz3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->vz[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->Er1t[i],
+                                                       r2[i],z2[i],solps_fields->Er2t[i],
+                                                       r3[i],z3[i],solps_fields->Er3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->Er[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->Ez1t[i],
+                                                       r2[i],z2[i],solps_fields->Ez2t[i],
+                                                       r3[i],z3[i],solps_fields->Ez3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->Ez[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTe1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTe2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTe3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTe[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTer1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTer2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTer3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTer[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTet1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTet2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTet3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTet[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTez1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTez2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTez3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTez[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTi1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTi2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTi3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTi[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTir1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTir2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTir3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTir[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTit1t[i],
+                                                       r2[i],z2[i],solps_fields->gradTit2t[i],
+                                                       r3[i],z3[i],solps_fields->gradTit3t[i],
+                                                       r[ii],z[jj]);
+                 solps_fields->gradTit[index] = a_point;
+                 
+                 a_point = interpolate_value(r1[i],z1[i],solps_fields->gradTiz1t[i],
                                            r2[i],z2[i],solps_fields->gradTiz2t[i],
                                            r3[i],z3[i],solps_fields->gradTiz3t[i],
                                            r[ii],z[jj]);
-		 solps_fields->gradTiz[index] = a_point;
+                 solps_fields->gradTiz[index] = a_point;
                }
             }
         }
@@ -728,10 +729,12 @@ int nx, ny, ns;
 
 std::vector<int> read_ifield(std::string filename, std::string variable_name)
 {
-  std::ifstream inFile;
+    std::ifstream inFile;
     
     inFile.open(filename);
-    if (!inFile) {
+    
+    if (!inFile) 
+    {
       std::cout << "Unable to open file";
         exit(1); // terminate with error
     }
@@ -740,7 +743,8 @@ std::vector<int> read_ifield(std::string filename, std::string variable_name)
     std::size_t found;
     std::vector<int> values;
 
-    while (getline(inFile,str)) {
+    while (getline(inFile,str))
+    {
         found=str.find("*cf:");
         if (found!=std::string::npos)
         {
@@ -755,7 +759,6 @@ std::vector<int> read_ifield(std::string filename, std::string variable_name)
           {
             int var_count = 0;
             int var_size = 0;
-            //std::sscanf(results[2].c_str(), "%d", &var_size);
             var_size = std::atoi(results[2].c_str());
             values.resize(var_size);
             while (var_count < var_size)
@@ -767,7 +770,6 @@ std::vector<int> read_ifield(std::string filename, std::string variable_name)
               for (int i=0; i<results2.size();i++)
               {
                 int val = 0;
-                //std::sscanf(results2[i].c_str(), "%d", &val);
                 val = std::atoi(results2[i].c_str());
                 values[var_count] = val;
                 //std::cout << val << "\n";
@@ -787,8 +789,9 @@ std::vector<double> read_dfield(std::string filename, std::string variable_name)
   std::ifstream inFile;
     
     inFile.open(filename);
-    if (!inFile) {
-      std::cout << "Unable to open file";
+    if (!inFile) 
+    {
+        std::cout << "Unable to open file";
         exit(1); // terminate with error
     }
     
@@ -796,7 +799,8 @@ std::vector<double> read_dfield(std::string filename, std::string variable_name)
     std::size_t found;
     std::vector<double> values;
 
-    while (getline(inFile,str)) {
+    while (getline(inFile,str))
+    {
         found=str.find("*cf:");
         if (found!=std::string::npos)
         {
@@ -811,7 +815,6 @@ std::vector<double> read_dfield(std::string filename, std::string variable_name)
           {
             int var_count = 0;
             int var_size = 0;
-            //std::sscanf(results[2].c_str(), "%d", &var_size);
             var_size = std::atoi(results[2].c_str());
             values.resize(var_size);
             while (var_count < var_size)
@@ -824,7 +827,6 @@ std::vector<double> read_dfield(std::string filename, std::string variable_name)
               for (int i=0; i<results2.size();i++)
               {
                 double val = 0;
-                //std::sscanf(results2[i].c_str(), "%lf", &val);
                 val = std::atof(results2[i].c_str());
                 values[var_count] = val;
                 std::cout.precision(17);
@@ -839,6 +841,7 @@ std::vector<double> read_dfield(std::string filename, std::string variable_name)
     inFile.close();
     return values;
 }
+
 int solps_2d_index(int i, int j)
 {
   return j*(nx+2) + i;
@@ -907,7 +910,6 @@ std::tuple<std::vector<double>,std::vector<double>,
   nx = nxny[0];
   ny = nxny[1];
 
-  // Calculate Efield on SOLPS grid
   int n_total = nx*ny*8;
   r1.resize(n_total,0.0);
   r2.resize(n_total,0.0);
@@ -946,16 +948,16 @@ std::tuple<std::vector<double>,std::vector<double>,
   std::vector<int> bottomiy = read_ifield("b2fgmtry", "bottomiy");
     
   for (int i = 0; i< leftix.size(); i++)
-          {
-            leftix[i] = leftix[i] + 1;
-            leftiy[i] = leftiy[i] + 1;
-            rightix[i] = rightix[i] + 1;
-            rightiy[i] = rightiy[i] + 1;
-            topix[i] = topix[i] + 1;
-            topiy[i] = topiy[i] + 1;
-            bottomix[i] = bottomix[i] + 1;
-            bottomiy[i] = bottomiy[i] + 1;
-          }
+  {
+    leftix[i] = leftix[i] + 1;
+    leftiy[i] = leftiy[i] + 1;
+    rightix[i] = rightix[i] + 1;
+    rightiy[i] = rightiy[i] + 1;
+    topix[i] = topix[i] + 1;
+    topiy[i] = topiy[i] + 1;
+    bottomix[i] = bottomix[i] + 1;
+    bottomiy[i] = bottomiy[i] + 1;
+  }
   // Get SOLPS state variables
   std::vector<double> po = read_dfield("b2fstate", "po");
 
@@ -1283,109 +1285,109 @@ std::tuple<std::vector<double>,std::vector<double>,
 
       if(i==1)
       {
-	        double target_buff = 0.01;
-		r1_edge[(j-1)*4 + 0] = r_top_left;
-		z1_edge[(j-1)*4 + 0] = z_top_left;
-		r2_edge[(j-1)*4 + 0] = r_bottom_left;
-		z2_edge[(j-1)*4 + 0] = z_bottom_left;
-		v1_edge[(j-1)*4 + 0] = a_topleft_corner;
-		v2_edge[(j-1)*4 + 0] = a_bottomleft_corner;
-
-		r1_edge[(j-1)*4 + 1] = r_bottom_left;
-		z1_edge[(j-1)*4 + 1] = z_bottom_left;
-		v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-
-
-                double parvecr = r_bottom_left - r_top_left;
-		double parvecz = r_bottom_left - z_top_left;
-                double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
-		parvecr = parvecr/parvecnorm;
-		parvecz = parvecz/parvecnorm;
-
-                double perpvecr = -parvecz;
-		double perpvecz = parvecr;
-                
-		r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*perpvecr;
-		z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*perpvecz;
-		v2_edge[(j-1)*4 + 1] = a_topleft_corner;
-		
-		r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*perpvecr;
-		r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*perpvecr;
-		z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*perpvecz;
-		z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*perpvecz;
-		v3_edge[(j-1)*4 + 0] = a_topleft_corner;
-		v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-      
-		d12 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-		d23 = distance(r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0],
-			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-		d13 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-			       r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 0] = std::max(max1,d13);
-		
-		d12 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-		d23 = distance(r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1],
-			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-		d13 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-			       r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 1] = std::max(max1,d13);
+        double target_buff = 0.01;
+        r1_edge[(j-1)*4 + 0] = r_top_left;
+        z1_edge[(j-1)*4 + 0] = z_top_left;
+        r2_edge[(j-1)*4 + 0] = r_bottom_left;
+        z2_edge[(j-1)*4 + 0] = z_bottom_left;
+        v1_edge[(j-1)*4 + 0] = a_topleft_corner;
+        v2_edge[(j-1)*4 + 0] = a_bottomleft_corner;
+        
+        r1_edge[(j-1)*4 + 1] = r_bottom_left;
+        z1_edge[(j-1)*4 + 1] = z_bottom_left;
+        v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
+        
+        
+        double parvecr = r_bottom_left - r_top_left;
+        double parvecz = r_bottom_left - z_top_left;
+        double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
+        parvecr = parvecr/parvecnorm;
+        parvecz = parvecz/parvecnorm;
+        
+        double perpvecr = -parvecz;
+        double perpvecz = parvecr;
+                    
+        r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*perpvecr;
+        z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*perpvecz;
+        v2_edge[(j-1)*4 + 1] = a_topleft_corner;
+        
+        r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*perpvecr;
+        r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*perpvecr;
+        z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*perpvecz;
+        z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*perpvecz;
+        v3_edge[(j-1)*4 + 0] = a_topleft_corner;
+        v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
+          
+        d12 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
+        r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
+        d23 = distance(r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0],
+        r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
+        d13 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
+        r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0]); 
+        max1 = std::max(d12,d23);
+        radius_edge[(j-1)*4 + 0] = std::max(max1,d13);
+        
+        d12 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
+        r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
+        d23 = distance(r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1],
+        r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
+        d13 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
+        r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1]); 
+        max1 = std::max(d12,d23);
+        radius_edge[(j-1)*4 + 1] = std::max(max1,d13);
       }
-      
+          
       if(i==nx)
       {
-	        double target_buff = 0.01;
-		r1_edge[(j-1)*4 + 2] = r_top_right;
-		z1_edge[(j-1)*4 + 2] = z_top_right;
-		r2_edge[(j-1)*4 + 2] = r_bottom_right;
-		z2_edge[(j-1)*4 + 2] = z_bottom_right;
-		v1_edge[(j-1)*4 + 2] = a_topright_corner;
-		v2_edge[(j-1)*4 + 2] = a_bottomright_corner;
-
-		r1_edge[(j-1)*4 + 3] = r_bottom_right;
-		z1_edge[(j-1)*4 + 3] = z_bottom_right;
-		v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
-
-                double parvecr = r_bottom_right - r_top_right;
-		double parvecz = r_bottom_right - z_top_right;
-                double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
-		parvecr = parvecr/parvecnorm;
-		parvecz = parvecz/parvecnorm;
-
-                double perpvecr = -(-parvecz);
-		double perpvecz = -parvecr;
-
-		r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*perpvecr;
-		z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*perpvecz;
-		v2_edge[(j-1)*4 + 3] = a_topright_corner;
-		
-		r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*perpvecr;
-		r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*perpvecr;
-		z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*perpvecz;
-		z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*perpvecz;
-		v3_edge[(j-1)*4 + 2] = a_topright_corner;
-		v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
-      
-		d12 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
-			       r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
-		d23 = distance(r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2],
-			       r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
-		d13 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
-			       r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 2] = std::max(max1,d13);
-		
-		d12 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
-			       r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
-		d23 = distance(r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3],
-			       r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
-		d13 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
-			       r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 3] = std::max(max1,d13);
+        double target_buff = 0.01;
+        r1_edge[(j-1)*4 + 2] = r_top_right;
+        z1_edge[(j-1)*4 + 2] = z_top_right;
+        r2_edge[(j-1)*4 + 2] = r_bottom_right;
+        z2_edge[(j-1)*4 + 2] = z_bottom_right;
+        v1_edge[(j-1)*4 + 2] = a_topright_corner;
+        v2_edge[(j-1)*4 + 2] = a_bottomright_corner;
+        
+        r1_edge[(j-1)*4 + 3] = r_bottom_right;
+        z1_edge[(j-1)*4 + 3] = z_bottom_right;
+        v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
+        
+        double parvecr = r_bottom_right - r_top_right;
+        double parvecz = r_bottom_right - z_top_right;
+        double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
+        parvecr = parvecr/parvecnorm;
+        parvecz = parvecz/parvecnorm;
+        
+        double perpvecr = -(-parvecz);
+        double perpvecz = -parvecr;
+        
+        r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*perpvecr;
+        z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*perpvecz;
+        v2_edge[(j-1)*4 + 3] = a_topright_corner;
+        
+        r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*perpvecr;
+        r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*perpvecr;
+        z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*perpvecz;
+        z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*perpvecz;
+        v3_edge[(j-1)*4 + 2] = a_topright_corner;
+        v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
+          
+        d12 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
+        r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
+        d23 = distance(r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2],
+        r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
+        d13 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
+        r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2]); 
+        max1 = std::max(d12,d23);
+        radius_edge[(j-1)*4 + 2] = std::max(max1,d13);
+        
+        d12 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
+        r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
+        d23 = distance(r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3],
+        r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
+        d13 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
+        r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3]); 
+        max1 = std::max(d12,d23);
+        radius_edge[(j-1)*4 + 3] = std::max(max1,d13);
       }
 
     }
@@ -1393,13 +1395,13 @@ std::tuple<std::vector<double>,std::vector<double>,
 
   for(int ii = 0; ii< 4*ny;ii++)
   {
-	  r1.push_back(r1_edge[ii]);
-	  r2.push_back(r2_edge[ii]);
-	  r3.push_back(r3_edge[ii]);
-	  z1.push_back(z1_edge[ii]);
-	  z2.push_back(z2_edge[ii]);
-	  z3.push_back(z3_edge[ii]);
-	  radius.push_back(radius_edge[ii]);
+    r1.push_back(r1_edge[ii]);
+    r2.push_back(r2_edge[ii]);
+    r3.push_back(r3_edge[ii]);
+    z1.push_back(z1_edge[ii]);
+    z2.push_back(z2_edge[ii]);
+    z3.push_back(z3_edge[ii]);
+    radius.push_back(radius_edge[ii]);
   }
   return std::make_tuple(r1, r2, r3, z1, z2, z3, radius);
 }
@@ -1612,12 +1614,11 @@ std::tuple<std::vector<double>,std::vector<double>>
   nx = nxny[0];
   ny = nxny[1];
 
-  // Calculate Efield on SOLPS grid
   gradTe.resize((nx+2)*(ny+2),0.0);
   gradTi.resize((nx+2)*(ny+2),0.0);
   
-  std::vector<double> crx = read_dfield("b2fgmtry", "crx");
-  std::vector<double> cry = read_dfield("b2fgmtry", "cry");
+  //std::vector<double> crx = read_dfield("b2fgmtry", "crx");
+  //std::vector<double> cry = read_dfield("b2fgmtry", "cry");
   std::vector<double> hx = read_dfield("b2fgmtry", "hx");
   std::vector<double> hy = read_dfield("b2fgmtry", "hy");
   
@@ -1625,31 +1626,24 @@ std::tuple<std::vector<double>,std::vector<double>>
   std::vector<int> leftiy = read_ifield("b2fgmtry", "leftiy");
   std::vector<int> rightix = read_ifield("b2fgmtry", "rightix");
   std::vector<int> rightiy = read_ifield("b2fgmtry", "rightiy");
-  std::vector<int> topix = read_ifield("b2fgmtry", "topix");
-  std::vector<int> topiy = read_ifield("b2fgmtry", "topiy");
-  std::vector<int> bottomix = read_ifield("b2fgmtry", "bottomix");
-  std::vector<int> bottomiy = read_ifield("b2fgmtry", "bottomiy");
     
   for (int i = 0; i< leftix.size(); i++)
-          {
-            leftix[i] = leftix[i] + 1;
-            leftiy[i] = leftiy[i] + 1;
-            rightix[i] = rightix[i] + 1;
-            rightiy[i] = rightiy[i] + 1;
-            topix[i] = topix[i] + 1;
-            topiy[i] = topiy[i] + 1;
-            bottomix[i] = bottomix[i] + 1;
-            bottomiy[i] = bottomiy[i] + 1;
-          }
+  {
+      leftix[i] = leftix[i] + 1;
+      leftiy[i] = leftiy[i] + 1;
+      rightix[i] = rightix[i] + 1;
+      rightiy[i] = rightiy[i] + 1;
+  }
+
   // Get SOLPS state variables
   std::vector<double> te = read_dfield("b2fstate", "te");
   std::vector<double> ti = read_dfield("b2fstate", "ti");
   std::vector<double> bb = read_dfield("b2fgmtry", "bb");
-    for(int i=0; i<ti.size();i++)
-    {
-      ti[i] = ti[i]/1.602176565e-19;
-      te[i] = te[i]/1.602176565e-19;
-    }
+  for(int i=0; i<ti.size();i++)
+  {
+    ti[i] = ti[i]/1.602176565e-19;
+    te[i] = te[i]/1.602176565e-19;
+  }
 
   for (int i=1; i < nx+1; i++)
   {
@@ -1678,23 +1672,22 @@ std::tuple<std::vector<double>,std::vector<double>>
       double d_left_right = 0.5*left_hx + cell_hx + 0.5*right_hx;
       double theta = std::atan(bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,2)]);
       double d_grad = d_left_right/std::sin(theta);
-      //std::cout << " dlr dgrag " << d_left_right << " " << d_grad << std::endl;
-      //std::cout << " rte lte " << right_te-left_te <<  std::endl;
+      
       gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
       gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;
       
       if( i == 1)
       {
         cell_2d_index = solps_2d_index(i-1,j);
-	gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
-	gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
+        gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
+        gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
       }
 
       if( i == nx)
       {
         cell_2d_index = solps_2d_index(i+1,j);
-	gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
-	gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
+        gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
+        gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
       }
     }
   }
@@ -1704,14 +1697,13 @@ std::tuple<std::vector<double>,std::vector<double>>
 
 std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vector<double>>
             get_Bfield(std::vector<double> Br, std::vector<double> Bt, std::vector<double> Bz, 
-			    std::vector<double> Bmag)
+            std::vector<double> Bmag)
 {
   std::vector<int> nxny = read_ifield("b2fgmtry","nx,ny");
 
   nx = nxny[0];
   ny = nxny[1];
 
-  // Calculate Efield on SOLPS grid
   Br.resize((nx+2)*(ny+2),0.0);
   Bt.resize((nx+2)*(ny+2),0.0);
   Bz.resize((nx+2)*(ny+2),0.0);
@@ -1719,29 +1711,7 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
   
   std::vector<double> crx = read_dfield("b2fgmtry", "crx");
   std::vector<double> cry = read_dfield("b2fgmtry", "cry");
-  //std::vector<double> hx = read_dfield("b2fgmtry", "hx");
-  //std::vector<double> hy = read_dfield("b2fgmtry", "hy");
   
-  //std::vector<int> leftix = read_ifield("b2fgmtry", "leftix");
-  //std::vector<int> leftiy = read_ifield("b2fgmtry", "leftiy");
-  //std::vector<int> rightix = read_ifield("b2fgmtry", "rightix");
-  //std::vector<int> rightiy = read_ifield("b2fgmtry", "rightiy");
-  //std::vector<int> topix = read_ifield("b2fgmtry", "topix");
-  //std::vector<int> topiy = read_ifield("b2fgmtry", "topiy");
-  //std::vector<int> bottomix = read_ifield("b2fgmtry", "bottomix");
-  //std::vector<int> bottomiy = read_ifield("b2fgmtry", "bottomiy");
-    
-  //for (int i = 0; i< leftix.size(); i++)
-  //        {
-  //          leftix[i] = leftix[i] + 1;
-  //          leftiy[i] = leftiy[i] + 1;
-  //          rightix[i] = rightix[i] + 1;
-  //          rightiy[i] = rightiy[i] + 1;
-  //          topix[i] = topix[i] + 1;
-  //          topiy[i] = topiy[i] + 1;
-  //          bottomix[i] = bottomix[i] + 1;
-  //          bottomiy[i] = bottomiy[i] + 1;
-  //        }
   // Get SOLPS state variables
   std::vector<double> bb = read_dfield("b2fgmtry", "bb");
   std::vector<std::vector<double>> bfield(4);
@@ -1755,553 +1725,44 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
   {
     for( int j=0; j < ny+2; j++)
     {
-      int cell_2d_index = solps_2d_index(i,j);
-	
-        bfield[0][cell_2d_index] = bb[solps_3d_index(i,j,0)];	
-        bfield[1][cell_2d_index] = bb[solps_3d_index(i,j,1)];	
-        bfield[2][cell_2d_index] = -bb[solps_3d_index(i,j,2)];	// Solps toroidal field is out of page
-	//this is opposite to the GITR right handed coordinate system
+        int cell_2d_index = solps_2d_index(i,j);
+
+        bfield[0][cell_2d_index] = bb[solps_3d_index(i,j,0)];
+        bfield[1][cell_2d_index] = bb[solps_3d_index(i,j,1)];
+        bfield[2][cell_2d_index] = -bb[solps_3d_index(i,j,2)];// Solps toroidal field is out of page
+        //this is opposite to the GITR right handed coordinate system
         bfield[3][cell_2d_index] = bb[solps_3d_index(i,j,3)];
 
-      //double cell_hx = hx[cell_2d_index];
-      //double cell_hy = hy[cell_2d_index];
-      //double cell_po = po[cell_2d_index];
 
-      //int top_2d_index = solps_2d_index(topix[solps_2d_index(i,j)],
-      //                                  topiy[solps_2d_index(i,j)]);
+        double r_bottom_left = crx[solps_3d_index(i,j,0)];
+        double z_bottom_left = cry[solps_3d_index(i,j,0)];
+        double r_bottom_right = crx[solps_3d_index(i,j,1)];
+        double z_bottom_right = cry[solps_3d_index(i,j,1)];
+        double r_top_left = crx[solps_3d_index(i,j,2)];
+        double z_top_left = cry[solps_3d_index(i,j,2)];
+        double r_top_right = crx[solps_3d_index(i,j,3)];
+        double z_top_right = cry[solps_3d_index(i,j,3)];
 
-      //double top_hx = hx[top_2d_index];
-      //double top_hy = hy[top_2d_index];
-      //double top_po = po[top_2d_index];
+        double r_right_mid = mean(r_top_right, r_bottom_right);
+        double z_right_mid = mean(z_top_right, z_bottom_right);
+        double r_left_mid = mean(r_top_left, r_bottom_left);
+        double z_left_mid = mean(z_top_left, z_bottom_left);
 
-      //int bottom_2d_index = solps_2d_index(bottomix[solps_2d_index(i,j)],
-      //                                  bottomiy[solps_2d_index(i,j)]);
+        double norm_left_right = std::sqrt((r_right_mid - r_left_mid)*(r_right_mid - r_left_mid) +
+              (z_right_mid - z_left_mid)*(z_right_mid - z_left_mid));
+        double r_hatx = (r_right_mid - r_left_mid)/norm_left_right;
+        double z_hatx = (z_right_mid - z_left_mid)/norm_left_right;
 
-      //double bottom_hx = hx[bottom_2d_index];
-      //double bottom_hy = hy[bottom_2d_index];
-      //double bottom_po = po[bottom_2d_index];
-
-      //int right_2d_index = solps_2d_index(rightix[solps_2d_index(i,j)],
-      //                                  rightiy[solps_2d_index(i,j)]);
-
-      //double right_hx = hx[right_2d_index];
-      //double right_hy = hy[right_2d_index];
-      //double right_po = po[right_2d_index];
-
-      //int left_2d_index = solps_2d_index(leftix[solps_2d_index(i,j)],
-      //                                  leftiy[solps_2d_index(i,j)]);
-
-      //double left_hx = hx[left_2d_index];
-      //double left_hy = hy[left_2d_index];
-      //double left_po = po[left_2d_index];
-      //
-      //double d_bottom_top = 0.5*top_hy + cell_hy + 0.5*bottom_hy;
-      //double d_left_right = 0.5*left_hx + cell_hx + 0.5*right_hx;
-
-      double r_bottom_left = crx[solps_3d_index(i,j,0)];
-      double z_bottom_left = cry[solps_3d_index(i,j,0)];
-      double r_bottom_right = crx[solps_3d_index(i,j,1)];
-      double z_bottom_right = cry[solps_3d_index(i,j,1)];
-      double r_top_left = crx[solps_3d_index(i,j,2)];
-      double z_top_left = cry[solps_3d_index(i,j,2)];
-      double r_top_right = crx[solps_3d_index(i,j,3)];
-      double z_top_right = cry[solps_3d_index(i,j,3)];
-
-      double r_right_mid = mean(r_top_right, r_bottom_right);
-      double z_right_mid = mean(z_top_right, z_bottom_right);
-      double r_left_mid = mean(r_top_left, r_bottom_left);
-      double z_left_mid = mean(z_top_left, z_bottom_left);
-      //double r_top_mid = mean(r_top_left, r_top_right);
-      //double z_top_mid = mean(z_top_left, z_top_right);
-      //double r_bottom_mid = mean(r_bottom_left, r_bottom_right);
-      //double z_bottom_mid = mean(z_bottom_left, z_bottom_right);
-
-      double norm_left_right = std::sqrt((r_right_mid - r_left_mid)*(r_right_mid - r_left_mid) +
-            (z_right_mid - z_left_mid)*(z_right_mid - z_left_mid));
-      double r_hatx = (r_right_mid - r_left_mid)/norm_left_right;
-      double z_hatx = (z_right_mid - z_left_mid)/norm_left_right;
-
-      //double dx = (right_po - left_po)/d_left_right;
-      Br[cell_2d_index] = bfield[0][cell_2d_index]*r_hatx;	
-      Bt[cell_2d_index] = bfield[2][cell_2d_index];	
-      Bz[cell_2d_index] = bfield[0][cell_2d_index]*z_hatx;	
-      Bmag[cell_2d_index] = bfield[3][cell_2d_index];	
-      //std::cout << " Bmag " << std::sqrt(bfield[0][cell_2d_index]*bfield[0][cell_2d_index] 
-      //	      + bfield[2][cell_2d_index]*bfield[2][cell_2d_index]) << " " << Bmag[cell_2d_index] << std::endl;
-      //double dxr = dx*r_hatx;
-      //double dxz = dx*z_hatx;
-
-      //double norm_bottom_top = std::sqrt((r_top_mid - r_bottom_mid)*(r_top_mid - r_bottom_mid) +
-      //      (z_top_mid - z_bottom_mid)*(z_top_mid - z_bottom_mid));
-      //double r_haty = (r_top_mid - r_bottom_mid)/norm_bottom_top;
-      //double z_haty = (z_top_mid - z_bottom_mid)/norm_bottom_top;
-
-
-      //double dy = (top_po - bottom_po)/d_bottom_top;
-      //double dyr = dy*r_haty;
-      //double dyz = dy*z_haty;
-      //double der = dxr+dyr;
-      //double dez = dxz+dyz;
+        Br[cell_2d_index] = bfield[0][cell_2d_index]*r_hatx;
+        Bt[cell_2d_index] = bfield[2][cell_2d_index];
+        Bz[cell_2d_index] = bfield[0][cell_2d_index]*z_hatx;
+        Bmag[cell_2d_index] = bfield[3][cell_2d_index];
 
     }
   }
 
   return std::make_tuple(Br, Bt, Bz, Bmag);
 }
-//std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
-//            get_scalar_field(std::string scalar_string,
-//           std::vector<double> v1,std::vector<double> v2,
-//           std::vector<double> v3)
-//{
-//           std::vector<double> r1, r2, r3, z1, z2, z3, radius;
-//  
-//           std::vector<int> nxny = read_ifield("b2fgmtry","nx,ny");
-//
-//  nx = nxny[0];
-//  ny = nxny[1];
-//
-//  // Calculate Efield on SOLPS grid
-//  int n_total = nx*ny*8;
-//  r1.resize(n_total,0.0);
-//  r2.resize(n_total,0.0);
-//  r3.resize(n_total,0.0);
-//  z1.resize(n_total,0.0);
-//  z2.resize(n_total,0.0);
-//  z3.resize(n_total,0.0);
-//  v1.resize(n_total,0.0);
-//  v2.resize(n_total,0.0);
-//  v3.resize(n_total,0.0);
-//  radius.resize(n_total,0.0);
-//  
-//  int n_edge_total = 2*ny;
-//  std::vector<double> r1_edge(n_edge_total,0.0);
-//  std::vector<double> r2_edge(n_edge_total,0.0);
-//  std::vector<double> r3_edge(n_edge_total,0.0);
-//  std::vector<double> z1_edge(n_edge_total,0.0);
-//  std::vector<double> z2_edge(n_edge_total,0.0);
-//  std::vector<double> z3_edge(n_edge_total,0.0);
-//  std::vector<double> v1_edge(n_edge_total,0.0);
-//  std::vector<double> v2_edge(n_edge_total,0.0);
-//  std::vector<double> v3_edge(n_edge_total,0.0);
-//  std::vector<double> radius_edge(n_edge_total,0.0);
-//    
-//  std::vector<double> crx = read_dfield("b2fgmtry", "crx");
-//  std::vector<double> cry = read_dfield("b2fgmtry", "cry");
-//  std::vector<double> hx = read_dfield("b2fgmtry", "hx");
-//  std::vector<double> hy = read_dfield("b2fgmtry", "hy");
-//  
-//  std::vector<int> leftix = read_ifield("b2fgmtry", "leftix");
-//  std::vector<int> leftiy = read_ifield("b2fgmtry", "leftiy");
-//  std::vector<int> rightix = read_ifield("b2fgmtry", "rightix");
-//  std::vector<int> rightiy = read_ifield("b2fgmtry", "rightiy");
-//  std::vector<int> topix = read_ifield("b2fgmtry", "topix");
-//  std::vector<int> topiy = read_ifield("b2fgmtry", "topiy");
-//  std::vector<int> bottomix = read_ifield("b2fgmtry", "bottomix");
-//  std::vector<int> bottomiy = read_ifield("b2fgmtry", "bottomiy");
-//    
-//  for (int i = 0; i< leftix.size(); i++)
-//          {
-//            leftix[i] = leftix[i] + 1;
-//            leftiy[i] = leftiy[i] + 1;
-//            rightix[i] = rightix[i] + 1;
-//            rightiy[i] = rightiy[i] + 1;
-//            topix[i] = topix[i] + 1;
-//            topiy[i] = topiy[i] + 1;
-//            bottomix[i] = bottomix[i] + 1;
-//            bottomiy[i] = bottomiy[i] + 1;
-//          }
-//  // Get SOLPS state variables
-//  std::vector<double> po = read_dfield("b2fstate", scalar_string);
-//
-//  for (int i=1; i < nx+1; i++)
-//  {
-//    for( int j=1; j < ny+1; j++)
-//    {
-//      int cell_2d_index = solps_2d_index(i,j);
-//
-//      double cell_hx = hx[cell_2d_index];
-//      double cell_hy = hy[cell_2d_index];
-//      double cell_po = po[cell_2d_index];
-//
-//      int top_2d_index = solps_2d_index(topix[solps_2d_index(i,j)],
-//                                        topiy[solps_2d_index(i,j)]);
-//
-//      double top_hx = hx[top_2d_index];
-//      double top_hy = hy[top_2d_index];
-//      double top_po = po[top_2d_index];
-//
-//      int bottom_2d_index = solps_2d_index(bottomix[solps_2d_index(i,j)],
-//                                        bottomiy[solps_2d_index(i,j)]);
-//
-//      double bottom_hx = hx[bottom_2d_index];
-//      double bottom_hy = hy[bottom_2d_index];
-//      double bottom_po = po[bottom_2d_index];
-//
-//      int right_2d_index = solps_2d_index(rightix[solps_2d_index(i,j)],
-//                                        rightiy[solps_2d_index(i,j)]);
-//
-//      double right_hx = hx[right_2d_index];
-//      double right_hy = hy[right_2d_index];
-//      double right_po = po[right_2d_index];
-//
-//      int left_2d_index = solps_2d_index(leftix[solps_2d_index(i,j)],
-//                                        leftiy[solps_2d_index(i,j)]);
-//
-//      double left_hx = hx[left_2d_index];
-//      double left_hy = hy[left_2d_index];
-//      double left_po = po[left_2d_index];
-//      
-//      double r_bottom_left = crx[solps_3d_index(i,j,0)];
-//      double z_bottom_left = cry[solps_3d_index(i,j,0)];
-//      double r_bottom_right = crx[solps_3d_index(i,j,1)];
-//      double z_bottom_right = cry[solps_3d_index(i,j,1)];
-//      double r_top_left = crx[solps_3d_index(i,j,2)];
-//      double z_top_left = cry[solps_3d_index(i,j,2)];
-//      double r_top_right = crx[solps_3d_index(i,j,3)];
-//      double z_top_right = cry[solps_3d_index(i,j,3)];
-//
-//      double r_right_mid = mean(r_top_right, r_bottom_right);
-//      double z_right_mid = mean(z_top_right, z_bottom_right);
-//      double r_left_mid = mean(r_top_left, r_bottom_left);
-//      double z_left_mid = mean(z_top_left, z_bottom_left);
-//      double r_top_mid = mean(r_top_left, r_top_right);
-//      double z_top_mid = mean(z_top_left, z_top_right);
-//      double r_bottom_mid = mean(r_bottom_left, r_bottom_right);
-//      double z_bottom_mid = mean(z_bottom_left, z_bottom_right);
-//
-//      double norm_left_right = std::sqrt((r_right_mid - r_left_mid)*(r_right_mid - r_left_mid) +
-//            (z_right_mid - z_left_mid)*(z_right_mid - z_left_mid));
-//
-//      double norm_bottom_top = std::sqrt((r_top_mid - r_bottom_mid)*(r_top_mid - r_bottom_mid) +
-//            (z_top_mid - z_bottom_mid)*(z_top_mid - z_bottom_mid));
-//
-//      int i_left = leftix[solps_2d_index(i,j)];
-//      int j_left = leftiy[solps_2d_index(i,j)];
-//      int i_right = rightix[solps_2d_index(i,j)];
-//      int j_right = rightiy[solps_2d_index(i,j)];
-//      int index_left = solps_2d_index(leftix[solps_2d_index(i,j)],
-//                                   leftiy[solps_2d_index(i,j)]);
-//      int index_right = solps_2d_index(rightix[solps_2d_index(i,j)],
-//                                    rightiy[solps_2d_index(i,j)]);
-//      int index_bottom = solps_2d_index(bottomix[solps_2d_index(i,j)],
-//                                     bottomiy[solps_2d_index(i,j)]);
-//      int index_top = solps_2d_index(topix[solps_2d_index(i,j)],
-//                                  topiy[solps_2d_index(i,j)]);
-//       
-//      int index_topright = solps_2d_index(rightix[index_top],
-//                                       rightiy[index_top]);
-//      int index_topleft = solps_2d_index(leftix[index_top],
-//                                      leftiy[index_top]);
-//      int index_bottomright = solps_2d_index(rightix[index_bottom],
-//                                       rightiy[index_bottom]);
-//      int index_bottomleft = solps_2d_index(leftix[index_bottom],
-//                                      leftiy[index_bottom]);
-//      
-//      double r_cell = cell_center(i,j,crx);
-//      double z_cell = cell_center(i,j,cry);
-//      double a_cell = po[solps_2d_index(i,j)];
-//
-//      double r_left = cell_center(leftix[solps_2d_index(i,j)],
-//                                  leftiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_left = cell_center(leftix[solps_2d_index(i,j)],
-//                                  leftiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_left = po[index_left];
-//      double r_right = cell_center(rightix[solps_2d_index(i,j)],
-//                                  rightiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_right = cell_center(rightix[solps_2d_index(i,j)],
-//                                  rightiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_right = po[index_right];
-//      double r_bottom = cell_center(bottomix[solps_2d_index(i,j)],
-//                                  bottomiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_bottom = cell_center(bottomix[solps_2d_index(i,j)],
-//                                  bottomiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_bottom = po[index_bottom];
-//      double r_top = cell_center(topix[solps_2d_index(i,j)],
-//                                  topiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_top = cell_center(topix[solps_2d_index(i,j)],
-//                                  topiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_top = po[index_top];
-//      double r_topright = cell_center(rightix[index_top],
-//                                  rightiy[index_top],
-//                                  crx);
-//      double z_topright = cell_center(rightix[index_top],
-//                                      rightiy[index_top],
-//                                  cry);
-//      double a_topright = po[index_topright];
-//      double r_topleft = cell_center(leftix[index_top],
-//                                     leftiy[index_top],
-//                                  crx);
-//      double z_topleft = cell_center(leftix[index_top],
-//                                     leftiy[index_top],
-//                                  cry);
-//      double a_topleft = po[index_topleft];
-//      double r_bottomright = cell_center(rightix[index_bottom],
-//                                  rightiy[index_bottom],
-//                                  crx);
-//      double z_bottomright = cell_center(rightix[index_bottom],
-//                                      rightiy[index_bottom],
-//                                  cry);
-//      double a_bottomright = po[index_bottomright];
-//      double r_bottomleft = cell_center(leftix[index_bottom],
-//                                     leftiy[index_bottom],
-//                                  crx);
-//      double z_bottomleft = cell_center(leftix[index_bottom],
-//                                     leftiy[index_bottom],
-//                                  cry);
-//      double a_bottomleft = po[index_bottomleft];
-//
-//            //% Interpolate values at cell edges
-//      double d1 = distance(r_cell,z_cell,r_top_mid,z_top_mid);
-//      double d2 = distance(r_top_mid,z_top_mid,r_top,z_top);
-//      double a_top_mid = (a_top*d1 + a_cell*d2)/(d1+d2);
-//      d1 = distance(r_cell,z_cell,r_bottom_mid,z_bottom_mid);
-//      d2 = distance(r_bottom_mid,z_bottom_mid,r_bottom,z_bottom);
-//      double a_bottom_mid = (a_bottom*d1 + a_cell*d2)/(d1+d2);
-//      d1 = distance(r_cell,z_cell,r_right_mid,z_right_mid);
-//      d2 = distance(r_right_mid,z_right_mid,r_right,z_right);
-//      double a_right_mid = (a_right*d1 + a_cell*d2)/(d1+d2);
-//      d1 = distance(r_cell,z_cell,r_left_mid,z_left_mid);
-//      d2 = distance(r_left_mid,z_left_mid,r_left,z_left);
-//      double a_left_mid = (a_left*d1 + a_cell*d2)/(d1+d2);
-//
-//      // % Off grid values for corners
-//      double r_topright_offgrid = mean(crx[solps_3d_index(i_right,j_right,2)],crx[solps_3d_index(i_right,j_right,3)]);
-//      double z_topright_offgrid = mean(cry[solps_3d_index(i_right,j_right,2)],cry[solps_3d_index(i_right,j_right,3)]);
-//      d1 = distance(r_right,z_right,r_topright_offgrid,z_topright_offgrid);
-//      d2 = distance(r_topright_offgrid,z_topright_offgrid,r_topright,z_topright);
-//      double a_topright_offgrid = (a_topright*d1 + a_right*d2)/(d1+d2);
-//      d1 = distance(r_top_mid,z_top_mid,r_top_right,z_top_right);
-//      d2 = distance(r_top_right,z_top_right,r_topright_offgrid,z_topright_offgrid);
-//      double a_topright_corner = (a_topright_offgrid*d1 + a_top_mid*d2)/(d1+d2);
-//
-//      double r_bottomright_offgrid = mean(crx[solps_3d_index(i_right,j_right,0)],crx[solps_3d_index(i_right,j_right,1)]);
-//      double z_bottomright_offgrid = mean(cry[solps_3d_index(i_right,j_right,0)],cry[solps_3d_index(i_right,j_right,1)]);
-//      d1 = distance(r_right,z_right,r_bottomright_offgrid,z_bottomright_offgrid);
-//      d2 = distance(r_bottomright_offgrid,z_bottomright_offgrid,r_bottomright,z_bottomright);
-//      double a_bottomright_offgrid = (a_bottomright*d1 + a_right*d2)/(d1+d2);
-//      d1 = distance(r_bottom_mid,z_bottom_mid,r_bottom_right,z_bottom_right);
-//      d2 = distance(r_bottom_right,z_bottom_right,r_bottomright_offgrid,z_bottomright_offgrid);
-//      double a_bottomright_corner = (a_bottomright_offgrid*d1 + a_bottom_mid*d2)/(d1+d2);
-//
-//      double r_topleft_offgrid = mean(crx[solps_3d_index(i_left,j_left,2)],crx[solps_3d_index(i_left,j_left,3)]);
-//      double z_topleft_offgrid = mean(cry[solps_3d_index(i_left,j_left,2)],cry[solps_3d_index(i_left,j_left,3)]);
-//      d1 = distance(r_left,z_left,r_topleft_offgrid,z_topleft_offgrid);
-//      d2 = distance(r_topleft_offgrid,z_topleft_offgrid,r_topleft,z_topleft);
-//      double a_topleft_offgrid = (a_topleft*d1 + a_left*d2)/(d1+d2);
-//      d1 = distance(r_top_mid,z_top_mid,r_top_left,z_top_left);
-//      d2 = distance(r_top_left,z_top_left,r_topleft_offgrid,z_topleft_offgrid);
-//      double a_topleft_corner = (a_topleft_offgrid*d1 + a_top_mid*d2)/(d1+d2);
-//      
-//      double r_bottomleft_offgrid = mean(crx[solps_3d_index(i_left,j_left,0)],crx[solps_3d_index(i_left,j_left,1)]);
-//      double z_bottomleft_offgrid = mean(cry[solps_3d_index(i_left,j_left,0)],cry[solps_3d_index(i_left,j_left,1)]);
-//
-//      d1 = distance(r_left,z_left,r_bottomleft_offgrid,z_bottomleft_offgrid);
-//      d2 = distance(r_bottomleft_offgrid,z_bottomleft_offgrid,r_bottomleft,z_bottomleft);
-//      double a_bottomleft_offgrid = (a_bottomleft*d1 + a_left*d2)/(d1+d2);
-//      d1 = distance(r_bottom_mid,z_bottom_mid,r_bottom_left,z_bottom_left);
-//      d2 = distance(r_bottom_left,z_bottom_left,r_bottomleft_offgrid,z_bottomleft_offgrid);
-//      double a_bottomleft_corner = (a_bottomleft_offgrid*d1 + a_bottom_mid*d2)/(d1+d2);
-//      int triangle_index = solps_3d_index_store(i-1,j-1,0);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_top_mid;
-//      z2[triangle_index] = z_top_mid;
-//      v2[triangle_index] = a_top_mid;
-//      r3[triangle_index] = r_top_right;
-//      z3[triangle_index] = z_top_right;
-//      v3[triangle_index] = a_topright_corner;
-//      double d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      double d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      double d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      double max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//
-//      triangle_index = solps_3d_index_store(i-1,j-1,1);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_top_right;
-//      z2[triangle_index] = z_top_right;
-//      v2[triangle_index] = a_topright_corner;
-//      r3[triangle_index] = r_right_mid;
-//      z3[triangle_index] = z_right_mid;
-//      v3[triangle_index] = a_right_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,2);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_right_mid;
-//      z2[triangle_index] = z_right_mid;
-//      v2[triangle_index] = a_right_mid;
-//      r3[triangle_index] = r_bottom_right;
-//      z3[triangle_index] = z_bottom_right;
-//      v3[triangle_index] = a_bottomright_corner;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,3);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_bottom_right;
-//      z2[triangle_index] = z_bottom_right;
-//      v2[triangle_index] = a_bottomright_corner;
-//      r3[triangle_index] = r_bottom_mid;
-//      z3[triangle_index] = z_bottom_mid;
-//      v3[triangle_index] = a_bottom_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,4);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_bottom_mid;
-//      z2[triangle_index] = z_bottom_mid;
-//      v2[triangle_index] = a_bottom_mid;
-//      r3[triangle_index] = r_bottom_left;
-//      z3[triangle_index] = z_bottom_left;
-//      v3[triangle_index] = a_bottomleft_corner;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,5);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_bottom_left;
-//      z2[triangle_index] = z_bottom_left;
-//      v2[triangle_index] = a_bottomleft_corner;
-//      r3[triangle_index] = r_left_mid;
-//      z3[triangle_index] = z_left_mid;
-//      v3[triangle_index] = a_left_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,6);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_left_mid;
-//      z2[triangle_index] = z_left_mid;
-//      v2[triangle_index] = a_left_mid;
-//      r3[triangle_index] = r_top_left;
-//      z3[triangle_index] = z_top_left;
-//      v3[triangle_index] = a_topleft_corner;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,7);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_top_left;
-//      z2[triangle_index] = z_top_left;
-//      v2[triangle_index] = a_topleft_corner;
-//      r3[triangle_index] = r_top_mid;
-//      z3[triangle_index] = z_top_mid;
-//      v3[triangle_index] = a_top_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      if(i==1)
-//      {
-//	        double target_buff = 0.01;
-//		r1_edge[(j-1)*4 + 0] = r_top_left;
-//		z1_edge[(j-1)*4 + 0] = z_top_left;
-//		r2_edge[(j-1)*4 + 0] = r_bottom_left;
-//		z2_edge[(j-1)*4 + 0] = z_bottom_left;
-//		v1_edge[(j-1)*4 + 0] = a_topleft_corner;
-//		v2_edge[(j-1)*4 + 0] = a_bottomleft_corner;
-//
-//		r1_edge[(j-1)*4 + 1] = r_bottom_left;
-//		z1_edge[(j-1)*4 + 1] = z_bottom_left;
-//		v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-//
-//
-//                double topvecr = r_top_left - r_top_right;
-//		double topvecz = z_top_left - z_top_right;
-//                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-//
-//                double bottomvecr = r_bottom_left - r_bottom_right;
-//		double bottomvecz = z_bottom_left - z_bottom_right;
-//                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-//                
-//		r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*topvecr;
-//		z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*topvecz;
-//		v2_edge[(j-1)*4 + 1] = a_topleft_corner;
-//		
-//		r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*topvecr;
-//		r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*bottomvecr;
-//		z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*topvecz;
-//		z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*bottomvecz;
-//		v3_edge[(j-1)*4 + 0] = a_topleft_corner;
-//		v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-//      
-//		d12 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-//			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-//		d23 = distance(r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0],
-//			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-//		d13 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-//			       r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0]); 
-//      		max1 = std::max(d12,d23);
-//      		radius_edge[(j-1)*4 + 0] = std::max(max1,d13);
-//		
-//		d12 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-//			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-//		d23 = distance(r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1],
-//			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-//		d13 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-//			       r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1]); 
-//      		max1 = std::max(d12,d23);
-//      		radius_edge[(j-1)*4 + 1] = std::max(max1,d13);
-//      }
-//
-//    }
-//  }
-//
-//  for(int ii = 0; ii< 2*ny;ii++)
-//  {
-//	  v1.push_back(v1_edge[ii]);
-//	  v2.push_back(v2_edge[ii]);
-//	  v3.push_back(v3_edge[ii]);
-//  }
-//
-//  return std::make_tuple(v1, v2, v3);
-//}
 
 std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
             get_scalar_field_tris(std::vector<double> solps_field,
@@ -2315,7 +1776,6 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
   nx = nxny[0];
   ny = nxny[1];
 
-  // Calculate Efield on SOLPS grid
   int n_total = nx*ny*8;
   r1.resize(n_total,0.0);
   r2.resize(n_total,0.0);
@@ -2355,18 +1815,16 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
   std::vector<int> bottomiy = read_ifield("b2fgmtry", "bottomiy");
     
   for (int i = 0; i< leftix.size(); i++)
-          {
-            leftix[i] = leftix[i] + 1;
-            leftiy[i] = leftiy[i] + 1;
-            rightix[i] = rightix[i] + 1;
-            rightiy[i] = rightiy[i] + 1;
-            topix[i] = topix[i] + 1;
-            topiy[i] = topiy[i] + 1;
-            bottomix[i] = bottomix[i] + 1;
-            bottomiy[i] = bottomiy[i] + 1;
-          }
-  // Get SOLPS state variables
-  //std::vector<double> po = read_dfield("b2fstate", scalar_string);
+  {
+    leftix[i] = leftix[i] + 1;
+    leftiy[i] = leftiy[i] + 1;
+    rightix[i] = rightix[i] + 1;
+    rightiy[i] = rightiy[i] + 1;
+    topix[i] = topix[i] + 1;
+    topiy[i] = topiy[i] + 1;
+    bottomix[i] = bottomix[i] + 1;
+    bottomiy[i] = bottomiy[i] + 1;
+  }
 
   for (int i=1; i < nx+1; i++)
   {
@@ -2513,7 +1971,7 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
                                   cry);
       double a_bottomleft = solps_field[index_bottomleft];
 
-            //% Interpolate values at cell edges
+      //% Interpolate values at cell edges
       double d1 = distance(r_cell,z_cell,r_top_mid,z_top_mid);
       double d2 = distance(r_top_mid,z_top_mid,r_top,z_top);
       double a_top_mid = (a_top*d1 + a_cell*d2)/(d1+d2);
@@ -2694,112 +2152,112 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
       
       if(i==1)
       {
-	        double target_buff = 0.01;
-		r1_edge[(j-1)*4 + 0] = r_top_left;
-		z1_edge[(j-1)*4 + 0] = z_top_left;
-		r2_edge[(j-1)*4 + 0] = r_bottom_left;
-		z2_edge[(j-1)*4 + 0] = z_bottom_left;
-		v1_edge[(j-1)*4 + 0] = a_topleft_corner;
-		v2_edge[(j-1)*4 + 0] = a_bottomleft_corner;
-
-		r1_edge[(j-1)*4 + 1] = r_bottom_left;
-		z1_edge[(j-1)*4 + 1] = z_bottom_left;
-		v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-
-
-                double topvecr = r_top_left - r_top_right;
-		double topvecz = z_top_left - z_top_right;
-                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-
-                double bottomvecr = r_bottom_left - r_bottom_right;
-		double bottomvecz = z_bottom_left - z_bottom_right;
-                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-                
-		r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*topvecr;
-		z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*topvecz;
-		v2_edge[(j-1)*4 + 1] = a_topleft_corner;
-		
-		r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*topvecr;
-		r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*bottomvecr;
-		z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*topvecz;
-		z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*bottomvecz;
-		v3_edge[(j-1)*4 + 0] = a_topleft_corner;
-		v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-      
-		d12 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-		d23 = distance(r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0],
-			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-		d13 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-			       r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 0] = std::max(max1,d13);
-		
-		d12 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-		d23 = distance(r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1],
-			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-		d13 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-			       r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 1] = std::max(max1,d13);
+        double target_buff = 0.01;
+        r1_edge[(j-1)*4 + 0] = r_top_left;
+        z1_edge[(j-1)*4 + 0] = z_top_left;
+        r2_edge[(j-1)*4 + 0] = r_bottom_left;
+        z2_edge[(j-1)*4 + 0] = z_bottom_left;
+        v1_edge[(j-1)*4 + 0] = a_topleft_corner;
+        v2_edge[(j-1)*4 + 0] = a_bottomleft_corner;
+        
+        r1_edge[(j-1)*4 + 1] = r_bottom_left;
+        z1_edge[(j-1)*4 + 1] = z_bottom_left;
+        v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
+        
+        
+        double topvecr = r_top_left - r_top_right;
+        double topvecz = z_top_left - z_top_right;
+        double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
+        
+        double bottomvecr = r_bottom_left - r_bottom_right;
+        double bottomvecz = z_bottom_left - z_bottom_right;
+        double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
+                    
+        r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*topvecr;
+        z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*topvecz;
+        v2_edge[(j-1)*4 + 1] = a_topleft_corner;
+        
+        r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*topvecr;
+        r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*bottomvecr;
+        z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*topvecz;
+        z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*bottomvecz;
+        v3_edge[(j-1)*4 + 0] = a_topleft_corner;
+        v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
+          
+        d12 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
+        r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
+        d23 = distance(r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0],
+        r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
+        d13 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
+        r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0]); 
+        max1 = std::max(d12,d23);
+        radius_edge[(j-1)*4 + 0] = std::max(max1,d13);
+        
+        d12 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
+        r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
+        d23 = distance(r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1],
+        r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
+        d13 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
+        r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1]); 
+        max1 = std::max(d12,d23);
+        radius_edge[(j-1)*4 + 1] = std::max(max1,d13);
       }
-      
+          
       if(i==nx)
       {
-	        double target_buff = 0.01;
-		r1_edge[(j-1)*4 + 2] = r_top_right;
-		z1_edge[(j-1)*4 + 2] = z_top_right;
-		r2_edge[(j-1)*4 + 2] = r_bottom_right;
-		z2_edge[(j-1)*4 + 2] = z_bottom_right;
-		v1_edge[(j-1)*4 + 2] = a_topright_corner;
-		v2_edge[(j-1)*4 + 2] = a_bottomright_corner;
-
-		r1_edge[(j-1)*4 + 3] = r_bottom_right;
-		z1_edge[(j-1)*4 + 3] = z_bottom_right;
-		v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
-
-
-                double topvecr = -(r_top_left - r_top_right);
-		double topvecz = -(z_top_left - z_top_right);
-                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-		topvecr = topvecr/topvecnorm;
-		topvecz = topvecz/topvecnorm;
-
-                double bottomvecr = -(r_bottom_left - r_bottom_right);
-		double bottomvecz = -(z_bottom_left - z_bottom_right);
-                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-		bottomvecr = bottomvecr/bottomvecnorm;
-		bottomvecz = bottomvecz/bottomvecnorm;
-                
-		r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*topvecr;
-		z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*topvecz;
-		v2_edge[(j-1)*4 + 3] = a_topright_corner;
-		
-		r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*topvecr;
-		r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*bottomvecr;
-		z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*topvecz;
-		z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*bottomvecz;
-		v3_edge[(j-1)*4 + 2] = a_topright_corner;
-		v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
-      
-		d12 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
-			       r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
-		d23 = distance(r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2],
-			       r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
-		d13 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
-			       r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 2] = std::max(max1,d13);
-		
-		d12 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
-			       r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
-		d23 = distance(r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3],
-			       r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
-		d13 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
-			       r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3]); 
-      		max1 = std::max(d12,d23);
-      		radius_edge[(j-1)*4 + 3] = std::max(max1,d13);
+          double target_buff = 0.01;
+          r1_edge[(j-1)*4 + 2] = r_top_right;
+          z1_edge[(j-1)*4 + 2] = z_top_right;
+          r2_edge[(j-1)*4 + 2] = r_bottom_right;
+          z2_edge[(j-1)*4 + 2] = z_bottom_right;
+          v1_edge[(j-1)*4 + 2] = a_topright_corner;
+          v2_edge[(j-1)*4 + 2] = a_bottomright_corner;
+          
+          r1_edge[(j-1)*4 + 3] = r_bottom_right;
+          z1_edge[(j-1)*4 + 3] = z_bottom_right;
+          v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
+          
+          
+          double topvecr = -(r_top_left - r_top_right);
+          double topvecz = -(z_top_left - z_top_right);
+          double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
+          topvecr = topvecr/topvecnorm;
+          topvecz = topvecz/topvecnorm;
+          
+          double bottomvecr = -(r_bottom_left - r_bottom_right);
+          double bottomvecz = -(z_bottom_left - z_bottom_right);
+          double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
+          bottomvecr = bottomvecr/bottomvecnorm;
+          bottomvecz = bottomvecz/bottomvecnorm;
+                      
+          r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*topvecr;
+          z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*topvecz;
+          v2_edge[(j-1)*4 + 3] = a_topright_corner;
+          
+          r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*topvecr;
+          r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*bottomvecr;
+          z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*topvecz;
+          z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*bottomvecz;
+          v3_edge[(j-1)*4 + 2] = a_topright_corner;
+          v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
+            
+          d12 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
+          r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
+          d23 = distance(r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2],
+          r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
+          d13 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
+          r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2]); 
+          max1 = std::max(d12,d23);
+          radius_edge[(j-1)*4 + 2] = std::max(max1,d13);
+          
+          d12 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
+          r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
+          d23 = distance(r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3],
+          r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
+          d13 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
+          r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3]); 
+          max1 = std::max(d12,d23);
+          radius_edge[(j-1)*4 + 3] = std::max(max1,d13);
       }
 
     }
@@ -2807,532 +2265,27 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
 
   for(int ii = 0; ii< 4*ny;ii++)
   {
-	  v1.push_back(v1_edge[ii]);
-	  v2.push_back(v2_edge[ii]);
-	  v3.push_back(v3_edge[ii]);
+    v1.push_back(v1_edge[ii]);
+    v2.push_back(v2_edge[ii]);
+    v3.push_back(v3_edge[ii]);
   }
     
 
   return std::make_tuple(v1, v2, v3);
 }
 
-//std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
-//            get_scalar_field_tris_left(std::vector<double> solps_field,
-//           std::vector<double> v1,std::vector<double> v2,
-//           std::vector<double> v3)
-//{
-//           std::vector<double> r1, r2, r3, z1, z2, z3, radius;
-//  
-//           std::vector<int> nxny = read_ifield("b2fgmtry","nx,ny");
-//
-//  nx = nxny[0];
-//  ny = nxny[1];
-//
-//  // Calculate Efield on SOLPS grid
-//  int n_total = nx*ny*8;
-//  r1.resize(n_total,0.0);
-//  r2.resize(n_total,0.0);
-//  r3.resize(n_total,0.0);
-//  z1.resize(n_total,0.0);
-//  z2.resize(n_total,0.0);
-//  z3.resize(n_total,0.0);
-//  v1.resize(n_total,0.0);
-//  v2.resize(n_total,0.0);
-//  v3.resize(n_total,0.0);
-//  radius.resize(n_total,0.0);
-//  
-//  int n_edge_total = 4*ny;
-//  std::vector<double> r1_edge(n_edge_total,0.0);
-//  std::vector<double> r2_edge(n_edge_total,0.0);
-//  std::vector<double> r3_edge(n_edge_total,0.0);
-//  std::vector<double> z1_edge(n_edge_total,0.0);
-//  std::vector<double> z2_edge(n_edge_total,0.0);
-//  std::vector<double> z3_edge(n_edge_total,0.0);
-//  std::vector<double> v1_edge(n_edge_total,0.0);
-//  std::vector<double> v2_edge(n_edge_total,0.0);
-//  std::vector<double> v3_edge(n_edge_total,0.0);
-//  std::vector<double> radius_edge(n_edge_total,0.0);
-//    
-//  std::vector<double> crx = read_dfield("b2fgmtry", "crx");
-//  std::vector<double> cry = read_dfield("b2fgmtry", "cry");
-//  std::vector<double> hx = read_dfield("b2fgmtry", "hx");
-//  std::vector<double> hy = read_dfield("b2fgmtry", "hy");
-//  
-//  std::vector<int> leftix = read_ifield("b2fgmtry", "leftix");
-//  std::vector<int> leftiy = read_ifield("b2fgmtry", "leftiy");
-//  std::vector<int> rightix = read_ifield("b2fgmtry", "rightix");
-//  std::vector<int> rightiy = read_ifield("b2fgmtry", "rightiy");
-//  std::vector<int> topix = read_ifield("b2fgmtry", "topix");
-//  std::vector<int> topiy = read_ifield("b2fgmtry", "topiy");
-//  std::vector<int> bottomix = read_ifield("b2fgmtry", "bottomix");
-//  std::vector<int> bottomiy = read_ifield("b2fgmtry", "bottomiy");
-//    
-//  for (int i = 0; i< leftix.size(); i++)
-//          {
-//            leftix[i] = leftix[i] + 1;
-//            leftiy[i] = leftiy[i] + 1;
-//            rightix[i] = rightix[i] + 1;
-//            rightiy[i] = rightiy[i] + 1;
-//            topix[i] = topix[i] + 1;
-//            topiy[i] = topiy[i] + 1;
-//            bottomix[i] = bottomix[i] + 1;
-//            bottomiy[i] = bottomiy[i] + 1;
-//          }
-//  // Get SOLPS state variables
-//  //std::vector<double> po = read_dfield("b2fstate", scalar_string);
-//
-//  for (int i=1; i < nx+1; i++)
-//  {
-//    for( int j=1; j < ny+1; j++)
-//    {
-//      int cell_2d_index = solps_2d_index(i,j);
-//
-//      double cell_hx = hx[cell_2d_index];
-//      double cell_hy = hy[cell_2d_index];
-//      double cell_po = solps_field[cell_2d_index];
-//
-//      int top_2d_index = solps_2d_index(topix[solps_2d_index(i,j)],
-//                                        topiy[solps_2d_index(i,j)]);
-//
-//      double top_hx = hx[top_2d_index];
-//      double top_hy = hy[top_2d_index];
-//      double top_po = solps_field[top_2d_index];
-//
-//      int bottom_2d_index = solps_2d_index(bottomix[solps_2d_index(i,j)],
-//                                        bottomiy[solps_2d_index(i,j)]);
-//
-//      double bottom_hx = hx[bottom_2d_index];
-//      double bottom_hy = hy[bottom_2d_index];
-//      double bottom_po = solps_field[bottom_2d_index];
-//
-//      int right_2d_index = solps_2d_index(rightix[solps_2d_index(i,j)],
-//                                        rightiy[solps_2d_index(i,j)]);
-//
-//      double right_hx = hx[right_2d_index];
-//      double right_hy = hy[right_2d_index];
-//      double right_po = solps_field[right_2d_index];
-//
-//      int left_2d_index = solps_2d_index(leftix[solps_2d_index(i,j)],
-//                                        leftiy[solps_2d_index(i,j)]);
-//
-//      double left_hx = hx[left_2d_index];
-//      double left_hy = hy[left_2d_index];
-//      double left_po = solps_field[left_2d_index];
-//      
-//      double r_bottom_left = crx[solps_3d_index(i,j,0)];
-//      double z_bottom_left = cry[solps_3d_index(i,j,0)];
-//      double r_bottom_right = crx[solps_3d_index(i,j,1)];
-//      double z_bottom_right = cry[solps_3d_index(i,j,1)];
-//      double r_top_left = crx[solps_3d_index(i,j,2)];
-//      double z_top_left = cry[solps_3d_index(i,j,2)];
-//      double r_top_right = crx[solps_3d_index(i,j,3)];
-//      double z_top_right = cry[solps_3d_index(i,j,3)];
-//
-//      double r_right_mid = mean(r_top_right, r_bottom_right);
-//      double z_right_mid = mean(z_top_right, z_bottom_right);
-//      double r_left_mid = mean(r_top_left, r_bottom_left);
-//      double z_left_mid = mean(z_top_left, z_bottom_left);
-//      double r_top_mid = mean(r_top_left, r_top_right);
-//      double z_top_mid = mean(z_top_left, z_top_right);
-//      double r_bottom_mid = mean(r_bottom_left, r_bottom_right);
-//      double z_bottom_mid = mean(z_bottom_left, z_bottom_right);
-//
-//      double norm_left_right = std::sqrt((r_right_mid - r_left_mid)*(r_right_mid - r_left_mid) +
-//            (z_right_mid - z_left_mid)*(z_right_mid - z_left_mid));
-//
-//      double norm_bottom_top = std::sqrt((r_top_mid - r_bottom_mid)*(r_top_mid - r_bottom_mid) +
-//            (z_top_mid - z_bottom_mid)*(z_top_mid - z_bottom_mid));
-//
-//      int i_left = leftix[solps_2d_index(i,j)];
-//      int j_left = leftiy[solps_2d_index(i,j)];
-//      int i_right = rightix[solps_2d_index(i,j)];
-//      int j_right = rightiy[solps_2d_index(i,j)];
-//      int index_left = solps_2d_index(leftix[solps_2d_index(i,j)],
-//                                   leftiy[solps_2d_index(i,j)]);
-//      int index_right = solps_2d_index(rightix[solps_2d_index(i,j)],
-//                                    rightiy[solps_2d_index(i,j)]);
-//      int index_bottom = solps_2d_index(bottomix[solps_2d_index(i,j)],
-//                                     bottomiy[solps_2d_index(i,j)]);
-//      int index_top = solps_2d_index(topix[solps_2d_index(i,j)],
-//                                  topiy[solps_2d_index(i,j)]);
-//       
-//      int index_topright = solps_2d_index(rightix[index_top],
-//                                       rightiy[index_top]);
-//      int index_topleft = solps_2d_index(leftix[index_top],
-//                                      leftiy[index_top]);
-//      int index_bottomright = solps_2d_index(rightix[index_bottom],
-//                                       rightiy[index_bottom]);
-//      int index_bottomleft = solps_2d_index(leftix[index_bottom],
-//                                      leftiy[index_bottom]);
-//      
-//      double r_cell = cell_center(i,j,crx);
-//      double z_cell = cell_center(i,j,cry);
-//      double a_cell = solps_field[solps_2d_index(i,j)];
-//
-//      double r_left = cell_center(leftix[solps_2d_index(i,j)],
-//                                  leftiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_left = cell_center(leftix[solps_2d_index(i,j)],
-//                                  leftiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_left = a_cell; //solps_field[index_left];
-//      double r_right = cell_center(rightix[solps_2d_index(i,j)],
-//                                  rightiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_right = cell_center(rightix[solps_2d_index(i,j)],
-//                                  rightiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_right = solps_field[index_right];
-//      double r_bottom = cell_center(bottomix[solps_2d_index(i,j)],
-//                                  bottomiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_bottom = cell_center(bottomix[solps_2d_index(i,j)],
-//                                  bottomiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_bottom = solps_field[index_bottom];
-//      double r_top = cell_center(topix[solps_2d_index(i,j)],
-//                                  topiy[solps_2d_index(i,j)],
-//                                  crx);
-//      double z_top = cell_center(topix[solps_2d_index(i,j)],
-//                                  topiy[solps_2d_index(i,j)],
-//                                  cry);
-//      double a_top = solps_field[index_top];
-//      double r_topright = cell_center(rightix[index_top],
-//                                  rightiy[index_top],
-//                                  crx);
-//      double z_topright = cell_center(rightix[index_top],
-//                                      rightiy[index_top],
-//                                  cry);
-//      double a_topright = solps_field[index_topright];
-//      double r_topleft = cell_center(leftix[index_top],
-//                                     leftiy[index_top],
-//                                  crx);
-//      double z_topleft = cell_center(leftix[index_top],
-//                                     leftiy[index_top],
-//                                  cry);
-//      double a_topleft = a_top; //solps_field[index_topleft];
-//      double r_bottomright = cell_center(rightix[index_bottom],
-//                                  rightiy[index_bottom],
-//                                  crx);
-//      double z_bottomright = cell_center(rightix[index_bottom],
-//                                      rightiy[index_bottom],
-//                                  cry);
-//      double a_bottomright = solps_field[index_bottomright];
-//      double r_bottomleft = cell_center(leftix[index_bottom],
-//                                     leftiy[index_bottom],
-//                                  crx);
-//      double z_bottomleft = cell_center(leftix[index_bottom],
-//                                     leftiy[index_bottom],
-//                                  cry);
-//      double a_bottomleft = a_bottom; //solps_field[index_bottomleft];
-//
-//            //% Interpolate values at cell edges
-//      double d1 = distance(r_cell,z_cell,r_top_mid,z_top_mid);
-//      double d2 = distance(r_top_mid,z_top_mid,r_top,z_top);
-//      double a_top_mid = (a_top*d1 + a_cell*d2)/(d1+d2);
-//      d1 = distance(r_cell,z_cell,r_bottom_mid,z_bottom_mid);
-//      d2 = distance(r_bottom_mid,z_bottom_mid,r_bottom,z_bottom);
-//      double a_bottom_mid = (a_bottom*d1 + a_cell*d2)/(d1+d2);
-//      d1 = distance(r_cell,z_cell,r_right_mid,z_right_mid);
-//      d2 = distance(r_right_mid,z_right_mid,r_right,z_right);
-//      double a_right_mid = (a_right*d1 + a_cell*d2)/(d1+d2);
-//      d1 = distance(r_cell,z_cell,r_left_mid,z_left_mid);
-//      d2 = distance(r_left_mid,z_left_mid,r_left,z_left);
-//      double a_left_mid = (a_left*d1 + a_cell*d2)/(d1+d2);
-//
-//      // % Off grid values for corners
-//      double r_topright_offgrid = mean(crx[solps_3d_index(i_right,j_right,2)],crx[solps_3d_index(i_right,j_right,3)]);
-//      double z_topright_offgrid = mean(cry[solps_3d_index(i_right,j_right,2)],cry[solps_3d_index(i_right,j_right,3)]);
-//      d1 = distance(r_right,z_right,r_topright_offgrid,z_topright_offgrid);
-//      d2 = distance(r_topright_offgrid,z_topright_offgrid,r_topright,z_topright);
-//      double a_topright_offgrid = (a_topright*d1 + a_right*d2)/(d1+d2);
-//      d1 = distance(r_top_mid,z_top_mid,r_top_right,z_top_right);
-//      d2 = distance(r_top_right,z_top_right,r_topright_offgrid,z_topright_offgrid);
-//      double a_topright_corner = (a_topright_offgrid*d1 + a_top_mid*d2)/(d1+d2);
-//
-//      double r_bottomright_offgrid = mean(crx[solps_3d_index(i_right,j_right,0)],crx[solps_3d_index(i_right,j_right,1)]);
-//      double z_bottomright_offgrid = mean(cry[solps_3d_index(i_right,j_right,0)],cry[solps_3d_index(i_right,j_right,1)]);
-//      d1 = distance(r_right,z_right,r_bottomright_offgrid,z_bottomright_offgrid);
-//      d2 = distance(r_bottomright_offgrid,z_bottomright_offgrid,r_bottomright,z_bottomright);
-//      double a_bottomright_offgrid = (a_bottomright*d1 + a_right*d2)/(d1+d2);
-//      d1 = distance(r_bottom_mid,z_bottom_mid,r_bottom_right,z_bottom_right);
-//      d2 = distance(r_bottom_right,z_bottom_right,r_bottomright_offgrid,z_bottomright_offgrid);
-//      double a_bottomright_corner = (a_bottomright_offgrid*d1 + a_bottom_mid*d2)/(d1+d2);
-//
-//      double r_topleft_offgrid = mean(crx[solps_3d_index(i_left,j_left,2)],crx[solps_3d_index(i_left,j_left,3)]);
-//      double z_topleft_offgrid = mean(cry[solps_3d_index(i_left,j_left,2)],cry[solps_3d_index(i_left,j_left,3)]);
-//      d1 = distance(r_left,z_left,r_topleft_offgrid,z_topleft_offgrid);
-//      d2 = distance(r_topleft_offgrid,z_topleft_offgrid,r_topleft,z_topleft);
-//      double a_topleft_offgrid = (a_topleft*d1 + a_left*d2)/(d1+d2);
-//      d1 = distance(r_top_mid,z_top_mid,r_top_left,z_top_left);
-//      d2 = distance(r_top_left,z_top_left,r_topleft_offgrid,z_topleft_offgrid);
-//      double a_topleft_corner = (a_topleft_offgrid*d1 + a_top_mid*d2)/(d1+d2);
-//      
-//      double r_bottomleft_offgrid = mean(crx[solps_3d_index(i_left,j_left,0)],crx[solps_3d_index(i_left,j_left,1)]);
-//      double z_bottomleft_offgrid = mean(cry[solps_3d_index(i_left,j_left,0)],cry[solps_3d_index(i_left,j_left,1)]);
-//
-//      d1 = distance(r_left,z_left,r_bottomleft_offgrid,z_bottomleft_offgrid);
-//      d2 = distance(r_bottomleft_offgrid,z_bottomleft_offgrid,r_bottomleft,z_bottomleft);
-//      double a_bottomleft_offgrid = (a_bottomleft*d1 + a_left*d2)/(d1+d2);
-//      d1 = distance(r_bottom_mid,z_bottom_mid,r_bottom_left,z_bottom_left);
-//      d2 = distance(r_bottom_left,z_bottom_left,r_bottomleft_offgrid,z_bottomleft_offgrid);
-//      double a_bottomleft_corner = (a_bottomleft_offgrid*d1 + a_bottom_mid*d2)/(d1+d2);
-//      int triangle_index = solps_3d_index_store(i-1,j-1,0);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_top_mid;
-//      z2[triangle_index] = z_top_mid;
-//      v2[triangle_index] = a_top_mid;
-//      r3[triangle_index] = r_top_right;
-//      z3[triangle_index] = z_top_right;
-//      v3[triangle_index] = a_topright_corner;
-//      double d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      double d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      double d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      double max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//
-//      triangle_index = solps_3d_index_store(i-1,j-1,1);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_top_right;
-//      z2[triangle_index] = z_top_right;
-//      v2[triangle_index] = a_topright_corner;
-//      r3[triangle_index] = r_right_mid;
-//      z3[triangle_index] = z_right_mid;
-//      v3[triangle_index] = a_right_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,2);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_right_mid;
-//      z2[triangle_index] = z_right_mid;
-//      v2[triangle_index] = a_right_mid;
-//      r3[triangle_index] = r_bottom_right;
-//      z3[triangle_index] = z_bottom_right;
-//      v3[triangle_index] = a_bottomright_corner;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,3);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_bottom_right;
-//      z2[triangle_index] = z_bottom_right;
-//      v2[triangle_index] = a_bottomright_corner;
-//      r3[triangle_index] = r_bottom_mid;
-//      z3[triangle_index] = z_bottom_mid;
-//      v3[triangle_index] = a_bottom_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,4);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_bottom_mid;
-//      z2[triangle_index] = z_bottom_mid;
-//      v2[triangle_index] = a_bottom_mid;
-//      r3[triangle_index] = r_bottom_left;
-//      z3[triangle_index] = z_bottom_left;
-//      v3[triangle_index] = a_bottomleft_corner;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,5);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_bottom_left;
-//      z2[triangle_index] = z_bottom_left;
-//      v2[triangle_index] = a_bottomleft_corner;
-//      r3[triangle_index] = r_left_mid;
-//      z3[triangle_index] = z_left_mid;
-//      v3[triangle_index] = a_left_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,6);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_left_mid;
-//      z2[triangle_index] = z_left_mid;
-//      v2[triangle_index] = a_left_mid;
-//      r3[triangle_index] = r_top_left;
-//      z3[triangle_index] = z_top_left;
-//      v3[triangle_index] = a_topleft_corner;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      triangle_index = solps_3d_index_store(i-1,j-1,7);
-//      r1[triangle_index] = r_cell;
-//      z1[triangle_index] = z_cell;
-//      v1[triangle_index] = a_cell;
-//      r2[triangle_index] = r_top_left;
-//      z2[triangle_index] = z_top_left;
-//      v2[triangle_index] = a_topleft_corner;
-//      r3[triangle_index] = r_top_mid;
-//      z3[triangle_index] = z_top_mid;
-//      v3[triangle_index] = a_top_mid;
-//      d12 = distance(r1[triangle_index],z1[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d23 = distance(r3[triangle_index],z3[triangle_index],r2[triangle_index],z2[triangle_index]); 
-//      d13 = distance(r1[triangle_index],z1[triangle_index],r3[triangle_index],z3[triangle_index]); 
-//      max1 = std::max(d12,d23);
-//      radius[triangle_index] = std::max(max1,d13);
-//      
-//      if(i==1)
-//      {
-//	        double target_buff = 0.01;
-//		r1_edge[(j-1)*4 + 0] = r_top_left;
-//		z1_edge[(j-1)*4 + 0] = z_top_left;
-//		r2_edge[(j-1)*4 + 0] = r_bottom_left;
-//		z2_edge[(j-1)*4 + 0] = z_bottom_left;
-//		v1_edge[(j-1)*4 + 0] = a_topleft_corner;
-//		v2_edge[(j-1)*4 + 0] = a_bottomleft_corner;
-//
-//		r1_edge[(j-1)*4 + 1] = r_bottom_left;
-//		z1_edge[(j-1)*4 + 1] = z_bottom_left;
-//		v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-//
-//
-//                double topvecr = r_top_left - r_top_right;
-//		double topvecz = z_top_left - z_top_right;
-//                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-//
-//                double bottomvecr = r_bottom_left - r_bottom_right;
-//		double bottomvecz = z_bottom_left - z_bottom_right;
-//                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-//                
-//		r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*topvecr;
-//		z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*topvecz;
-//		v2_edge[(j-1)*4 + 1] = a_topleft_corner;
-//		
-//		r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*topvecr;
-//		r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*bottomvecr;
-//		z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*topvecz;
-//		z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*bottomvecz;
-//		v3_edge[(j-1)*4 + 0] = a_topleft_corner;
-//		v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
-//      
-//		d12 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-//			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-//		d23 = distance(r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0],
-//			       r2_edge[(j-1)*4 + 0],z2_edge[(j-1)*4 + 0]); 
-//		d13 = distance(r1_edge[(j-1)*4 + 0],z1_edge[(j-1)*4 + 0],
-//			       r3_edge[(j-1)*4 + 0],z3_edge[(j-1)*4 + 0]); 
-//      		max1 = std::max(d12,d23);
-//      		radius_edge[(j-1)*4 + 0] = std::max(max1,d13);
-//		
-//		d12 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-//			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-//		d23 = distance(r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1],
-//			       r2_edge[(j-1)*4 + 1],z2_edge[(j-1)*4 + 1]); 
-//		d13 = distance(r1_edge[(j-1)*4 + 1],z1_edge[(j-1)*4 + 1],
-//			       r3_edge[(j-1)*4 + 1],z3_edge[(j-1)*4 + 1]); 
-//      		max1 = std::max(d12,d23);
-//      		radius_edge[(j-1)*4 + 1] = std::max(max1,d13);
-//      }
-//      
-//      if(i==nx)
-//      {
-//	        double target_buff = 0.01;
-//		r1_edge[(j-1)*4 + 2] = r_top_right;
-//		z1_edge[(j-1)*4 + 2] = z_top_right;
-//		r2_edge[(j-1)*4 + 2] = r_bottom_right;
-//		z2_edge[(j-1)*4 + 2] = z_bottom_right;
-//		v1_edge[(j-1)*4 + 2] = a_topright_corner;
-//		v2_edge[(j-1)*4 + 2] = a_bottomright_corner;
-//
-//		r1_edge[(j-1)*4 + 3] = r_bottom_right;
-//		z1_edge[(j-1)*4 + 3] = z_bottom_right;
-//		v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
-//
-//
-//                double topvecr = -(r_top_left - r_top_right);
-//		double topvecz = -(z_top_left - z_top_right);
-//                double topvecnorm = std::sqrt(topvecr*topvecr + topvecz*topvecz);
-//		topvecr = topvecr/topvecnorm;
-//		topvecz = topvecz/topvecnorm;
-//
-//                double bottomvecr = -(r_bottom_left - r_bottom_right);
-//		double bottomvecz = -(z_bottom_left - z_bottom_right);
-//                double bottomvecnorm = std::sqrt(bottomvecr*bottomvecr + bottomvecz*bottomvecz);
-//		bottomvecr = bottomvecr/bottomvecnorm;
-//		bottomvecz = bottomvecz/bottomvecnorm;
-//                
-//		r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*topvecr;
-//		z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*topvecz;
-//		v2_edge[(j-1)*4 + 3] = a_topright_corner;
-//		
-//		r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*topvecr;
-//		r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*bottomvecr;
-//		z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*topvecz;
-//		z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*bottomvecz;
-//		v3_edge[(j-1)*4 + 2] = a_topright_corner;
-//		v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
-//      
-//		d12 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
-//			       r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
-//		d23 = distance(r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2],
-//			       r2_edge[(j-1)*4 + 2],z2_edge[(j-1)*4 + 2]); 
-//		d13 = distance(r1_edge[(j-1)*4 + 2],z1_edge[(j-1)*4 + 2],
-//			       r3_edge[(j-1)*4 + 2],z3_edge[(j-1)*4 + 2]); 
-//      		max1 = std::max(d12,d23);
-//      		radius_edge[(j-1)*4 + 2] = std::max(max1,d13);
-//		
-//		d12 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
-//			       r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
-//		d23 = distance(r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3],
-//			       r2_edge[(j-1)*4 + 3],z2_edge[(j-1)*4 + 3]); 
-//		d13 = distance(r1_edge[(j-1)*4 + 3],z1_edge[(j-1)*4 + 3],
-//			       r3_edge[(j-1)*4 + 3],z3_edge[(j-1)*4 + 3]); 
-//      		max1 = std::max(d12,d23);
-//      		radius_edge[(j-1)*4 + 3] = std::max(max1,d13);
-//      }
-//
-//    }
-//  }
-//
-//  for(int ii = 0; ii< 4*ny;ii++)
-//  {
-//	  v1.push_back(v1_edge[ii]);
-//	  v2.push_back(v2_edge[ii]);
-//	  v3.push_back(v3_edge[ii]);
-//  }
-//    
-//
-//  return std::make_tuple(v1, v2, v3);
-//}
-
 int main()
 {
-	netCDF::NcType netcdf_precision = netCDF::ncFloat;
+    // Depending on output size and precision needed, 
+    // netCDF binaries can be set to float or double here
+    netCDF::NcType netcdf_precision = netCDF::ncFloat;
+    
+    // On multiple GPU machines, the device can be hardcoded
     //cudaSetDevice(1);
+    // Alternately, this can be set at the command line
+    // using CUDA_VISIBLE_DEVICES=0. Indexing begins with 0
+    
+    // Timer - usually start with one resolution and go up
     typedef std::chrono::high_resolution_clock app_time;
     auto app_start_time = app_time::now();
     
@@ -3346,21 +2299,51 @@ int main()
     ns = nxnyns[2];
     
     int n8 = 8;
+    
+    // Total number of triangles
+    // SOLPS quadrilaterals are split into 8 triangles
+    // An additional 2 at each end of the x grid (4)
     int n_total = nx*ny*n8 + 4*ny;
    
     // SOLPS variables 
+    // Lower bound on charge for bundled species.
+    // When there is no bundling, this is just the charge of the species.
     std::vector<double> zamin = read_dfield("b2fstate","zamin");
+
+    // Atomic number of the species.
     std::vector<double> zn = read_dfield("b2fstate","zn");
+
+    // Molecular mass of the species
     std::vector<double> am = read_dfield("b2fstate","am");
+
+    // Ion densities
     std::vector<double> na = read_dfield("b2fstate","na");
+
+    // Electron densities
     std::vector<double> ne = read_dfield("b2fstate","ne");
+
+    // Ion fluxes through SOLPS cell faces
     std::vector<double> fna = read_dfield("b2fstate","fna");
+
+    // Electric potential
     std::vector<double> po = read_dfield("b2fstate", "po");
+
+    // Electron temperature
     std::vector<double> te = read_dfield("b2fstate", "te");
+
+    // Ion temperature
     std::vector<double> ti = read_dfield("b2fstate", "ti");
+
+    // Ion flow velocities
     std::vector<double> ua = read_dfield("b2fstate", "ua");
+
+    // Magnetic field components
     std::vector<double> bb = read_dfield("b2fgmtry", "bb");
+
+    // Target areas
     std::vector<double> gs = read_dfield("b2fgmtry", "gs");
+    
+    // Convert Ti and Te from Joules to eV
     for(int i=0; i<ti.size();i++)
     {
       ti[i] = ti[i]/1.602176565e-19;
@@ -3386,6 +2369,7 @@ int main()
     std::vector<std::vector<double>> flowv(ns);
     std::vector<std::vector<double>> bfield(4);
    
+    // Set size for 2d vectors
     for ( int i = 0 ; i < ns ; i++ )
     {
       flux[i].resize((nx+2)*(ny+2));
@@ -3393,6 +2377,7 @@ int main()
       flowv[i].resize((nx+2)*(ny+2));
     }
     
+    // Set size for 2d B-field vectors
     for ( int i = 0 ; i < 4 ; i++ )
     {
       bfield[i].resize((nx+2)*(ny+2));
@@ -3411,27 +2396,34 @@ int main()
       {
         for(int k=0; k<ns; k++)
         {
+          // The 4d index function has an extra argument whic is the size of the 3rd dimension.
+          // In this case, the 3rd dimension is 0 for x-directed flux, 1 for y-directed flux
+          // So the last argument is size 2.
+          // The flux convention is the flux between the (i-1)th and (i)th cells, or the left face of the i cell
           flux[k][solps_2d_index(i,j)] = fna[solps_4d_index(i,j,0,k,2)];
           ni[k][solps_2d_index(i,j)] = na[solps_3d_index(i,j,k)];
           flowv[k][solps_2d_index(i,j)] = ua[solps_3d_index(i,j,k)];
 
+          // For averaged plasma parameters, exclude neutrals (charge 0)
           if(zamin[k] > 0.0)
-          {	 
+          {
             ion_density[solps_2d_index(i,j)] = ion_density[solps_2d_index(i,j)] + na[solps_3d_index(i,j,k)];
             ion_charge[solps_2d_index(i,j)] = ion_charge[solps_2d_index(i,j)] + na[solps_3d_index(i,j,k)]*zamin[k];
             ion_mass[solps_2d_index(i,j)] = ion_mass[solps_2d_index(i,j)] + na[solps_3d_index(i,j,k)]*am[k];
             ion_flow[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)] + na[solps_3d_index(i,j,k)]*flowv[k][solps_2d_index(i,j)];
           }
         }
-	if(ion_density[solps_2d_index(i,j)]>0.0)
-	{
+        
+        if(ion_density[solps_2d_index(i,j)] > 0.0)
+        {
             ion_charge[solps_2d_index(i,j)] = ion_charge[solps_2d_index(i,j)]/ion_density[solps_2d_index(i,j)];
             ion_mass[solps_2d_index(i,j)] = ion_mass[solps_2d_index(i,j)]/ion_density[solps_2d_index(i,j)];
             
             ion_flow[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]/ion_density[solps_2d_index(i,j)];
-	}
-	if(Bmag[solps_2d_index(i,j)] > 0.0)
-	{
+        }
+        
+        if(Bmag[solps_2d_index(i,j)] > 0.0)
+        {
             ion_vr[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Br[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             ion_vt[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             ion_vz[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
@@ -3441,9 +2433,9 @@ int main()
             gradTir[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Br[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTit[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTiz[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
-	}
-      }	     
-    } 
+        }
+      }
+    }
     
     // Target variables
     std::vector<double> r_inner_target(ny+1,0.0);
@@ -3484,22 +2476,21 @@ int main()
     
     for (int j=0;j<ny+1; j++)
     {
-      // Inner target	    
-      int i = 0;	    
+      // Inner target
+      int i = 0;
       double r_top_right = crx[solps_3d_index(i,j,3)];
       double z_top_right = cry[solps_3d_index(i,j,3)];
       
-      r_inner_target[j] = r_top_right; 	    
-      z_inner_target[j] = z_top_right; 	    
+      r_inner_target[j] = r_top_right;
+      z_inner_target[j] = z_top_right;
       
       if(j > 0)
       {
         double r_bottom_right = crx[solps_3d_index(i,j,1)];
         double z_bottom_right = cry[solps_3d_index(i,j,1)];
-        r_inner_target_midpoints[j-1] = mean(r_top_right,r_bottom_right); 	    
-        z_inner_target_midpoints[j-1] = mean(z_top_right,z_bottom_right); 	    
-	length_inner_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
-//	std::cout << " lits " << length_inner_target_segment[j-1] << std::endl;
+        r_inner_target_midpoints[j-1] = mean(r_top_right,r_bottom_right);
+        z_inner_target_midpoints[j-1] = mean(z_top_right,z_bottom_right);
+        length_inner_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
 
         Bmag_inner_target[j-1] = Bmag[solps_2d_index(i+1,j)];
 
@@ -3514,16 +2505,16 @@ int main()
         double b_norm = Bmag_inner_target[j-1];
         Bangle_inner_target[j-1] = std::acos(dot_product/b_norm)*180.0/3.1415926535;
      
-       	te_inner_target[j-1] = te[solps_2d_index(i+1,j)];
-       	ti_inner_target[j-1] = ti[solps_2d_index(i+1,j)];
-       	ne_inner_target[j-1] = ne[solps_2d_index(i+1,j)];
+        te_inner_target[j-1] = te[solps_2d_index(i+1,j)];
+        ti_inner_target[j-1] = ti[solps_2d_index(i+1,j)];
+        ne_inner_target[j-1] = ne[solps_2d_index(i+1,j)];
 
-        area_inner_target[j-1] = gs[solps_3d_index(i+1,j,0)]; 	    
+        area_inner_target[j-1] = gs[solps_3d_index(i+1,j,0)];
         for(int k=0; k<ns; k++)
         {
-       	  flux_inner_target[k*ny + j-1] = flux[k][solps_2d_index(i+1,j)]/area_inner_target[j-1];
-       	  ni_inner_target[k*ny + j-1] = na[solps_3d_index(i+1,j,k)];
-	}
+         flux_inner_target[k*ny + j-1] = flux[k][solps_2d_index(i+1,j)]/area_inner_target[j-1];
+         ni_inner_target[k*ny + j-1] = na[solps_3d_index(i+1,j,k)];
+        }
       }
       
       // Outer target
@@ -3531,18 +2522,18 @@ int main()
       r_top_right = crx[solps_3d_index(i,j,3)];
       z_top_right = cry[solps_3d_index(i,j,3)];
       
-      r_outer_target[j] = r_top_right; 	    
-      z_outer_target[j] = z_top_right; 	    
+      r_outer_target[j] = r_top_right;
+      z_outer_target[j] = z_top_right;
       
       if(j > 0)
       {
         double r_bottom_right = crx[solps_3d_index(i,j,1)];
         double z_bottom_right = cry[solps_3d_index(i,j,1)];
-        r_outer_target_midpoints[j-1] = mean(r_top_right,r_bottom_right); 	    
-        z_outer_target_midpoints[j-1] = mean(z_top_right,z_bottom_right); 	    
-	length_outer_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
+        r_outer_target_midpoints[j-1] = mean(r_top_right,r_bottom_right);
+        z_outer_target_midpoints[j-1] = mean(z_top_right,z_bottom_right);
+        length_outer_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
         
-	Bmag_outer_target[j-1] = Bmag[solps_2d_index(i,j)];
+        Bmag_outer_target[j-1] = Bmag[solps_2d_index(i,j)];
 
         // Bangle calculation
         double slope_dzdx = (z_top_right - z_bottom_right)/(r_top_right - r_bottom_right);
@@ -3555,16 +2546,16 @@ int main()
         double b_norm = Bmag_outer_target[j-1];
         Bangle_outer_target[j-1] = std::acos(dot_product/b_norm)*180.0/3.1415926535;
      
-       	te_outer_target[j-1] = te[solps_2d_index(i,j)];
-       	ti_outer_target[j-1] = ti[solps_2d_index(i,j)];
-       	ne_outer_target[j-1] = ne[solps_2d_index(i,j)];
+        te_outer_target[j-1] = te[solps_2d_index(i,j)];
+        ti_outer_target[j-1] = ti[solps_2d_index(i,j)];
+        ne_outer_target[j-1] = ne[solps_2d_index(i,j)];
 
-        area_outer_target[j-1] = gs[solps_3d_index(i+1,j,0)]; 	    
+        area_outer_target[j-1] = gs[solps_3d_index(i+1,j,0)];
         for(int k=0; k<ns; k++)
         {
-       	  flux_outer_target[k*ny + j-1] = flux[k][solps_2d_index(i+1,j)]/area_outer_target[j-1];
-       	  ni_outer_target[k*ny + j-1] = na[solps_3d_index(i,j,k)];
-	}
+          flux_outer_target[k*ny + j-1] = flux[k][solps_2d_index(i+1,j)]/area_outer_target[j-1];
+          ni_outer_target[k*ny + j-1] = na[solps_3d_index(i,j,k)];
+        }
       }
     }
 
@@ -3584,11 +2575,12 @@ int main()
       {
         rmrs_inner_target[i] = rmrs_inner_target[i-1] + length_inner_target_segment[i-1];
         rmrs_outer_target[i] = rmrs_outer_target[i-1] + length_outer_target_segment[i-1];
-	if(i<ny)
-	{
-          rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] + 0.5*length_inner_target_segment[i];
-          rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] + 0.5*length_outer_target_segment[i];
-	}
+        
+        if(i<ny)
+        {
+                rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] + 0.5*length_inner_target_segment[i];
+                rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] + 0.5*length_outer_target_segment[i];
+        }
       }
     }
     
@@ -3978,11 +2970,11 @@ int main()
 
     if(nr == 1)
     {
-	    dr = 1;
+      dr = 1;
     }
     if(nz == 1)
     {
-	    dz = 1;
+      dz = 1;
     }
     thrust::host_vector<double> r_h(nr), z_h(nz), val_h(nr*nz);
 
@@ -4022,32 +3014,12 @@ int main()
     typedef std::chrono::duration<float> fsec;
     fsec setup_time = setup_time_clock - app_start_time;
     printf("Time taken for setup is %6.3f (secs) \n", setup_time.count());
-//#pragma omp parallel for collapse(3)
-  for(int i=0; i< n_total; i++)
-  {
-    //for(int jj=0; jj < nz; jj++)
-    //{
-    //  for(int ii=0; ii< nr; ii++)
-    //  {
-          index_triangle[0] = i;
-	  std::cout << "Time step # " << i << std::endl;
-          thrust::for_each(thrust::device,point_first,point_last,spf);
-              //double dist = (r[ii] - r1[i])*(r[ii] - r1[i]) + (z[jj] - z1[i])*(z[jj] - z1[i]);
-              //if(dist < radius[i]*radius[i])
-              //{
-              //  bool in = in_triangle(r1[i],z1[i],r2[i],z2[i],r3[i],z3[i],r[ii],z[jj]);
-
-              //  if(in)
-              //  {
-              //    double a_point = interpolate_value(r1[i],z1[i],v1[i],
-              //                                     r2[i],z2[i],v2[i],
-              //                                     r3[i],z3[i],v3[i],
-              //                                     r[ii],z[jj]);
-              //    val[jj*nr + ii] = a_point;
-              //  }
-              //}
-    //      }
-    //    }
+    //#pragma omp parallel for collapse(3)
+    for(int i=0; i< n_total; i++)
+    {
+      index_triangle[0] = i;
+      std::cout << "Time step # " << i << std::endl;
+      thrust::for_each(thrust::device,point_first,point_last,spf);
       
     }
     auto run_time_clock = app_time::now();
