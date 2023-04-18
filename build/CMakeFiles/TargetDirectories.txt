@@ -1,0 +1,3 @@
+/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir
+/home/78k/myRepos/solps_interp/build/CMakeFiles/edit_cache.dir
+/home/78k/myRepos/solps_interp/build/CMakeFiles/rebuild_cache.dir
