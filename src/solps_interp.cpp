@@ -1298,23 +1298,26 @@ std::tuple<std::vector<double>,std::vector<double>,
         v1_edge[(j-1)*4 + 1] = a_bottomleft_corner;
         
         
-        double parvecr = r_bottom_left - r_top_left;
-        double parvecz = r_bottom_left - z_top_left;
-        double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
-        parvecr = parvecr/parvecnorm;
-        parvecz = parvecz/parvecnorm;
+        double parvecr_top = r_top_left - r_top_right;
+        double parvecz_top = z_top_left - z_top_right;
+        double parvecnorm_top = std::sqrt(parvecr_top*parvecr_top + parvecz_top*parvecz_top);
+        parvecr_top = parvecr_top/parvecnorm_top;
+        parvecz_top = parvecz_top/parvecnorm_top;
         
-        double perpvecr = -parvecz;
-        double perpvecz = parvecr;
-                    
-        r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*perpvecr;
-        z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*perpvecz;
+        double parvecr_bottom = r_bottom_left - r_bottom_right;
+        double parvecz_bottom = z_bottom_left - z_bottom_right;
+        double parvecnorm_bottom = std::sqrt(parvecr_bottom*parvecr_bottom + parvecz_bottom*parvecz_bottom);
+        parvecr_bottom = parvecr_bottom/parvecnorm_bottom;
+        parvecz_bottom = parvecz_bottom/parvecnorm_bottom;
+        
+        r2_edge[(j-1)*4 + 1] = r_top_left + target_buff*parvecr_top;
+        z2_edge[(j-1)*4 + 1] = z_top_left + target_buff*parvecz_top;
         v2_edge[(j-1)*4 + 1] = a_topleft_corner;
         
-        r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*perpvecr;
-        r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*perpvecr;
-        z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*perpvecz;
-        z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*perpvecz;
+        r3_edge[(j-1)*4 + 0] = r_top_left + target_buff*parvecr_top;
+        r3_edge[(j-1)*4 + 1] = r_bottom_left + target_buff*parvecr_bottom;
+        z3_edge[(j-1)*4 + 0] = z_top_left + target_buff*parvecz_top;
+        z3_edge[(j-1)*4 + 1] = z_bottom_left + target_buff*parvecz_bottom;
         v3_edge[(j-1)*4 + 0] = a_topleft_corner;
         v3_edge[(j-1)*4 + 1] = a_bottomleft_corner;
           
@@ -1351,23 +1354,26 @@ std::tuple<std::vector<double>,std::vector<double>,
         z1_edge[(j-1)*4 + 3] = z_bottom_right;
         v1_edge[(j-1)*4 + 3] = a_bottomright_corner;
         
-        double parvecr = r_bottom_right - r_top_right;
-        double parvecz = r_bottom_right - z_top_right;
-        double parvecnorm = std::sqrt(parvecr*parvecr + parvecz*parvecz);
-        parvecr = parvecr/parvecnorm;
-        parvecz = parvecz/parvecnorm;
+        double parvecr_top = r_top_left - r_top_right;
+        double parvecz_top = z_top_left - z_top_right;
+        double parvecnorm_top = std::sqrt(parvecr_top*parvecr_top + parvecz_top*parvecz_top);
+        parvecr_top = -parvecr_top/parvecnorm_top;
+        parvecz_top = -parvecz_top/parvecnorm_top;
         
-        double perpvecr = -(-parvecz);
-        double perpvecz = -parvecr;
+        double parvecr_bottom = r_bottom_left - r_bottom_right;
+        double parvecz_bottom = z_bottom_left - z_bottom_right;
+        double parvecnorm_bottom = std::sqrt(parvecr_bottom*parvecr_bottom + parvecz_bottom*parvecz_bottom);
+        parvecr_bottom = -parvecr_bottom/parvecnorm_bottom;
+        parvecz_bottom = -parvecz_bottom/parvecnorm_bottom;
         
-        r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*perpvecr;
-        z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*perpvecz;
+        r2_edge[(j-1)*4 + 3] = r_top_right + target_buff*parvecr_top;
+        z2_edge[(j-1)*4 + 3] = z_top_right + target_buff*parvecz_top;
         v2_edge[(j-1)*4 + 3] = a_topright_corner;
         
-        r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*perpvecr;
-        r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*perpvecr;
-        z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*perpvecz;
-        z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*perpvecz;
+        r3_edge[(j-1)*4 + 2] = r_top_right + target_buff*parvecr_top;
+        r3_edge[(j-1)*4 + 3] = r_bottom_right + target_buff*parvecr_bottom;
+        z3_edge[(j-1)*4 + 2] = z_top_right + target_buff*parvecz_top;
+        z3_edge[(j-1)*4 + 3] = z_bottom_right + target_buff*parvecz_bottom;
         v3_edge[(j-1)*4 + 2] = a_topright_corner;
         v3_edge[(j-1)*4 + 3] = a_bottomright_corner;
           
@@ -2903,8 +2909,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 4400;
-    int nz = 9300;
+    int nr = 4*400;
+    int nz = 4*800;
 
     solps_fields->te.resize(nr*nz);
     solps_fields->te = 0.0;
@@ -2960,10 +2966,10 @@ int main()
 
     thrust::counting_iterator<std::size_t> point_first(0);
     thrust::counting_iterator<std::size_t> point_last(nr*nz);
-    double r_start = 4.0; //4.5018; //4.0;
-    double r_end = 8.5; //4.5018; //8.4;
-    double z_start = -4.6; //-3.131; //-4.6;
-    double z_end = 4.7; //-3.131; //4.7;
+    double r_start = 1.0; //1.7; //4.5018; //4.0;
+    double r_end = 2.5; //3.3; //4.5018; //8.4;
+    double z_start = -1.5; //-3.131; //-4.6;
+    double z_end = 1.5; //-3.131; //4.7;
 
     double dr = (r_end - r_start)/(nr - 1);
     double dz = (z_end - z_start)/(nz - 1);
