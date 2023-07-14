@@ -2498,6 +2498,9 @@ int main()
         z_inner_target_midpoints[j-1] = mean(z_top_right,z_bottom_right);
         length_inner_target_segment[j-1] = distance(r_top_right,z_top_right,r_bottom_right,z_bottom_right);
 
+        printf("r_top_right %f z_top_right %f \n", r_top_right, z_top_right);
+        printf("r_bottom_right %f z_bottom_right %f \n", r_bottom_right, z_bottom_right);
+        printf("length %d %f \n",j-1,length_inner_target_segment[j-1]);
         Bmag_inner_target[j-1] = Bmag[solps_2d_index(i+1,j)];
 
         // Bangle calculation
@@ -2573,19 +2576,15 @@ int main()
       if(i==topcut)
       {
         rmrs_inner_target[i] = 0.0;
-        rmrs_outer_target[i] = 0.0;
-        rmrs_inner_target_midpoints[i] = 0.5*rmrs_inner_target[i];
-        rmrs_outer_target_midpoints[i] = 0.5*rmrs_outer_target[i];
+        rmrs_inner_target_midpoints[i] = 0.5*length_inner_target_segment[i];
       }
       else
       {
         rmrs_inner_target[i] = rmrs_inner_target[i-1] + length_inner_target_segment[i-1];
-        rmrs_outer_target[i] = rmrs_outer_target[i-1] + length_outer_target_segment[i-1];
         
         if(i<ny)
         {
                 rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] + 0.5*length_inner_target_segment[i];
-                rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] + 0.5*length_outer_target_segment[i];
         }
       }
     }
@@ -2593,11 +2592,33 @@ int main()
     for(int i=topcut-1; i>-1; i--)
     {
         rmrs_inner_target[i] = rmrs_inner_target[i+1] - length_inner_target_segment[i];
-        rmrs_outer_target[i] = rmrs_outer_target[i+1] - length_outer_target_segment[i];
-        rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] - 0.5*length_inner_target_segment[i];
-        rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] - 0.5*length_outer_target_segment[i];
+        rmrs_inner_target_midpoints[i] = rmrs_inner_target[i] + 0.5*length_inner_target_segment[i];
+        //printf("i %d rmrs_inner_target %f
     }
-
+    
+    for(int i=topcut-1; i<ny+1; i++)
+    {
+      if(i==topcut-1)
+      {
+        rmrs_outer_target[i] = 0.0;
+        rmrs_outer_target_midpoints[i] = 0.5*length_outer_target_segment[i];
+      }
+      else
+      {
+        rmrs_outer_target[i] = rmrs_outer_target[i-1] + length_outer_target_segment[i-1];
+        
+        if(i<ny)
+        {
+                rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] + 0.5*length_outer_target_segment[i];
+        }
+      }
+    }
+    
+    for(int i=topcut-2; i>-1; i--)
+    {
+        rmrs_outer_target[i] = rmrs_outer_target[i+1] - length_outer_target_segment[i];
+        rmrs_outer_target_midpoints[i] = rmrs_outer_target[i] + 0.5*length_outer_target_segment[i];
+    }
     auto solps_fields = new Fields();
 
     thrust::host_vector<double> r1_h(n_total), r2_h(n_total), r3_h(n_total),
