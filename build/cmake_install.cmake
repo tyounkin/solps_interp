@@ -1,4 +1,4 @@
-# Install script for directory: /home/78k/myRepos/solps_interp
+# Install script for directory: /home/cloud/myRepos/solps_interp_linear
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/78k/myRepos/solps_interp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/cloud/myRepos/solps_interp_linear/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

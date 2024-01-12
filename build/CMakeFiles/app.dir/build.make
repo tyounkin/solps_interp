@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/bin/cmake
+CMAKE_COMMAND = /home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/bin/cmake
 
 # The command to remove a file.
-RM = /home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/bin/cmake -E rm -f
+RM = /home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/78k/myRepos/solps_interp
+CMAKE_SOURCE_DIR = /home/cloud/myRepos/solps_interp_linear
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/78k/myRepos/solps_interp/build
+CMAKE_BINARY_DIR = /home/cloud/myRepos/solps_interp_linear/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/app.dir/depend.make
@@ -72,31 +72,31 @@ include CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o: CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.depend
 CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o: CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.cmake
 CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o: ../src/solps_interp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/78k/myRepos/solps_interp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o"
-	cd /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src && /home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/bin/cmake -E make_directory /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/.
-	cd /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src && /home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o -D generated_cubin_file:STRING=/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o.cubin.txt -P /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o"
+	cd /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src && /home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/bin/cmake -E make_directory /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/.
+	cd /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src && /home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o -D generated_cubin_file:STRING=/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o.cubin.txt -P /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.cmake
 
 CMakeFiles/app.dir/app_intermediate_link.o: CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/78k/myRepos/solps_interp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building NVCC intermediate link file CMakeFiles/app.dir/app_intermediate_link.o"
-	/home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cuda-11.5.1-dq4atxjulvyjmxzjwimnulpgge6mmb4k/bin/nvcc -DCUDA -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA --std=c++14 -O3 --expt-relaxed-constexpr --expt-extended-lambda -m64 -ccbin /usr/bin/c++ -dlink /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o -o /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/./app_intermediate_link.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building NVCC intermediate link file CMakeFiles/app.dir/app_intermediate_link.o"
+	/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cuda-11.5.1-allpyh5tkas4irdoa5xitocg3fzxxkfm/bin/nvcc -DCUDA -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA --std=c++14 -O3 --expt-relaxed-constexpr --expt-extended-lambda -m64 -ccbin /home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-9.4.0/gcc-11.2.0-wkfqq2f2d4veqamg2nhynmr7rwsx3xyi/bin/g++ -dlink /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o -o /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/./app_intermediate_link.o
 
 # Object files for target app
 app_OBJECTS =
 
 # External object files for target app
 app_EXTERNAL_OBJECTS = \
-"/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o" \
-"/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/app_intermediate_link.o"
+"/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o" \
+"/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/app_intermediate_link.o"
 
 app: CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o
 app: CMakeFiles/app.dir/app_intermediate_link.o
 app: CMakeFiles/app.dir/build.make
-app: /home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cuda-11.5.1-dq4atxjulvyjmxzjwimnulpgge6mmb4k/lib64/libcudart_static.a
+app: /home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cuda-11.5.1-allpyh5tkas4irdoa5xitocg3fzxxkfm/lib64/libcudart_static.a
 app: /usr/lib/x86_64-linux-gnu/librt.so
-app: /home/tqd/Code/netcdfcxxbuild/lib/libnetcdf_c++4.so
-app: /home/tqd/Code/netcdfcbuild/lib/libnetcdf.so
+app: /home/cloud/myRepos/netcdfcxxbuild/lib/libnetcdf_c++4.so
+app: /usr/lib/x86_64-linux-gnu/libnetcdf.so
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/78k/myRepos/solps_interp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +109,6 @@ CMakeFiles/app.dir/clean:
 
 CMakeFiles/app.dir/depend: CMakeFiles/app.dir/app_intermediate_link.o
 CMakeFiles/app.dir/depend: CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o
-	cd /home/78k/myRepos/solps_interp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/78k/myRepos/solps_interp /home/78k/myRepos/solps_interp /home/78k/myRepos/solps_interp/build /home/78k/myRepos/solps_interp/build /home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/cloud/myRepos/solps_interp_linear/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cloud/myRepos/solps_interp_linear /home/cloud/myRepos/solps_interp_linear /home/cloud/myRepos/solps_interp_linear/build /home/cloud/myRepos/solps_interp_linear/build /home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/app.dir/depend
 

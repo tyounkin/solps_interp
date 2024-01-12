@@ -57,21 +57,21 @@ if(NOT generated_file)
 endif()
 
 # Set these up as variables to make reading the generated file easier
-set(CMAKE_COMMAND "/home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/bin/cmake") # path
-set(source_file "/home/78k/myRepos/solps_interp/src/solps_interp.cpp") # path
-set(NVCC_generated_dependency_file "/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.depend") # path
-set(CUDA_make2cmake "/home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/share/cmake-3.22/Modules/FindCUDA/make2cmake.cmake") # path
-set(CUDA_parse_cubin "/home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cmake-3.22.1-p2thcxuu73iatal3h3ef2knt6p6mzkms/share/cmake-3.22/Modules/FindCUDA/parse_cubin.cmake") # path
+set(CMAKE_COMMAND "/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/bin/cmake") # path
+set(source_file "/home/cloud/myRepos/solps_interp_linear/src/solps_interp.cpp") # path
+set(NVCC_generated_dependency_file "/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.NVCC-depend") # path
+set(cmake_dependency_file "/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/app_generated_solps_interp.cpp.o.depend") # path
+set(CUDA_make2cmake "/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/share/cmake-3.22/Modules/FindCUDA/make2cmake.cmake") # path
+set(CUDA_parse_cubin "/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cmake-3.22.1-5mwyvixrpgnby723sagec7yt4k3wxdrv/share/cmake-3.22/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
-set(CUDA_HOST_COMPILER "/usr/bin/c++") # path
+set(CUDA_HOST_COMPILER "/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-9.4.0/gcc-11.2.0-wkfqq2f2d4veqamg2nhynmr7rwsx3xyi/bin/g++") # path
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/.") # path
-set(generated_file_internal "/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o") # path
-set(generated_cubin_file_internal "/home/78k/myRepos/solps_interp/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o.cubin.txt") # path
+set(generated_file_path "/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/.") # path
+set(generated_file_internal "/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o") # path
+set(generated_cubin_file_internal "/home/cloud/myRepos/solps_interp_linear/build/CMakeFiles/app.dir/src/./app_generated_solps_interp.cpp.o.cubin.txt") # path
 
-set(CUDA_NVCC_EXECUTABLE "/home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cuda-11.5.1-dq4atxjulvyjmxzjwimnulpgge6mmb4k/bin/nvcc") # path
+set(CUDA_NVCC_EXECUTABLE "/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cuda-11.5.1-allpyh5tkas4irdoa5xitocg3fzxxkfm/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS -DCUDA;-DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA;--std=c++14;-O3;--expt-relaxed-constexpr;--expt-extended-lambda ;; ) # list
 # Build specific configuration flags
 set(CUDA_NVCC_FLAGS_DEBUG  ; )
@@ -79,7 +79,7 @@ set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
-set(CUDA_NVCC_INCLUDE_DIRS [==[/home/5n4/spack/opt/spack/linux-ubuntu18.04-cascadelake/gcc-11.2.0/cuda-11.5.1-dq4atxjulvyjmxzjwimnulpgge6mmb4k/include;$<TARGET_PROPERTY:app,INCLUDE_DIRECTORIES>]==]) # list (needs to be in lua quotes to address backslashes)
+set(CUDA_NVCC_INCLUDE_DIRS [==[/home/cloud/spack/opt/spack/linux-ubuntu20.04-cascadelake/gcc-11.2.0/cuda-11.5.1-allpyh5tkas4irdoa5xitocg3fzxxkfm/include;$<TARGET_PROPERTY:app,INCLUDE_DIRECTORIES>]==]) # list (needs to be in lua quotes to address backslashes)
 string(REPLACE "\\" "/" CUDA_NVCC_INCLUDE_DIRS "${CUDA_NVCC_INCLUDE_DIRS}")
 set(CUDA_NVCC_COMPILE_DEFINITIONS [==[$<TARGET_PROPERTY:app,COMPILE_DEFINITIONS>]==]) # list (needs to be in lua quotes see #16510 ).
 set(format_flag "-dc") # string

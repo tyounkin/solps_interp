@@ -3500,7 +3500,11 @@ int main()
     }
 
     std::vector<int> topcut_vec = read_ifield("b2fgmtry","topcut");
-    int topcut = topcut_vec[0];//Doesn't change from SOLPS index value because of removal of guard cell
+    int topcut = topcut=0;//topcut_vec[0];//Doesn't change from SOLPS index value because of removal of guard cell
+    if( topcut_vec.size() > 0)
+    {
+     topcut = topcut_vec[0];
+     }
 
     for(int i=topcut; i<ny+1; i++)
     {
@@ -3833,8 +3837,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 4400;
-    int nz = 9300;
+    int nr = 4000;
+    int nz = 5000;
 
     solps_fields->te.resize(nr*nz);
     solps_fields->te = 0.0;
@@ -3888,10 +3892,10 @@ int main()
 
     thrust::counting_iterator<std::size_t> point_first(0);
     thrust::counting_iterator<std::size_t> point_last(nr*nz);
-    double r_start = 4.0; //4.5018; //4.0;
-    double r_end = 8.5; //4.5018; //8.4;
-    double z_start = -4.6; //-3.131; //-4.6;
-    double z_end = 4.7; //-3.131; //4.7;
+    double r_start = 0; //4.5018; //4.0;
+    double r_end = 0.1; //4.5018; //8.4;
+    double z_start = 0.86; //-3.131; //-4.6;
+    double z_end = 3.09; //-3.131; //4.7;
 
     double dr = (r_end - r_start)/(nr - 1);
     double dz = (z_end - z_start)/(nz - 1);

@@ -1,13 +1,7 @@
 #!/bin/bash
 source env.fusiont5.sh
 
-cmake -DTHRUST_INCLUDE_DIR=/home/tqd/Code/thrust/thrust \
-    -DNETCDF_CXX_INCLUDE_DIR=$NETCDFCXX4INCLUDE \
-    -DNETCDF_CXX_LIBRARY=$NETCDFLIB_CPP \
-    -DNETCDF_DIR=$NETCDFDIR \
-    -DNETCDF_INCLUDE_DIR=$NETCDFINCLUDE \
-    -DNETCDF_LIBRARY=$NETCDFLIB \
-    -DNETCDF_CXX_INCLUDE_DIR=$NETCDFCXX4INCLUDE \
+cmake -DNETCDF_CXX_INCLUDE_DIR=/home/cloud/myRepos/netcdfcxxbuild/include \
+    -DNETCDF_CXX_LIBRARY=/home/cloud/myRepos/netcdfcxxbuild/lib/libnetcdf_c++4.so \
     -DLIBCONFIGPP_LIBRARY=$LIBCONFIGLIB \
-    -DMPI_C_LIBRARIES=/cm/shared/apps/mpich/ge/gcc/64/3.2.1/lib \
     ..
