@@ -1676,24 +1676,27 @@ std::tuple<std::vector<double>,std::vector<double>>
       double left_ti = ti[left_2d_index];
       
       double d_left_right = 0.5*left_hx + cell_hx + 0.5*right_hx;
-      double theta = std::atan(bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,2)]);
+      double theta = std::atan(bb[solps_3d_index(i,j,0)]/-bb[solps_3d_index(i,j,2)]);
       double d_grad = d_left_right/std::sin(theta);
       
       gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
       gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;
       
+      gradTe[cell_2d_index] = bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,3)]*(right_te - left_te)/d_left_right;
+      gradTi[cell_2d_index] = bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,3)]*(right_ti - left_ti)/d_left_right;
+
       if( i == 1)
       {
-        cell_2d_index = solps_2d_index(i-1,j);
-        gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
-        gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
+        //cell_2d_index = solps_2d_index(i-1,j);
+        gradTe[solps_2d_index(i-1,j)] = gradTe[cell_2d_index];
+        gradTi[solps_2d_index(i-1,j)] = gradTi[cell_2d_index];
       }
 
       if( i == nx)
       {
-        cell_2d_index = solps_2d_index(i+1,j);
-        gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
-        gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;;
+        //cell_2d_index = solps_2d_index(i+1,j);
+        gradTe[solps_2d_index(i+1,j)] = gradTe[cell_2d_index];
+        gradTi[solps_2d_index(i+1,j)] = gradTi[cell_2d_index];
       }
     }
   }
@@ -2348,6 +2351,7 @@ int main()
 
     // Target areas
     std::vector<double> gs = read_dfield("b2fgmtry", "gs");
+    std::vector<double> hx = read_dfield("b2fgmtry", "hx");
     
     // Convert Ti and Te from Joules to eV
     for(int i=0; i<ti.size();i++)
@@ -2455,6 +2459,7 @@ int main()
     std::vector<double> Bangle_inner_target(ny,0.0);
     std::vector<double> te_inner_target(ny,0.0);
     std::vector<double> ti_inner_target(ny,0.0);
+    std::vector<double> vpara_inner_target(ny,0.0);
     std::vector<double> ne_inner_target(ny,0.0);
     std::vector<double> length_inner_target_segment(ny,0.0);
     
@@ -2469,6 +2474,7 @@ int main()
     std::vector<double> Bangle_outer_target(ny,0.0);
     std::vector<double> te_outer_target(ny,0.0);
     std::vector<double> ti_outer_target(ny,0.0);
+    std::vector<double> vpara_outer_target(ny,0.0);
     std::vector<double> ne_outer_target(ny,0.0);
     std::vector<double> length_outer_target_segment(ny,0.0);
     
@@ -2514,9 +2520,9 @@ int main()
         double b_norm = Bmag_inner_target[j-1];
         Bangle_inner_target[j-1] = std::acos(dot_product/b_norm)*180.0/3.1415926535;
      
-        te_inner_target[j-1] = te[solps_2d_index(i+1,j)];
-        ti_inner_target[j-1] = ti[solps_2d_index(i+1,j)];
-        ne_inner_target[j-1] = ne[solps_2d_index(i+1,j)];
+        te_inner_target[j-1] = (te[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + te[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
+        ti_inner_target[j-1] = (ti[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ti[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
+        vpara_inner_target[j-1] = (ion_flow[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ion_flow[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
 
         area_inner_target[j-1] = gs[solps_3d_index(i+1,j,0)];
         for(int k=0; k<ns; k++)
@@ -2557,6 +2563,7 @@ int main()
      
         te_outer_target[j-1] = te[solps_2d_index(i,j)];
         ti_outer_target[j-1] = ti[solps_2d_index(i,j)];
+        vpara_outer_target[j-1] = ion_flow[solps_2d_index(i,j)];
         ne_outer_target[j-1] = ne[solps_2d_index(i,j)];
 
         area_outer_target[j-1] = gs[solps_3d_index(i+1,j,0)];
@@ -2930,8 +2937,8 @@ int main()
     double* v3_pointer = thrust::raw_pointer_cast(&v3[0]);
     double* radius_pointer = thrust::raw_pointer_cast(&radius[0]);
     
-    int nr = 4*400;
-    int nz = 4*800;
+    int nr = 1*400;
+    int nz = 1*800;
 
     solps_fields->te.resize(nr*nz);
     solps_fields->te = 0.0;
@@ -3086,6 +3093,7 @@ int main()
       netCDF::NcVar _Bangle_inner_target = ncFile_out.addVar("Bangle_inner_target", netcdf_precision, _ny);
       netCDF::NcVar _te_inner_target = ncFile_out.addVar("te_inner_target", netcdf_precision, _ny);
       netCDF::NcVar _ti_inner_target = ncFile_out.addVar("ti_inner_target", netcdf_precision, _ny);
+      netCDF::NcVar _vpara_inner_target = ncFile_out.addVar("vpara_inner_target", netcdf_precision, _ny);
       netCDF::NcVar _ne_inner_target = ncFile_out.addVar("ne_inner_target", netcdf_precision, _ny);
       netCDF::NcVar _flux_inner_target = ncFile_out.addVar("flux_inner_target", netcdf_precision, surfdim);
       netCDF::NcVar _ni_inner_target = ncFile_out.addVar("ni_inner_target", netcdf_precision, surfdim);
@@ -3100,6 +3108,7 @@ int main()
       netCDF::NcVar _Bangle_outer_target = ncFile_out.addVar("Bangle_outer_target", netcdf_precision, _ny);
       netCDF::NcVar _te_outer_target = ncFile_out.addVar("te_outer_target", netcdf_precision, _ny);
       netCDF::NcVar _ti_outer_target = ncFile_out.addVar("ti_outer_target", netcdf_precision, _ny);
+      netCDF::NcVar _vpara_outer_target = ncFile_out.addVar("vpara_outer_target", netcdf_precision, _ny);
       netCDF::NcVar _ne_outer_target = ncFile_out.addVar("ne_outer_target", netcdf_precision, _ny);
       netCDF::NcVar _flux_outer_target = ncFile_out.addVar("flux_outer_target", netcdf_precision, surfdim);
       netCDF::NcVar _ni_outer_target = ncFile_out.addVar("ni_outer_target", netcdf_precision, surfdim);
@@ -3148,6 +3157,7 @@ int main()
       _Bangle_inner_target.putVar(&Bangle_inner_target[0]);
       _te_inner_target.putVar(&te_inner_target[0]);
       _ti_inner_target.putVar(&ti_inner_target[0]);
+      _vpara_inner_target.putVar(&vpara_inner_target[0]);
       _ne_inner_target.putVar(&ne_inner_target[0]);
       _flux_inner_target.putVar(&flux_inner_target[0]);
       _ni_inner_target.putVar(&ni_inner_target[0]);
@@ -3162,6 +3172,7 @@ int main()
       _Bangle_outer_target.putVar(&Bangle_outer_target[0]);
       _te_outer_target.putVar(&te_outer_target[0]);
       _ti_outer_target.putVar(&ti_outer_target[0]);
+      _vpara_outer_target.putVar(&vpara_outer_target[0]);
       _ne_outer_target.putVar(&ne_outer_target[0]);
       _flux_outer_target.putVar(&flux_outer_target[0]);
       _ni_outer_target.putVar(&ni_outer_target[0]);
