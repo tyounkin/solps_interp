@@ -24,14 +24,22 @@
 class Managed {
 public:
  void *operator new(size_t len) {
+#ifdef __CUDACC__
  void *ptr;
  cudaMallocManaged(&ptr, len);
  cudaDeviceSynchronize();
  return ptr;
+#else
+ return ::operator new(len);
+#endif
  }
  void operator delete(void *ptr) {
+#ifdef __CUDACC__
  //cudaDeviceSynchronize();
  cudaFree(ptr);
+#else
+ return ::operator delete(ptr);
+#endif
  }
 };
 
@@ -1708,6 +1716,7 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
             get_Bfield(std::vector<double> Br, std::vector<double> Bt, std::vector<double> Bz, 
             std::vector<double> Bmag)
 {
+  // Get grid size
   std::vector<int> nxny = read_ifield("b2fgmtry","nx,ny");
 
   nx = nxny[0];
@@ -1752,6 +1761,8 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>,std::vect
         double r_top_right = crx[solps_3d_index(i,j,3)];
         double z_top_right = cry[solps_3d_index(i,j,3)];
 
+        // Naming convention, x grid goes from left to right
+        // So this is calculating the parallel unit vector
         double r_right_mid = mean(r_top_right, r_bottom_right);
         double z_right_mid = mean(z_top_right, z_bottom_right);
         double r_left_mid = mean(r_top_left, r_bottom_left);
@@ -2285,9 +2296,10 @@ std::tuple<std::vector<double>,std::vector<double>,std::vector<double>>
 
 int main()
 {
+    const double Q_CONST = 1.602176565e-19;
     // Depending on output size and precision needed, 
     // netCDF binaries can be set to float or double here
-    netCDF::NcType netcdf_precision = netCDF::ncFloat;
+    netCDF::NcType netcdf_precision = netCDF::ncDouble;
     
     // On multiple GPU machines, the device can be hardcoded
     //cudaSetDevice(1);
@@ -2312,6 +2324,7 @@ int main()
     // Total number of triangles
     // SOLPS quadrilaterals are split into 8 triangles
     // An additional 2 at each end of the x grid (4)
+    // last 4*ny are for extrapolation
     int n_total = nx*ny*n8 + 4*ny;
    
     // SOLPS variables 
@@ -2356,8 +2369,8 @@ int main()
     // Convert Ti and Te from Joules to eV
     for(int i=0; i<ti.size();i++)
     {
-      ti[i] = ti[i]/1.602176565e-19;
-      te[i] = te[i]/1.602176565e-19;
+      ti[i] = ti[i]/Q_CONST;
+      te[i] = te[i]/Q_CONST;
     }
     
     // SOLPS grid variables pulled out of the above variables
@@ -2438,10 +2451,10 @@ int main()
             ion_vt[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             ion_vz[solps_2d_index(i,j)] = ion_flow[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTer[solps_2d_index(i,j)] = gradTe[solps_2d_index(i,j)]*Br[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
-            gradTet[solps_2d_index(i,j)] = gradTe[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
+            gradTet[solps_2d_index(i,j)] = -gradTe[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTez[solps_2d_index(i,j)] = gradTe[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTir[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Br[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
-            gradTit[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
+            gradTit[solps_2d_index(i,j)] = -gradTi[solps_2d_index(i,j)]*Bt[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
             gradTiz[solps_2d_index(i,j)] = gradTi[solps_2d_index(i,j)]*Bz[solps_2d_index(i,j)]/Bmag[solps_2d_index(i,j)];
         }
       }
