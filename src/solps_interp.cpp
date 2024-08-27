@@ -1684,11 +1684,11 @@ std::tuple<std::vector<double>,std::vector<double>>
       double left_ti = ti[left_2d_index];
       
       double d_left_right = 0.5*left_hx + cell_hx + 0.5*right_hx;
-      double theta = std::atan(bb[solps_3d_index(i,j,0)]/-bb[solps_3d_index(i,j,2)]);
-      double d_grad = d_left_right/std::sin(theta);
+      //double theta = std::atan(bb[solps_3d_index(i,j,0)]/-bb[solps_3d_index(i,j,2)]);
+      //double d_grad = d_left_right/std::sin(theta);
       
-      gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
-      gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;
+      //gradTe[cell_2d_index] = (right_te - left_te)/d_grad;
+      //gradTi[cell_2d_index] = (right_ti - left_ti)/d_grad;
       
       gradTe[cell_2d_index] = bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,3)]*(right_te - left_te)/d_left_right;
       gradTi[cell_2d_index] = bb[solps_3d_index(i,j,0)]/bb[solps_3d_index(i,j,3)]*(right_ti - left_ti)/d_left_right;
@@ -2536,6 +2536,7 @@ int main()
         te_inner_target[j-1] = (te[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + te[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
         ti_inner_target[j-1] = (ti[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ti[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
         vpara_inner_target[j-1] = (ion_flow[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ion_flow[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
+        ne_inner_target[j-1] = (ne[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ne[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
 
         area_inner_target[j-1] = gs[solps_3d_index(i+1,j,0)];
         for(int k=0; k<ns; k++)
@@ -2574,10 +2575,14 @@ int main()
         double b_norm = Bmag_outer_target[j-1];
         Bangle_outer_target[j-1] = std::acos(dot_product/b_norm)*180.0/3.1415926535;
      
-        te_outer_target[j-1] = te[solps_2d_index(i,j)];
-        ti_outer_target[j-1] = ti[solps_2d_index(i,j)];
-        vpara_outer_target[j-1] = ion_flow[solps_2d_index(i,j)];
-        ne_outer_target[j-1] = ne[solps_2d_index(i,j)];
+        //te_outer_target[j-1] = te[solps_2d_index(i,j)];
+        te_outer_target[j-1] = (te[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + te[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
+        //ti_outer_target[j-1] = ti[solps_2d_index(i,j)];
+        ti_outer_target[j-1] = (ti[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ti[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
+        //vpara_outer_target[j-1] = ion_flow[solps_2d_index(i,j)];
+        vpara_outer_target[j-1] = (ion_flow[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ion_flow[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
+        //ne_outer_target[j-1] = ne[solps_2d_index(i,j)];
+        ne_outer_target[j-1] = (ne[solps_2d_index(i,j)]*hx[solps_2d_index(i+1,j)] + ne[solps_2d_index(i+1,j)]*hx[solps_2d_index(i,j)])/(hx[solps_2d_index(i+1,j)] + hx[solps_2d_index(i,j)]);
 
         area_outer_target[j-1] = gs[solps_3d_index(i+1,j,0)];
         for(int k=0; k<ns; k++)
